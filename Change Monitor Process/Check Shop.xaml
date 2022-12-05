@@ -7,11 +7,17 @@
     <x:Property Name="out_variant" Type="OutArgument(x:String)" />
     <x:Property Name="out_url" Type="OutArgument(x:String)" />
     <x:Property Name="in_WhatToExtract" Type="InArgument(x:String)" />
+    <x:Property Name="in_SearchTerm1" Type="InArgument(x:String)" />
+    <x:Property Name="in_SearchTerm2" Type="InArgument(x:String)" />
+    <x:Property Name="in_SearchTerm3" Type="InArgument(x:String)" />
+    <x:Property Name="in_TextAnchor1" Type="InArgument(x:String)" />
+    <x:Property Name="in_TextAnchor2" Type="InArgument(x:String)" />
+    <x:Property Name="in_TextAnchor3" Type="InArgument(x:String)" />
   </x:Members>
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1208,1937</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1051,3260</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Check_Shop_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="70">
@@ -51,10 +57,12 @@
       <x:String>System.Text.RegularExpressions</x:String>
       <x:String>System.IO</x:String>
       <x:String>System.Security</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
     </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
-    <scg:List x:TypeArguments="AssemblyReference" Capacity="96">
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="51">
       <AssemblyReference>System.Activities</AssemblyReference>
       <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
       <AssemblyReference>System.Private.CoreLib</AssemblyReference>
@@ -104,9 +112,10 @@
       <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
       <AssemblyReference>NPOI</AssemblyReference>
       <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Check_Shop" sap:VirtualizedContainerService.HintSize="692,1872" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Check_Shop" sap:VirtualizedContainerService.HintSize="764,3195" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="ui:UiElement" Name="Browser" />
     </Sequence.Variables>
@@ -115,7 +124,7 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="650,1780" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="702,3073" sap2010:WorkflowViewState.IdRef="TryCatch_1">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -123,9 +132,9 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
       <TryCatch.Try>
-        <Switch x:TypeArguments="x:String" DisplayName="Switch" Expression="[in_Shop]" sap:VirtualizedContainerService.HintSize="612,1553" sap2010:WorkflowViewState.IdRef="Switch`1_4">
+        <Switch x:TypeArguments="x:String" DisplayName="Switch" Expression="[in_Shop]" sap:VirtualizedContainerService.HintSize="664,2836" sap2010:WorkflowViewState.IdRef="Switch`1_4">
           <Switch.Default>
-            <Throw Exception="[new Exception(&quot;Shop not found&quot;)]" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="Throw_1" />
+            <Throw Exception="[new Exception(&quot;Shop not found&quot;)]" sap:VirtualizedContainerService.HintSize="334,97" sap2010:WorkflowViewState.IdRef="Throw_1" />
           </Switch.Default>
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -133,24 +142,24 @@
               <x:Boolean x:Key="IsPinned">False</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <uix:NApplicationCard WebDriverMode="{x:Null}" x:Key="sainsburys" sap2010:Annotation.AnnotationText="Set product page to get price from" AttachMode="SingleWindow" CloseMode="Never" DisplayName="Use Browser Chrome: Hula Hoops Original Potato Ring Crisps 6x24g | Sainsbury's" sap:VirtualizedContainerService.HintSize="573,1257" sap2010:WorkflowViewState.IdRef="NApplicationCard_3" InteractionMode="DebuggerApi" IsIncognito="True" OutUiElement="[Browser]" ScopeGuid="c437b863-15c5-4f8b-aa85-e4de0e6736b7" Version="V2">
+          <uix:NApplicationCard WebDriverMode="{x:Null}" x:Key="sainsburys" sap2010:Annotation.AnnotationText="Set product page to get price from" AttachMode="SingleWindow" CloseMode="Never" DisplayName="Use Browser Chrome: Hula Hoops Original Potato Ring Crisps 6x24g | Sainsbury's" sap:VirtualizedContainerService.HintSize="593,1325" sap2010:WorkflowViewState.IdRef="NApplicationCard_3" InteractionMode="DebuggerApi" IsIncognito="True" OutUiElement="[Browser]" ScopeGuid="c437b863-15c5-4f8b-aa85-e4de0e6736b7" Version="V2">
             <uix:NApplicationCard.Body>
               <ActivityAction x:TypeArguments="x:Object">
                 <ActivityAction.Argument>
                   <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
                 </ActivityAction.Argument>
-                <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="539,1010" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="559,1080" sap2010:WorkflowViewState.IdRef="Sequence_5">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <uix:NTakeScreenshot ContinueOnError="True" DisplayName="Take Screenshot" FileName="screenshot.png" FileNameMode="None" sap:VirtualizedContainerService.HintSize="497,239" sap2010:WorkflowViewState.IdRef="NTakeScreenshot_3" Timeout="5" Version="V1">
+                  <uix:NTakeScreenshot ContinueOnError="True" DisplayName="Take Screenshot" FileName="screenshot.png" FileNameMode="None" sap:VirtualizedContainerService.HintSize="497,249" sap2010:WorkflowViewState.IdRef="NTakeScreenshot_3" Timeout="5" Version="V1">
                     <uix:NTakeScreenshot.SavedTo>
                       <OutArgument x:TypeArguments="x:String">[out_ScreenshotFilepath]</OutArgument>
                     </uix:NTakeScreenshot.SavedTo>
                   </uix:NTakeScreenshot>
-                  <uix:NClick sap2010:Annotation.AnnotationText="Click &quot;Accept Cookies&quot; (DRAG FROM OBJECT REPOSITORY)" ClickType="Single" ContinueOnError="True" DisplayName="Click 'Accept Cookies'" sap:VirtualizedContainerService.HintSize="497,198" sap2010:WorkflowViewState.IdRef="NClick_3" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="c437b863-15c5-4f8b-aa85-e4de0e6736b7" Timeout="5" Version="V1">
+                  <uix:NClick sap2010:Annotation.AnnotationText="Click &quot;Accept Cookies&quot; (DRAG FROM OBJECT REPOSITORY)" ClickType="Single" ContinueOnError="True" DisplayName="Click 'Accept Cookies'" sap:VirtualizedContainerService.HintSize="497,208" sap2010:WorkflowViewState.IdRef="NClick_3" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="c437b863-15c5-4f8b-aa85-e4de0e6736b7" Timeout="5" Version="V1">
                     <uix:NClick.Target>
                       <uix:TargetAnchorable BrowserURL="https://www.sainsburys.co.uk/gol-ui/product/enriched-multi-vit-british-free-range-medium-eggs-x6" DesignTimeRectangle="1185, 923, 142, 42" ElementType="Button" FriendlyName="'Accept Cookies'" FullSelectorArgument="&lt;webctrl id='onetrust-accept-btn-handler' tag='BUTTON' /&gt;" FuzzySelectorArgument="&lt;webctrl id='onetrust-accept-btn-handler' tag='BUTTON' type='' class='' aaname='Accept All Cookies' check:innerText='Accept All Cookies' /&gt;" Guid="9049bff1-642c-4ae4-aae3-c4154c683e01" ImageBase64="" InformativeScreenshot="a0529c70c88371ae7d31d0c849d316d7.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='*Sainsbury*' /&gt;" SearchSteps="FuzzySelector" Visibility="Interactive" />
                     </uix:NClick.Target>
@@ -160,7 +169,7 @@
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
                   </uix:NClick>
-                  <Switch x:TypeArguments="x:String" DisplayName="Switch" Expression="[in_WhatToExtract]" sap:VirtualizedContainerService.HintSize="497,161" sap2010:WorkflowViewState.IdRef="Switch`1_5">
+                  <Switch x:TypeArguments="x:String" DisplayName="Switch" Expression="[in_WhatToExtract]" sap:VirtualizedContainerService.HintSize="497,171" sap2010:WorkflowViewState.IdRef="Switch`1_5">
                     <Switch.Default>
                       <Assign sap:VirtualizedContainerService.HintSize="262,61" sap2010:WorkflowViewState.IdRef="Assign_4">
                         <Assign.To>
@@ -201,7 +210,7 @@
                       </uix:NGetText.Text>
                     </uix:NGetText>
                   </Switch>
-                  <uix:NGetText sap2010:Annotation.AnnotationText="Get name of product (DRAG FROM OBJECT REPOSITORY)" DisplayName="Get Text 'Product Variant'" sap:VirtualizedContainerService.HintSize="497,198" sap2010:WorkflowViewState.IdRef="NGetText_6" ScopeIdentifier="c437b863-15c5-4f8b-aa85-e4de0e6736b7" Version="V1">
+                  <uix:NGetText sap2010:Annotation.AnnotationText="Get name of product (DRAG FROM OBJECT REPOSITORY)" DisplayName="Get Text 'Product Variant'" sap:VirtualizedContainerService.HintSize="497,208" sap2010:WorkflowViewState.IdRef="NGetText_6" ScopeIdentifier="c437b863-15c5-4f8b-aa85-e4de0e6736b7" Version="V1">
                     <uix:NGetText.Target>
                       <uix:TargetAnchorable BrowserURL="https://www.sainsburys.co.uk/gol-ui/product/hula-hoops-original-potato-rings-7x25g" DesignTimeRectangle="611, 421, 742, 40" ElementType="Text" FriendlyName="'Product Variant'" FullSelectorArgument="&lt;webctrl tag='H1' class='pd__header' parentclass='pd__right' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='H1' class='pd__header' parentclass='pd__right' type='' aaname='Sainsbury&amp;apos;s Multigrain Hoops Cereal 375g' /&gt;" Guid="81ec4f53-19e3-48a9-8528-677f709edf4e" ImageBase64="" InformativeScreenshot="82c3dc614144dd27d2c1deae6d2dee40.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='* | Sainsbury&amp;apos;s' /&gt;" SearchSteps="FuzzySelector" Visibility="Interactive" />
                     </uix:NGetText.Target>
@@ -228,19 +237,19 @@
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
           </uix:NApplicationCard>
-          <uix:NApplicationCard WebDriverMode="{x:Null}" x:Key="uibankshop" sap2010:Annotation.AnnotationText="Set product page to get price from" AttachMode="SingleWindow" CloseMode="Never" DisplayName="Use Browser Chrome: UiBank" sap:VirtualizedContainerService.HintSize="572,603" sap2010:WorkflowViewState.IdRef="NApplicationCard_4" InteractionMode="DebuggerApi" OutUiElement="[Browser]" ScopeGuid="c437b863-15c5-4f8b-aa85-e4de0e6736b7" Version="V2">
+          <uix:NApplicationCard WebDriverMode="{x:Null}" x:Key="uibankshop" sap2010:Annotation.AnnotationText="Set product page to get price from" AttachMode="SingleWindow" CloseMode="Never" DisplayName="Use Browser Chrome: UiBank" sap:VirtualizedContainerService.HintSize="593,663" sap2010:WorkflowViewState.IdRef="NApplicationCard_4" InteractionMode="DebuggerApi" OutUiElement="[Browser]" ScopeGuid="c437b863-15c5-4f8b-aa85-e4de0e6736b7" Version="V2">
             <uix:NApplicationCard.Body>
               <ActivityAction x:TypeArguments="x:Object">
                 <ActivityAction.Argument>
                   <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
                 </ActivityAction.Argument>
-                <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="538,356" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="559,406" sap2010:WorkflowViewState.IdRef="Sequence_7">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <Assign sap:VirtualizedContainerService.HintSize="496,61" sap2010:WorkflowViewState.IdRef="Assign_5">
+                  <Assign sap:VirtualizedContainerService.HintSize="497,71" sap2010:WorkflowViewState.IdRef="Assign_5">
                     <Assign.To>
                       <OutArgument x:TypeArguments="x:String">[out_variant]</OutArgument>
                     </Assign.To>
@@ -248,7 +257,7 @@
                       <InArgument x:TypeArguments="x:String">UiBankProductVariant</InArgument>
                     </Assign.Value>
                   </Assign>
-                  <Switch x:TypeArguments="x:String" DisplayName="Switch" Expression="[in_WhatToExtract]" sap:VirtualizedContainerService.HintSize="496,161" sap2010:WorkflowViewState.IdRef="Switch`1_6">
+                  <Switch x:TypeArguments="x:String" DisplayName="Switch" Expression="[in_WhatToExtract]" sap:VirtualizedContainerService.HintSize="497,171" sap2010:WorkflowViewState.IdRef="Switch`1_6">
                     <Switch.Default>
                       <Assign sap:VirtualizedContainerService.HintSize="262,61" sap2010:WorkflowViewState.IdRef="Assign_6">
                         <Assign.To>
@@ -259,7 +268,7 @@
                         </Assign.Value>
                       </Assign>
                     </Switch.Default>
-                    <uix:NGetText x:Key="working" sap2010:Annotation.AnnotationText="Get &quot;Sign In&quot; text" DisplayName="Get Text '*Open an'" sap:VirtualizedContainerService.HintSize="334,187" sap2010:WorkflowViewState.IdRef="NGetText_9" ScopeIdentifier="c437b863-15c5-4f8b-aa85-e4de0e6736b7" ScrapingOptions="None" Timeout="10" Version="V1">
+                    <uix:NGetText x:Key="working" sap2010:Annotation.AnnotationText="Get &quot;Sign In&quot; text" DisplayName="Get Text '*Open an'" sap:VirtualizedContainerService.HintSize="334,197" sap2010:WorkflowViewState.IdRef="NGetText_9" ScopeIdentifier="c437b863-15c5-4f8b-aa85-e4de0e6736b7" ScrapingOptions="None" Timeout="10" Version="V1">
                       <uix:NGetText.Target>
                         <uix:TargetAnchorable BrowserURL="https://uibank.uipath.com/" DesignTimeRectangle="840, 480, 624, 24" ElementType="Text" FriendlyName="'*Open an'" FullSelectorArgument="&lt;webctrl tag='H5' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='H5' type='' class='text-white' /&gt;" Guid="86414863-e3c5-452b-973f-ad773281e1a2" InformativeScreenshot="c441b700790485e4318cdf662abcb492.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='UiBank' /&gt;" SearchSteps="FuzzySelector" Visibility="Interactive" />
                       </uix:NGetText.Target>
@@ -272,7 +281,7 @@
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
                     </uix:NGetText>
-                    <uix:NGetText x:Key="broken" sap2010:Annotation.AnnotationText="Get &quot;Sign In&quot; text" DisplayName="Get Text 'Sign In'" sap:VirtualizedContainerService.HintSize="334,187" sap2010:WorkflowViewState.IdRef="NGetText_10" ScopeIdentifier="c437b863-15c5-4f8b-aa85-e4de0e6736b7" Timeout="10" Version="V1">
+                    <uix:NGetText x:Key="broken" sap2010:Annotation.AnnotationText="Get &quot;Sign In&quot; text" DisplayName="Get Text 'Sign In'" sap:VirtualizedContainerService.HintSize="334,197" sap2010:WorkflowViewState.IdRef="NGetText_10" ScopeIdentifier="c437b863-15c5-4f8b-aa85-e4de0e6736b7" Timeout="10" Version="V1">
                       <uix:NGetText.Target>
                         <uix:TargetAnchorable BrowserURL="https://uibank.uipath.com/" DesignTimeRectangle="475, 558, 314, 50" ElementType="Button" FriendlyName="'Sign In'" FullSelectorArgument="&lt;webctrl tag='BUTTON' type='submit' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='BUTTONabc' type='submit' class='btn btn-block btn-blue btn-xl' /&gt;" Guid="c388c5dc-0082-49c2-8338-2d6f3ee36080" InformativeScreenshot="a09025903d990bf34df40c0ef3e618dd.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='UiBank' /&gt;" SearchSteps="FuzzySelector" Visibility="Interactive" />
                       </uix:NGetText.Target>
@@ -300,13 +309,13 @@
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
           </uix:NApplicationCard>
-          <uix:NApplicationCard WebDriverMode="{x:Null}" x:Key="asda" sap2010:Annotation.AnnotationText="Set product page to get price from" AttachMode="SingleWindow" CloseMode="Never" DisplayName="Use Browser Chrome: Hula Hoops Salt &amp; Vinegar Multipack Crisps - ASDA Groceries" sap:VirtualizedContainerService.HintSize="573,1596" sap2010:WorkflowViewState.IdRef="NApplicationCard_6" InteractionMode="DebuggerApi" IsIncognito="True" OutUiElement="[Browser]" ScopeGuid="c437b863-15c5-4f8b-aa85-e4de0e6736b7" Version="V2">
+          <uix:NApplicationCard WebDriverMode="{x:Null}" x:Key="asda" sap2010:Annotation.AnnotationText="Set product page to get price from" AttachMode="SingleWindow" CloseMode="Never" DisplayName="Use Browser Chrome: Hula Hoops Salt &amp; Vinegar Multipack Crisps - ASDA Groceries" sap:VirtualizedContainerService.HintSize="593,1664" sap2010:WorkflowViewState.IdRef="NApplicationCard_6" InteractionMode="DebuggerApi" IsIncognito="True" OutUiElement="[Browser]" ScopeGuid="c437b863-15c5-4f8b-aa85-e4de0e6736b7" Version="V2">
             <uix:NApplicationCard.Body>
               <ActivityAction x:TypeArguments="x:Object">
                 <ActivityAction.Argument>
                   <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
                 </ActivityAction.Argument>
-                <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="539,1349" sap2010:WorkflowViewState.IdRef="Sequence_12">
+                <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="559,1419" sap2010:WorkflowViewState.IdRef="Sequence_12">
                   <Sequence.Variables>
                     <Variable x:TypeArguments="x:String" Name="ProductName" />
                     <Variable x:TypeArguments="x:String" Name="ProductVariant" />
@@ -316,12 +325,12 @@
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <uix:NTakeScreenshot ContinueOnError="True" DisplayName="Take Screenshot" FileName="screenshot.png" FileNameMode="None" sap:VirtualizedContainerService.HintSize="497,239" sap2010:WorkflowViewState.IdRef="NTakeScreenshot_6" ScopeIdentifier="c437b863-15c5-4f8b-aa85-e4de0e6736b7" Timeout="5" Version="V1">
+                  <uix:NTakeScreenshot ContinueOnError="True" DisplayName="Take Screenshot" FileName="screenshot.png" FileNameMode="None" sap:VirtualizedContainerService.HintSize="497,249" sap2010:WorkflowViewState.IdRef="NTakeScreenshot_6" ScopeIdentifier="c437b863-15c5-4f8b-aa85-e4de0e6736b7" Timeout="5" Version="V1">
                     <uix:NTakeScreenshot.SavedTo>
                       <OutArgument x:TypeArguments="x:String">[out_ScreenshotFilepath]</OutArgument>
                     </uix:NTakeScreenshot.SavedTo>
                   </uix:NTakeScreenshot>
-                  <uix:NClick sap2010:Annotation.AnnotationText="Click &quot;Accept Cookies&quot; (DRAG FROM OBJECT REPOSITORY)" ClickType="Single" ContinueOnError="True" DisplayName="Click 'I Accept'" sap:VirtualizedContainerService.HintSize="497,198" sap2010:WorkflowViewState.IdRef="NClick_4" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="c437b863-15c5-4f8b-aa85-e4de0e6736b7" Timeout="5" Version="V1">
+                  <uix:NClick sap2010:Annotation.AnnotationText="Click &quot;Accept Cookies&quot; (DRAG FROM OBJECT REPOSITORY)" ClickType="Single" ContinueOnError="True" DisplayName="Click 'I Accept'" sap:VirtualizedContainerService.HintSize="497,208" sap2010:WorkflowViewState.IdRef="NClick_4" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="c437b863-15c5-4f8b-aa85-e4de0e6736b7" Timeout="5" Version="V1">
                     <uix:NClick.Target>
                       <uix:TargetAnchorable BrowserURL="https://www.asda.com/" DesignTimeRectangle="1415, 747, 50, 16" ElementType="Button" FriendlyName="'I Accept'" FullSelectorArgument="&lt;webctrl id='onetrust-accept-btn-handler' tag='BUTTON' /&gt;" FuzzySelectorArgument="&lt;webctrl id='onetrust-accept-btn-handler' tag='BUTTON' type='' class='' aaname='I Accept' check:innerText='I Accept' /&gt;" Guid="1de4725e-2f93-425b-aa66-409161c2cdb1" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAIEAAAAuCAYAAAAP6nprAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAJuSURBVHhe7Zy9alRRFIWDiILg06SzFCx9BJ/CP7T0BSwsRBBLexNtxEKUCCnSKaIQRAioGCGMiAaVI2vgu+wczkwUdLxz9lrwEeacfc+EWd/cYjJkpTjpc0CClx8+l7N3NsvJqw/K8cvrpjPUq/pVzzGDBM/fTcqJK/fLyvl7pnPUs/omgwRnbj1rXmD6RH2TQYJjl9abw6ZP1DcZJGgNmr4hliAxxBIkhliCxBBLkBhiCRJDLEFiiCVIDLEEiSGWIDHEEiSGWILEkKWQ4MX7SZl8+17O3d1q7mtd+8rtzbfNmUWytbNXrj181dwbE6QLCVQ80WxrZlE8ev2x7P/4aQn+NodJwP7O3tfmXJSkLkjXEl1/+ubGdD3eXRTuMLpWZ2zvfpn+VLguPo8yhrvSPMjSS0BZmqGE+OJTmtZUlAqjNL1rOZc5rbXmkIe5unjN6Pl8J/hHzJMgFh+FYD8WHa+j6DgLUYj4WM9R780TJp45RsjSS1DvHfYY9FjrLQkQq44KtgT/iVlFUkgrlDSrlLq8uFcXPW/PEiyIWRLoBVf0zmWNdzil1KXFs2Jh8c4wr1jO4wzuGpwfZ/mdxgpZWgkoql5nPhYRb+91QZollK51pCCIhgT6LIB9ncF57CuIMVbIUkgwJih57AX/DsQS/CGWwHQFsQSJIZYgMcQSJIZYgsQQS5AYYgkSQyxBYoglSAyxBIkhliAxZJDg6MW15qDpE/VNBglO3XjaHDZ9or7JIMHGm0/NYdMn6psMEihPtnfL6vXH5ciFtel/tzJ9oV7Vr3qOOSAB0d/L9a0Z0xd846lOUwInVyxB+pTyCx4b/RDGWMmaAAAAAElFTkSuQmCC" InformativeScreenshot="42e199680cf2d8e65149103d863604b3.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Asda.com - Online Food Shopping, George, &amp;amp; more' /&gt;" SearchSteps="FuzzySelector" Visibility="Interactive" />
                     </uix:NClick.Target>
@@ -331,7 +340,7 @@
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
                   </uix:NClick>
-                  <Switch x:TypeArguments="x:String" DisplayName="Switch" Expression="[in_WhatToExtract]" sap:VirtualizedContainerService.HintSize="497,161" sap2010:WorkflowViewState.IdRef="Switch`1_7">
+                  <Switch x:TypeArguments="x:String" DisplayName="Switch" Expression="[in_WhatToExtract]" sap:VirtualizedContainerService.HintSize="497,171" sap2010:WorkflowViewState.IdRef="Switch`1_7">
                     <Switch.Default>
                       <Assign sap:VirtualizedContainerService.HintSize="262,61" sap2010:WorkflowViewState.IdRef="Assign_9">
                         <Assign.To>
@@ -363,7 +372,7 @@
                       </uix:NGetText>
                       <c:Extract_GBP_Currency_Amount DisplayName="Extract GBP Currency Amount" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="Extract_GBP_Currency_Amount_5" in_input="[out_value]" out_output="[out_value]" />
                     </Sequence>
-                    <uix:NGetText x:Key="PricePerUnit" DisplayName="Get Text 'Price Per Unit'" sap:VirtualizedContainerService.HintSize="334,156" sap2010:WorkflowViewState.IdRef="NGetText_12" ScopeIdentifier="c437b863-15c5-4f8b-aa85-e4de0e6736b7" ScrapingOptions="None" Version="V1">
+                    <uix:NGetText x:Key="PricePerUnit" DisplayName="Get Text 'Price Per Unit'" sap:VirtualizedContainerService.HintSize="334,166" sap2010:WorkflowViewState.IdRef="NGetText_12" ScopeIdentifier="c437b863-15c5-4f8b-aa85-e4de0e6736b7" ScrapingOptions="None" Version="V1">
                       <uix:NGetText.Target>
                         <uix:TargetAnchorable BrowserURL="https://groceries.asda.com/product/pringles-tube-snacks/pringles-salt-vinegar-sharing-crisps/910003061998" DesignTimeRectangle="580, 576, 86, 20" ElementType="Text" FriendlyName="'(30.0p/each)'" FullSelectorArgument="&lt;webctrl parentid='main-content' tag='SPAN' class='co-product__price-per-uom' parentclass='pdp-main-details__price-and-uom' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='main-content' tag='SPAN' class='co-product__price-per-uom' parentclass='pdp-main-details__price-and-uom' type='' /&gt;" Guid="f56d3044-4f59-4efa-a8fc-db35bcffed7a" ImageBase64="" InformativeScreenshot="1c3ef25f01d36023e2f024f5b3a7df87.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='* - ASDA Groceries' /&gt;" SearchSteps="Selector" Visibility="Interactive" />
                       </uix:NGetText.Target>
@@ -372,7 +381,7 @@
                       </uix:NGetText.Text>
                     </uix:NGetText>
                   </Switch>
-                  <uix:NGetText sap2010:Annotation.AnnotationText="Get name of product (DRAG FROM OBJECT REPOSITORY)" DisplayName="Get Text 'ASDA Succulent'" sap:VirtualizedContainerService.HintSize="497,198" sap2010:WorkflowViewState.IdRef="NGetText_13" ScopeIdentifier="c437b863-15c5-4f8b-aa85-e4de0e6736b7" Version="V1">
+                  <uix:NGetText sap2010:Annotation.AnnotationText="Get name of product (DRAG FROM OBJECT REPOSITORY)" DisplayName="Get Text 'ASDA Succulent'" sap:VirtualizedContainerService.HintSize="497,208" sap2010:WorkflowViewState.IdRef="NGetText_13" ScopeIdentifier="c437b863-15c5-4f8b-aa85-e4de0e6736b7" Version="V1">
                     <uix:NGetText.Target>
                       <uix:TargetAnchorable BrowserURL="https://groceries.asda.com/product/chicken-thighs-drumsticks/asda-succulent-chicken-drumsticks/910000981724" DesignTimeRectangle="580, 354, 752, 36" ElementType="Text" FriendlyName="'ASDA Succulent'" FullSelectorArgument="&lt;webctrl tag='H1' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='H1' type='' class='pdp-main-details__title' /&gt;" Guid="cb66d6e7-7c45-4ce1-82aa-3f0a8c8a2776" InformativeScreenshot="a64026136f5aa8e72919120c31bb5970.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='ASDA Succulent Chicken Drumsticks - ASDA Groceries' /&gt;" SearchSteps="FuzzySelector" Visibility="Interactive" />
                     </uix:NGetText.Target>
@@ -385,7 +394,7 @@
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
                   </uix:NGetText>
-                  <uix:NGetText sap2010:Annotation.AnnotationText="Get name of product (DRAG FROM OBJECT REPOSITORY)" ContinueOnError="True" DisplayName="Get Text '12x24g'" sap:VirtualizedContainerService.HintSize="497,198" sap2010:WorkflowViewState.IdRef="NGetText_14" ScopeIdentifier="c437b863-15c5-4f8b-aa85-e4de0e6736b7" Timeout="3" Version="V1">
+                  <uix:NGetText sap2010:Annotation.AnnotationText="Get name of product (DRAG FROM OBJECT REPOSITORY)" ContinueOnError="True" DisplayName="Get Text '12x24g'" sap:VirtualizedContainerService.HintSize="497,208" sap2010:WorkflowViewState.IdRef="NGetText_14" ScopeIdentifier="c437b863-15c5-4f8b-aa85-e4de0e6736b7" Timeout="3" Version="V1">
                     <uix:NGetText.Target>
                       <uix:TargetAnchorable BrowserURL="https://groceries.asda.com/product/large-multipack-crisps-10-packs/hula-hoops-variety-multipack-crisps/1000100852506" DesignTimeRectangle="580, 406, 48, 20" ElementType="Text" FriendlyName="'12x24g'" FullSelectorArgument="&lt;webctrl aaname='12x24g' parentid='main-content' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='main-content' tag='DIV' type='' class='pdp-main-details__weight' /&gt;" Guid="a1c2dcc4-4505-40c7-8d7d-00b730f421d3" InformativeScreenshot="6be302785329aa1275d023c25216c516.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Hula Hoops Variety Multipack Crisps - ASDA Groceries' /&gt;" SearchSteps="FuzzySelector" Visibility="Interactive" />
                     </uix:NGetText.Target>
@@ -398,7 +407,7 @@
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
                   </uix:NGetText>
-                  <Assign sap:VirtualizedContainerService.HintSize="497,61" sap2010:WorkflowViewState.IdRef="Assign_10">
+                  <Assign sap:VirtualizedContainerService.HintSize="497,71" sap2010:WorkflowViewState.IdRef="Assign_10">
                     <Assign.To>
                       <OutArgument x:TypeArguments="x:String">[out_variant]</OutArgument>
                     </Assign.To>
@@ -420,24 +429,24 @@
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
           </uix:NApplicationCard>
-          <uix:NApplicationCard WebDriverMode="{x:Null}" x:Key="morrisons" sap2010:Annotation.AnnotationText="Set product page to get price from" AttachMode="SingleWindow" CloseMode="Never" DisplayName="Use Browser Chrome: Morrisons | Online Shopping | Food, Drink &amp; More To Your Door" sap:VirtualizedContainerService.HintSize="572,1215" sap2010:WorkflowViewState.IdRef="NApplicationCard_7" InteractionMode="DebuggerApi" IsIncognito="True" OutUiElement="[Browser]" ScopeGuid="c437b863-15c5-4f8b-aa85-e4de0e6736b7" Version="V2">
+          <uix:NApplicationCard WebDriverMode="{x:Null}" x:Key="morrisons" sap2010:Annotation.AnnotationText="Set product page to get price from" AttachMode="SingleWindow" CloseMode="Never" DisplayName="Use Browser Chrome: Morrisons | Online Shopping | Food, Drink &amp; More To Your Door" sap:VirtualizedContainerService.HintSize="593,1283" sap2010:WorkflowViewState.IdRef="NApplicationCard_7" InteractionMode="DebuggerApi" IsIncognito="True" OutUiElement="[Browser]" ScopeGuid="c437b863-15c5-4f8b-aa85-e4de0e6736b7" Version="V2">
             <uix:NApplicationCard.Body>
               <ActivityAction x:TypeArguments="x:Object">
                 <ActivityAction.Argument>
                   <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
                 </ActivityAction.Argument>
-                <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="538,968" sap2010:WorkflowViewState.IdRef="Sequence_14">
+                <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="559,1038" sap2010:WorkflowViewState.IdRef="Sequence_14">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <uix:NTakeScreenshot ContinueOnError="True" DisplayName="Take Screenshot" FileName="screenshot.png" FileNameMode="None" sap:VirtualizedContainerService.HintSize="496,239" sap2010:WorkflowViewState.IdRef="NTakeScreenshot_7" ScopeIdentifier="c437b863-15c5-4f8b-aa85-e4de0e6736b7" Timeout="5" Version="V1">
+                  <uix:NTakeScreenshot ContinueOnError="True" DisplayName="Take Screenshot" FileName="screenshot.png" FileNameMode="None" sap:VirtualizedContainerService.HintSize="497,249" sap2010:WorkflowViewState.IdRef="NTakeScreenshot_7" ScopeIdentifier="c437b863-15c5-4f8b-aa85-e4de0e6736b7" Timeout="5" Version="V1">
                     <uix:NTakeScreenshot.SavedTo>
                       <OutArgument x:TypeArguments="x:String">[out_ScreenshotFilepath]</OutArgument>
                     </uix:NTakeScreenshot.SavedTo>
                   </uix:NTakeScreenshot>
-                  <uix:NClick sap2010:Annotation.AnnotationText="Click &quot;Accept Cookies&quot; (DRAG FROM OBJECT REPOSITORY)" ClickType="Single" ContinueOnError="True" DisplayName="Click 'Accept All Cookies'" sap:VirtualizedContainerService.HintSize="496,198" sap2010:WorkflowViewState.IdRef="NClick_5" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="c437b863-15c5-4f8b-aa85-e4de0e6736b7" Timeout="5" Version="V1">
+                  <uix:NClick sap2010:Annotation.AnnotationText="Click &quot;Accept Cookies&quot; (DRAG FROM OBJECT REPOSITORY)" ClickType="Single" ContinueOnError="True" DisplayName="Click 'Accept All Cookies'" sap:VirtualizedContainerService.HintSize="497,208" sap2010:WorkflowViewState.IdRef="NClick_5" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="c437b863-15c5-4f8b-aa85-e4de0e6736b7" Timeout="5" Version="V1">
                     <uix:NClick.Target>
                       <uix:TargetAnchorable BrowserURL="https://groceries.morrisons.com/webshop/startWebshop.do" DesignTimeRectangle="1468, 977, 139, 42" ElementType="Button" FriendlyName="'Accept All Cookies'" FullSelectorArgument="&lt;webctrl id='onetrust-accept-btn-handler' tag='BUTTON' /&gt;" FuzzySelectorArgument="&lt;webctrl id='onetrust-accept-btn-handler' tag='BUTTON' type='' class='' aaname='Accept All Cookies' check:innerText='Accept All Cookies' /&gt;" Guid="f1d0a49b-502e-4098-843f-dc1256584faa" ImageBase64="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" InformativeScreenshot="90a5172d8a6d8c78f530c2fc0ac6b771.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Morrisons | Online Shopping | Food, Drink &amp;amp; More To Your Door' /&gt;" SearchSteps="FuzzySelector" Visibility="Interactive" />
                     </uix:NClick.Target>
@@ -447,7 +456,7 @@
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
                   </uix:NClick>
-                  <Switch x:TypeArguments="x:String" DisplayName="Switch" Expression="[in_WhatToExtract]" sap:VirtualizedContainerService.HintSize="496,161" sap2010:WorkflowViewState.IdRef="Switch`1_8">
+                  <Switch x:TypeArguments="x:String" DisplayName="Switch" Expression="[in_WhatToExtract]" sap:VirtualizedContainerService.HintSize="497,171" sap2010:WorkflowViewState.IdRef="Switch`1_8">
                     <Switch.Default>
                       <Assign sap:VirtualizedContainerService.HintSize="262,61" sap2010:WorkflowViewState.IdRef="Assign_11">
                         <Assign.To>
@@ -458,13 +467,13 @@
                         </Assign.Value>
                       </Assign>
                     </Switch.Default>
-                    <Sequence x:Key="Price" sap:VirtualizedContainerService.HintSize="376,354" sap2010:WorkflowViewState.IdRef="Sequence_13">
+                    <Sequence x:Key="Price" sap:VirtualizedContainerService.HintSize="400,352" sap2010:WorkflowViewState.IdRef="Sequence_13">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <uix:NGetText sap2010:Annotation.AnnotationText="Get price of product (DRAG FROM OBJECT REPOSITORY)" DisplayName="Get Text '£1.25'" sap:VirtualizedContainerService.HintSize="334,198" sap2010:WorkflowViewState.IdRef="NGetText_15" ScopeIdentifier="c437b863-15c5-4f8b-aa85-e4de0e6736b7" Version="V1">
+                      <uix:NGetText sap2010:Annotation.AnnotationText="Get price of product (DRAG FROM OBJECT REPOSITORY)" DisplayName="Get Text '£1.25'" sap:VirtualizedContainerService.HintSize="338,208" sap2010:WorkflowViewState.IdRef="NGetText_15" ScopeIdentifier="c437b863-15c5-4f8b-aa85-e4de0e6736b7" Version="V1">
                         <uix:NGetText.Target>
                           <uix:TargetAnchorable BrowserURL="https://groceries.morrisons.com/products/hula-hoops-original-multipack-crisps-6-pack-369859011" DesignTimeRectangle="1061, 326, 81, 36" ElementType="Text" FriendlyName="'£1.25'" FullSelectorArgument="&lt;webctrl tag='H2' class='bop-price__current *' parentclass='bop-price__wrapper' parentid='overview' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='H2' class='bop-price__current *' parentclass='bop-price__wrapper' parentid='overview' type='' /&gt;" Guid="de49b11d-ca19-4dc2-8963-96c53a84e644" ImageBase64="" InformativeScreenshot="e968721cb9a9194684ead0f680fb6c0e.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='*Morrisons*' /&gt;" SearchSteps="Selector" Visibility="Interactive" />
                         </uix:NGetText.Target>
@@ -477,15 +486,15 @@
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
                       </uix:NGetText>
-                      <c:Extract_GBP_Currency_Amount DisplayName="Extract GBP Currency Amount" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="Extract_GBP_Currency_Amount_6" in_input="[out_value]" out_output="[out_value]" />
+                      <c:Extract_GBP_Currency_Amount DisplayName="Extract GBP Currency Amount" sap:VirtualizedContainerService.HintSize="338,148" sap2010:WorkflowViewState.IdRef="Extract_GBP_Currency_Amount_6" in_input="[out_value]" out_output="[out_value]" />
                     </Sequence>
-                    <Sequence x:Key="PricePerUnit" sap:VirtualizedContainerService.HintSize="376,292" sap2010:WorkflowViewState.IdRef="Sequence_15">
+                    <Sequence x:Key="PricePerUnit" sap:VirtualizedContainerService.HintSize="400,290" sap2010:WorkflowViewState.IdRef="Sequence_15">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <uix:NGetText sap2010:Annotation.AnnotationText="Get name of product (DRAG FROM OBJECT REPOSITORY)" DisplayName="Get Text '£1.22 per 100g'" sap:VirtualizedContainerService.HintSize="334,198" sap2010:WorkflowViewState.IdRef="NGetText_17" ScopeIdentifier="c437b863-15c5-4f8b-aa85-e4de0e6736b7" Version="V1">
+                      <uix:NGetText sap2010:Annotation.AnnotationText="Get name of product (DRAG FROM OBJECT REPOSITORY)" DisplayName="Get Text '£1.22 per 100g'" sap:VirtualizedContainerService.HintSize="338,208" sap2010:WorkflowViewState.IdRef="NGetText_17" ScopeIdentifier="c437b863-15c5-4f8b-aa85-e4de0e6736b7" Version="V1">
                         <uix:NGetText.Target>
                           <uix:TargetAnchorable BrowserURL="https://groceries.morrisons.com/products/hula-hoops-original-multipack-crisps-6-pack-369859011" DesignTimeRectangle="1138, 340, 333, 18" ElementType="Text" FriendlyName="'£1.22 per 100g'" FullSelectorArgument="&lt;webctrl parentid='overview' tag='SPAN' class='bop-price__per' parentclass='bop-price__wrapper' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='overview' tag='SPAN' class='bop-price__per' parentclass='bop-price__wrapper' type='' /&gt;" Guid="d9f05c54-501d-4efa-a8e9-b240243745ff" ImageBase64="" InformativeScreenshot="fa7d16f4cf76fab40d4f78641a567f98.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='*Morrisons*' /&gt;" SearchSteps="Selector" Visibility="Interactive" />
                         </uix:NGetText.Target>
@@ -500,7 +509,7 @@
                       </uix:NGetText>
                     </Sequence>
                   </Switch>
-                  <uix:NGetText DisplayName="Get Text 'Price Per Unit'" sap:VirtualizedContainerService.HintSize="496,156" sap2010:WorkflowViewState.IdRef="NGetText_18" ScopeIdentifier="c437b863-15c5-4f8b-aa85-e4de0e6736b7" Version="V1">
+                  <uix:NGetText DisplayName="Get Text 'Price Per Unit'" sap:VirtualizedContainerService.HintSize="497,166" sap2010:WorkflowViewState.IdRef="NGetText_18" ScopeIdentifier="c437b863-15c5-4f8b-aa85-e4de0e6736b7" Version="V1">
                     <uix:NGetText.Target>
                       <uix:TargetAnchorable BrowserURL="https://groceries.morrisons.com/products/hula-hoops-original-multipack-crisps-6-pack-369859011" DesignTimeRectangle="448, 326, 576, 71" ElementType="Text" FriendlyName="'Hula Hoops'" FullSelectorArgument="&lt;webctrl tag='H1' parentclass='bop-title' parentid='overview' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='H1' parentclass='bop-title' parentid='overview' type='' class='' /&gt;" Guid="3a8ccef6-ca16-450c-ba6c-d7f8e392d8db" InformativeScreenshot="2757c9291bb798ef36a61fae4c36c5c8.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='*Morrisons*' /&gt;" SearchSteps="Selector" Visibility="Interactive" />
                     </uix:NGetText.Target>
@@ -522,24 +531,24 @@
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
           </uix:NApplicationCard>
-          <uix:NApplicationCard WebDriverMode="{x:Null}" x:Key="lidl" sap2010:Annotation.AnnotationText="Set product page to get price from" AttachMode="SingleWindow" CloseMode="Never" DisplayName="Use Browser Chrome: Woodcote 12 Large Free Range Eggs - at Lidl UK - www.lidl.co.uk" sap:VirtualizedContainerService.HintSize="573,1215" sap2010:WorkflowViewState.IdRef="NApplicationCard_8" InteractionMode="DebuggerApi" IsIncognito="True" OutUiElement="[Browser]" ScopeGuid="c437b863-15c5-4f8b-aa85-e4de0e6736b7" Version="V2">
+          <uix:NApplicationCard WebDriverMode="{x:Null}" x:Key="lidl" sap2010:Annotation.AnnotationText="Set product page to get price from" AttachMode="SingleWindow" CloseMode="Never" DisplayName="Use Browser Chrome: Woodcote 12 Large Free Range Eggs - at Lidl UK - www.lidl.co.uk" sap:VirtualizedContainerService.HintSize="593,1283" sap2010:WorkflowViewState.IdRef="NApplicationCard_8" InteractionMode="DebuggerApi" IsIncognito="True" OutUiElement="[Browser]" ScopeGuid="c437b863-15c5-4f8b-aa85-e4de0e6736b7" Version="V2">
             <uix:NApplicationCard.Body>
               <ActivityAction x:TypeArguments="x:Object">
                 <ActivityAction.Argument>
                   <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
                 </ActivityAction.Argument>
-                <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="539,968" sap2010:WorkflowViewState.IdRef="Sequence_18">
+                <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="559,1038" sap2010:WorkflowViewState.IdRef="Sequence_18">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <uix:NTakeScreenshot ContinueOnError="True" DisplayName="Take Screenshot" FileName="screenshot.png" FileNameMode="None" sap:VirtualizedContainerService.HintSize="497,239" sap2010:WorkflowViewState.IdRef="NTakeScreenshot_8" ScopeIdentifier="c437b863-15c5-4f8b-aa85-e4de0e6736b7" Timeout="5" Version="V1">
+                  <uix:NTakeScreenshot ContinueOnError="True" DisplayName="Take Screenshot" FileName="screenshot.png" FileNameMode="None" sap:VirtualizedContainerService.HintSize="497,249" sap2010:WorkflowViewState.IdRef="NTakeScreenshot_8" ScopeIdentifier="c437b863-15c5-4f8b-aa85-e4de0e6736b7" Timeout="5" Version="V1">
                     <uix:NTakeScreenshot.SavedTo>
                       <OutArgument x:TypeArguments="x:String">[out_ScreenshotFilepath]</OutArgument>
                     </uix:NTakeScreenshot.SavedTo>
                   </uix:NTakeScreenshot>
-                  <uix:NClick sap2010:Annotation.AnnotationText="Click &quot;Accept Cookies&quot; (DRAG FROM OBJECT REPOSITORY)" ClickType="Single" ContinueOnError="True" DisplayName="Click 'Accept'" sap:VirtualizedContainerService.HintSize="497,198" sap2010:WorkflowViewState.IdRef="NClick_6" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="c437b863-15c5-4f8b-aa85-e4de0e6736b7" Timeout="5" Version="V1">
+                  <uix:NClick sap2010:Annotation.AnnotationText="Click &quot;Accept Cookies&quot; (DRAG FROM OBJECT REPOSITORY)" ClickType="Single" ContinueOnError="True" DisplayName="Click 'Accept'" sap:VirtualizedContainerService.HintSize="497,208" sap2010:WorkflowViewState.IdRef="NClick_6" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="c437b863-15c5-4f8b-aa85-e4de0e6736b7" Timeout="5" Version="V1">
                     <uix:NClick.Target>
                       <uix:TargetAnchorable BrowserURL="https://www.lidl.co.uk/p/eggs/woodcote-12-large-free-range-eggs/p6729" DesignTimeRectangle="945, 632, 87, 48" ElementType="Button" FriendlyName="'Accept'" FullSelectorArgument="&lt;webctrl aaname='Accept ' tag='BUTTON' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Accept ' tag='BUTTON' type='button' class='cookie-alert-extended-button' check:innerText='ACCEPT' /&gt;" Guid="fb9e8fee-0d75-4c72-8268-812f52cdf55d" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAFsAAAA0CAYAAADllEQWAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAJsSURBVHhe7ZaxSiNRFIbTWGxjbbPPsK8SELaw2mIfYMEX8EFCahFFEJsF3WcQgykFIU1sNOA2aa5e5/5nTs7cGzVODoz5P/iayeRO7jf3zqQXiBsLse/u/4fR3SNtydhTI7EPDm/Ct58nYXvvlLZk7Bm7Aom9tXscev0j2rKxK5DYuRNpOwLGdhAwtoOAsR0EjO0gYGwHAWM7CBjbQcDYDgLGdhAwtoOAsR0EjO0gYGwHAWM7CBjbQbCW2INJGvSFh+ur7Dm9/lW4fEonvTIPl8PMeRez9Hlicqs+t2OANJb9rmJ88dYYiadp2JfrrSZYQ+zbME5jVszC4M1zauoIR2H/ep6OGiTA6rEj1ULocmxMcDKToDpgtF759Y2QY5jccBoe0iHZHepYNWYdqriDJHjmWnYhyPiFXbaioPXYmEiMIZPSW78RzB6vAjTiJ3HcrsqPxC5G7VZsPB7sNlYTlWPLJqS29sIz2rrJsTExWY0mvj7HbuEF3xHxVXVTNHo3NK6nv2N+Q5diywtNVmMzWv3SWxa7foG2F7uJfZd0KHZh4gA3QCa/bEJqrNYeI5rCje5O7PLfuYo0QZlQZmUpSy/IRT8Se9lOSnYmtvxQM6nMSpaQZlKDl7+L8l11U+y/mbGE3dTYpUmpaLKSdUiLClvfFAtilB9dcq2vGFtefI1tX3rZZULlns8SC+gQGxqblgWM7SBgbAcBYzsIGNtBwNgOAsZ2EDC2g4CxHQSM7SBgbAcBYzsIGNtBwNgOAsZ2EDC2g0Bi7/w6y55IP2fsCiT2v9E0/PjzN3z/fU5bMvaMXYHEJuuHsd0I4RmgY3RcXu9kWQAAAABJRU5ErkJggg==" InformativeScreenshot="52eaec026f6529dcf0c7507799e436dd.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Woodcote 12 Large Free Range Eggs - at Lidl UK - www.lidl.co.uk' /&gt;" SearchSteps="FuzzySelector" Visibility="Interactive" />
                     </uix:NClick.Target>
@@ -549,7 +558,7 @@
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
                   </uix:NClick>
-                  <Switch x:TypeArguments="x:String" DisplayName="Switch" Expression="[in_WhatToExtract]" sap:VirtualizedContainerService.HintSize="497,161" sap2010:WorkflowViewState.IdRef="Switch`1_9">
+                  <Switch x:TypeArguments="x:String" DisplayName="Switch" Expression="[in_WhatToExtract]" sap:VirtualizedContainerService.HintSize="497,171" sap2010:WorkflowViewState.IdRef="Switch`1_9">
                     <Switch.Default>
                       <Assign sap:VirtualizedContainerService.HintSize="262,61" sap2010:WorkflowViewState.IdRef="Assign_12">
                         <Assign.To>
@@ -560,13 +569,13 @@
                         </Assign.Value>
                       </Assign>
                     </Switch.Default>
-                    <Sequence x:Key="Price" sap:VirtualizedContainerService.HintSize="376,312" sap2010:WorkflowViewState.IdRef="Sequence_16">
+                    <Sequence x:Key="Price" sap:VirtualizedContainerService.HintSize="400,352" sap2010:WorkflowViewState.IdRef="Sequence_16">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <uix:NGetText sap2010:Annotation.AnnotationText="Get price of product (DRAG FROM OBJECT REPOSITORY)" DisplayName="Get Text '£ 3.29'" sap:VirtualizedContainerService.HintSize="334,198" sap2010:WorkflowViewState.IdRef="NGetText_19" ScopeIdentifier="c437b863-15c5-4f8b-aa85-e4de0e6736b7" Version="V1">
+                      <uix:NGetText sap2010:Annotation.AnnotationText="Get price of product (DRAG FROM OBJECT REPOSITORY)" DisplayName="Get Text '£ 3.29'" sap:VirtualizedContainerService.HintSize="338,208" sap2010:WorkflowViewState.IdRef="NGetText_19" ScopeIdentifier="c437b863-15c5-4f8b-aa85-e4de0e6736b7" Version="V1">
                         <uix:NGetText.Target>
                           <uix:TargetAnchorable BrowserURL="https://www.lidl.co.uk/p/birchwood-beef/birchwood-british-lean-diced-beef-steak/p24371" DesignTimeRectangle="867, 491, 100, 44" ElementType="Text" FriendlyName="'£ 3.29'" FullSelectorArgument="&lt;webctrl isleaf='1' parentid='productbox' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl isleaf='1' parentid='productbox' tag='SPAN' type='' class='pricebox__price' /&gt;" Guid="35b4abe1-75cc-4134-a0d8-f6ef74c840bb" InformativeScreenshot="07e323696704a347295e3fa00f5be9ae.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Birchwood British Lean Diced Beef Steak - at Lidl UK - www.lidl.co.uk' /&gt;" SearchSteps="FuzzySelector" Visibility="Interactive" />
                         </uix:NGetText.Target>
@@ -579,15 +588,15 @@
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
                       </uix:NGetText>
-                      <c:Extract_GBP_Currency_Amount DisplayName="Extract GBP Currency Amount" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="Extract_GBP_Currency_Amount_7" in_input="[out_value]" out_output="[out_value]" />
+                      <c:Extract_GBP_Currency_Amount DisplayName="Extract GBP Currency Amount" sap:VirtualizedContainerService.HintSize="338,148" sap2010:WorkflowViewState.IdRef="Extract_GBP_Currency_Amount_7" in_input="[out_value]" out_output="[out_value]" />
                     </Sequence>
-                    <Sequence x:Key="PricePerUnit" sap:VirtualizedContainerService.HintSize="376,250" sap2010:WorkflowViewState.IdRef="Sequence_17">
+                    <Sequence x:Key="PricePerUnit" sap:VirtualizedContainerService.HintSize="400,290" sap2010:WorkflowViewState.IdRef="Sequence_17">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <uix:NGetText sap2010:Annotation.AnnotationText="Get name of product (DRAG FROM OBJECT REPOSITORY)" DisplayName="Get Text 'each, £8.23/kg'" sap:VirtualizedContainerService.HintSize="334,198" sap2010:WorkflowViewState.IdRef="NGetText_20" ScopeIdentifier="c437b863-15c5-4f8b-aa85-e4de0e6736b7" Version="V1">
+                      <uix:NGetText sap2010:Annotation.AnnotationText="Get name of product (DRAG FROM OBJECT REPOSITORY)" DisplayName="Get Text 'each, £8.23/kg'" sap:VirtualizedContainerService.HintSize="338,208" sap2010:WorkflowViewState.IdRef="NGetText_20" ScopeIdentifier="c437b863-15c5-4f8b-aa85-e4de0e6736b7" Version="V1">
                         <uix:NGetText.Target>
                           <uix:TargetAnchorable BrowserURL="https://www.lidl.co.uk/p/birchwood-beef/birchwood-british-lean-diced-beef-steak/p24371" DesignTimeRectangle="858, 542, 118, 14" ElementType="Text" FriendlyName="'each, £8.23/kg'" FullSelectorArgument="&lt;webctrl css-selector='body&amp;gt;div&amp;gt;section&amp;gt;div&amp;gt;article&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div' isleaf='1' parentid='productbox' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl type='' isleaf='1' parentid='productbox' tag='DIV' class='pricebox__basic-quantity' /&gt;" Guid="541794b1-f9fc-4f18-92fa-1bd9d794d346" InformativeScreenshot="60be6c11a4302ffc8674328d567de679.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Birchwood British Lean Diced Beef Steak - at Lidl UK - www.lidl.co.uk' /&gt;" SearchSteps="FuzzySelector" Visibility="Interactive" />
                         </uix:NGetText.Target>
@@ -602,7 +611,7 @@
                       </uix:NGetText>
                     </Sequence>
                   </Switch>
-                  <uix:NGetText DisplayName="Get Text 'Price Per Unit'" sap:VirtualizedContainerService.HintSize="497,156" sap2010:WorkflowViewState.IdRef="NGetText_21" ScopeIdentifier="c437b863-15c5-4f8b-aa85-e4de0e6736b7" Version="V1">
+                  <uix:NGetText DisplayName="Get Text 'Price Per Unit'" sap:VirtualizedContainerService.HintSize="497,166" sap2010:WorkflowViewState.IdRef="NGetText_21" ScopeIdentifier="c437b863-15c5-4f8b-aa85-e4de0e6736b7" Version="V1">
                     <uix:NGetText.Target>
                       <uix:TargetAnchorable BrowserURL="https://www.lidl.co.uk/p/birchwood-beef/birchwood-british-lean-diced-beef-steak/p24371" DesignTimeRectangle="138, 358, 1180, 72" ElementType="Text" FriendlyName="'Birchwood British'" FullSelectorArgument="&lt;webctrl tag='H1' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='H1' type='' class='attributebox__headline attributebox__headline--h1' /&gt;" Guid="543c3b8c-81f7-4c4e-92e2-9f3e7409d1bb" InformativeScreenshot="fa1be827103aab97b001ac2b44647f33.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Birchwood British Lean Diced Beef Steak - at Lidl UK - www.lidl.co.uk' /&gt;" SearchSteps="FuzzySelector" Visibility="Interactive" />
                     </uix:NGetText.Target>
@@ -624,24 +633,24 @@
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
           </uix:NApplicationCard>
-          <uix:NApplicationCard WebDriverMode="{x:Null}" x:Key="leagueofgraphs" sap2010:Annotation.AnnotationText="Set product page to get price from" AttachMode="SingleWindow" CloseMode="Never" DisplayName="Use Browser Chrome: Tomo (EUW) - LeagueOfGraphs" sap:VirtualizedContainerService.HintSize="572,1193" sap2010:WorkflowViewState.IdRef="NApplicationCard_9" InteractionMode="DebuggerApi" IsIncognito="True" OutUiElement="[Browser]" ScopeGuid="c437b863-15c5-4f8b-aa85-e4de0e6736b7" Version="V2">
+          <uix:NApplicationCard WebDriverMode="{x:Null}" x:Key="leagueofgraphs" sap2010:Annotation.AnnotationText="Set product page to get price from" AttachMode="SingleWindow" CloseMode="Never" DisplayName="Use Browser Chrome: Tomo (EUW) - LeagueOfGraphs" sap:VirtualizedContainerService.HintSize="592,1253" sap2010:WorkflowViewState.IdRef="NApplicationCard_9" InteractionMode="DebuggerApi" IsIncognito="True" OutUiElement="[Browser]" ScopeGuid="c437b863-15c5-4f8b-aa85-e4de0e6736b7" Version="V2">
             <uix:NApplicationCard.Body>
               <ActivityAction x:TypeArguments="x:Object">
                 <ActivityAction.Argument>
                   <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
                 </ActivityAction.Argument>
-                <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="538,946" sap2010:WorkflowViewState.IdRef="Sequence_20">
+                <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="559,1016" sap2010:WorkflowViewState.IdRef="Sequence_20">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <uix:NTakeScreenshot ContinueOnError="True" DisplayName="Take Screenshot" FileName="screenshot.png" FileNameMode="None" sap:VirtualizedContainerService.HintSize="496,239" sap2010:WorkflowViewState.IdRef="NTakeScreenshot_9" ScopeIdentifier="c437b863-15c5-4f8b-aa85-e4de0e6736b7" Timeout="5" Version="V1">
+                  <uix:NTakeScreenshot ContinueOnError="True" DisplayName="Take Screenshot" FileName="screenshot.png" FileNameMode="None" sap:VirtualizedContainerService.HintSize="497,249" sap2010:WorkflowViewState.IdRef="NTakeScreenshot_9" ScopeIdentifier="c437b863-15c5-4f8b-aa85-e4de0e6736b7" Timeout="5" Version="V1">
                     <uix:NTakeScreenshot.SavedTo>
                       <OutArgument x:TypeArguments="x:String">[out_ScreenshotFilepath]</OutArgument>
                     </uix:NTakeScreenshot.SavedTo>
                   </uix:NTakeScreenshot>
-                  <uix:NClick sap2010:Annotation.AnnotationText="Click &quot;Accept Cookies&quot; (DRAG FROM OBJECT REPOSITORY)" ClickType="Single" ContinueOnError="True" DisplayName="Click 'Accept'" sap:VirtualizedContainerService.HintSize="496,198" sap2010:WorkflowViewState.IdRef="NClick_10" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="c437b863-15c5-4f8b-aa85-e4de0e6736b7" Timeout="5" Version="V1">
+                  <uix:NClick sap2010:Annotation.AnnotationText="Click &quot;Accept Cookies&quot; (DRAG FROM OBJECT REPOSITORY)" ClickType="Single" ContinueOnError="True" DisplayName="Click 'Accept'" sap:VirtualizedContainerService.HintSize="497,208" sap2010:WorkflowViewState.IdRef="NClick_10" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="c437b863-15c5-4f8b-aa85-e4de0e6736b7" Timeout="5" Version="V1">
                     <uix:NClick.Target>
                       <uix:TargetAnchorable BrowserURL="https://www.leagueofgraphs.com/summoner/euw/Beefi" DesignTimeRectangle="675, 734, 347, 32" ElementType="Button" FriendlyName="'Accept'" FullSelectorArgument="&lt;webctrl aaname='                     Accept                 ' parentid='ncmp__tool' tag='BUTTON' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='                     Accept                 ' parentid='ncmp__tool' tag='BUTTON' type='' class='ncmp__btn' check:innerText='Accept' /&gt;" Guid="08c7d7c9-eeec-4a11-8e18-f6ea6b48cccd" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAV8AAAAkCAYAAAAuJzk3AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAIjSURBVHhe7dpBSiNBGIZhb+OxxGN4Ai8hZO1yQMjKlSs3Cm4Ed1koZBfmAjVWp/+2ElpHhuSvQZ4PHoap9JjdS03jSTEzs/SJr5lZh03xvb5/LacXt+Xk/BcAB1b7Wjsbm+IrvADHVTsbm+I79yAAhxUTX4BEMfEFSBQTX4BEMfEFSBQTX4BEMfEFSBQTX4BEMfEFSBQTX/q6WZfnt01ZXM18dmRnd5vy/PQy+xkcS0x86eihLFabsnzalMe7h5nPj0t86SEmvvRztSqPq1U5q3++rcvl3ueXT7/fb8Vby5u/ndeQz5zXm/X7dyymfzN+z3DjHs8EmEQx8aWbevOMG28NahvYnVtpE+fPzocgx3n7KmOMbPs98ZybLz3ExJdOtq8cpne9NZJTCLe32DbGX5+/lGV7222fG+Lb3Ko/CzkkiYkvfQwRHP/bP4lI7sc0fH2++7PG226Nb321Ec+KL53FxJcudl4TNGfb1wP/cvP95Dcm9m++zd/Flx5i4ksH8zfYIYbjLXUnzsNtdRvX75+PP3+I7cd3tc+JLz3ExJd8+7fR0EZzvOXGK4SPUH/vfPrVteG1w7os47P2FcQYZgEmU0x8+dmG+DbBhc5i4svPJr78Z2LiC5AoJr4AiWLiC5AoJr4AiWLiC5AoJr4AiWLiC5AoJr4AiWJTfE8vbmcfBOAwamdjU3yv718FGOBIal9rZ2NTfM3MLG/ia2aWvlL+ABbEYTuY/S9pAAAAAElFTkSuQmCC" InformativeScreenshot="cb16ebc806e37dad919c2c771f0044e8.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Beefi (EUW) - LeagueOfGraphs' /&gt;" SearchSteps="FuzzySelector" Visibility="Interactive" />
                     </uix:NClick.Target>
@@ -651,7 +660,7 @@
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
                   </uix:NClick>
-                  <Switch x:TypeArguments="x:String" DisplayName="Switch" Expression="[in_WhatToExtract]" sap:VirtualizedContainerService.HintSize="496,139" sap2010:WorkflowViewState.IdRef="Switch`1_10">
+                  <Switch x:TypeArguments="x:String" DisplayName="Switch" Expression="[in_WhatToExtract]" sap:VirtualizedContainerService.HintSize="497,149" sap2010:WorkflowViewState.IdRef="Switch`1_10">
                     <Switch.Default>
                       <Assign sap:VirtualizedContainerService.HintSize="262,61" sap2010:WorkflowViewState.IdRef="Assign_13">
                         <Assign.To>
@@ -662,7 +671,7 @@
                         </Assign.Value>
                       </Assign>
                     </Switch.Default>
-                    <Sequence x:Key="Rank" sap:VirtualizedContainerService.HintSize="376,589" sap2010:WorkflowViewState.IdRef="Sequence_19">
+                    <Sequence x:Key="Rank" sap:VirtualizedContainerService.HintSize="400,629" sap2010:WorkflowViewState.IdRef="Sequence_19">
                       <Sequence.Variables>
                         <Variable x:TypeArguments="x:String" Name="Tier" />
                         <Variable x:TypeArguments="x:String" Name="LP" />
@@ -672,7 +681,7 @@
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <uix:NGetText sap2010:Annotation.AnnotationText="Get price of product (DRAG FROM OBJECT REPOSITORY)" DisplayName="Get Text 'Gold IV'" sap:VirtualizedContainerService.HintSize="334,198" sap2010:WorkflowViewState.IdRef="NGetText_22" ScopeIdentifier="c437b863-15c5-4f8b-aa85-e4de0e6736b7" Version="V1">
+                      <uix:NGetText sap2010:Annotation.AnnotationText="Get price of product (DRAG FROM OBJECT REPOSITORY)" DisplayName="Get Text 'Gold IV'" sap:VirtualizedContainerService.HintSize="338,208" sap2010:WorkflowViewState.IdRef="NGetText_22" ScopeIdentifier="c437b863-15c5-4f8b-aa85-e4de0e6736b7" Version="V1">
                         <uix:NGetText.Target>
                           <uix:TargetAnchorable BrowserURL="https://www.leagueofgraphs.com/summoner/euw/Tomo" DesignTimeRectangle="810, 606, 200, 26" ElementType="Text" FriendlyName="'Gold IV'" FullSelectorArgument="&lt;webctrl isleaf='1' parentid='mainContent' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl isleaf='1' parentid='mainContent' tag='DIV' type='' class='leagueTier' /&gt;" Guid="8e7d2c69-e38d-49c7-b5ab-218735efaf62" InformativeScreenshot="5cc6ea61e872ed22e4e4c981c889902b.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Tomo (EUW) - LeagueOfGraphs' /&gt;" SearchSteps="FuzzySelector" Visibility="Interactive" />
                         </uix:NGetText.Target>
@@ -685,7 +694,7 @@
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
                       </uix:NGetText>
-                      <uix:NGetText sap2010:Annotation.AnnotationText="Get price of product (DRAG FROM OBJECT REPOSITORY)" DisplayName="Get Text 'LP: 57'" sap:VirtualizedContainerService.HintSize="334,198" sap2010:WorkflowViewState.IdRef="NGetText_23" ScopeIdentifier="c437b863-15c5-4f8b-aa85-e4de0e6736b7" Version="V1">
+                      <uix:NGetText sap2010:Annotation.AnnotationText="Get price of product (DRAG FROM OBJECT REPOSITORY)" DisplayName="Get Text 'LP: 57'" sap:VirtualizedContainerService.HintSize="338,208" sap2010:WorkflowViewState.IdRef="NGetText_23" ScopeIdentifier="c437b863-15c5-4f8b-aa85-e4de0e6736b7" Version="V1">
                         <uix:NGetText.Target>
                           <uix:TargetAnchorable BrowserURL="https://www.leagueofgraphs.com/summoner/euw/Tomo" DesignTimeRectangle="810, 703, 200, 18" FriendlyName="'LP: 57'" FullSelectorArgument="&lt;webctrl aaname='LP: ' parentid='mainContent' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='mainContent' tag='DIV' type='' class='league-points' /&gt;" Guid="6b128a06-87b3-460b-8e4e-384b148241b2" InformativeScreenshot="7d9f589d2804af0e6fa2e4331a5c7481.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Tomo (EUW) - LeagueOfGraphs' /&gt;" SearchSteps="FuzzySelector" Visibility="Interactive" />
                         </uix:NGetText.Target>
@@ -698,7 +707,7 @@
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
                       </uix:NGetText>
-                      <Assign sap:VirtualizedContainerService.HintSize="334,61" sap2010:WorkflowViewState.IdRef="Assign_14">
+                      <Assign sap:VirtualizedContainerService.HintSize="338,71" sap2010:WorkflowViewState.IdRef="Assign_14">
                         <Assign.To>
                           <OutArgument x:TypeArguments="x:String">[out_value]</OutArgument>
                         </Assign.To>
@@ -708,7 +717,7 @@
                       </Assign>
                     </Sequence>
                   </Switch>
-                  <uix:NGetText DisplayName="Get Text 'Price Per Unit'" sap:VirtualizedContainerService.HintSize="496,156" sap2010:WorkflowViewState.IdRef="NGetText_24" ScopeIdentifier="c437b863-15c5-4f8b-aa85-e4de0e6736b7" Version="V1">
+                  <uix:NGetText DisplayName="Get Text 'Price Per Unit'" sap:VirtualizedContainerService.HintSize="497,166" sap2010:WorkflowViewState.IdRef="NGetText_24" ScopeIdentifier="c437b863-15c5-4f8b-aa85-e4de0e6736b7" Version="V1">
                     <uix:NGetText.Target>
                       <uix:TargetAnchorable BrowserURL="https://www.leagueofgraphs.com/summoner/euw/Tomo" DesignTimeRectangle="708, 222, 270, 36" ElementType="Text" FriendlyName="'Doomliger (EUW)'" FullSelectorArgument="&lt;webctrl tag='H2' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='H2' type='' class='' /&gt;" Guid="43772f0a-0f0f-4c18-84ab-cf53d903161b" ImageBase64="" InformativeScreenshot="0e73039d4279f2692b0f16e3d6039f61.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='* - LeagueOfGraphs' /&gt;" SearchSteps="Selector" Visibility="Interactive" />
                     </uix:NGetText.Target>
@@ -730,29 +739,29 @@
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
           </uix:NApplicationCard>
-          <uix:NApplicationCard WebDriverMode="{x:Null}" x:Key="superdrug" sap2010:Annotation.AnnotationText="Set product page to get price from" AttachMode="SingleWindow" CloseMode="Never" DisplayName="Use Browser Chrome: Aveeno Daily Moisturising Yogurt Vanilla Body Wash 300ml | Toiletries | Superdru" sap:VirtualizedContainerService.HintSize="573,1215" sap2010:WorkflowViewState.IdRef="NApplicationCard_10" InteractionMode="DebuggerApi" IsIncognito="True" OutUiElement="[Browser]" ScopeGuid="c437b863-15c5-4f8b-aa85-e4de0e6736b7" Version="V2">
+          <uix:NApplicationCard WebDriverMode="{x:Null}" x:Key="superdrug" sap2010:Annotation.AnnotationText="Set product page to get price from" AttachMode="SingleWindow" CloseMode="Never" DisplayName="Use Browser Chrome: Aveeno Daily Moisturising Yogurt Vanilla Body Wash 300ml | Toiletries | Superdru" sap:VirtualizedContainerService.HintSize="593,1283" sap2010:WorkflowViewState.IdRef="NApplicationCard_10" InteractionMode="DebuggerApi" IsIncognito="True" OutUiElement="[Browser]" ScopeGuid="c437b863-15c5-4f8b-aa85-e4de0e6736b7" Version="V2">
             <uix:NApplicationCard.Body>
               <ActivityAction x:TypeArguments="x:Object">
                 <ActivityAction.Argument>
                   <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
                 </ActivityAction.Argument>
-                <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="539,968" sap2010:WorkflowViewState.IdRef="Sequence_22">
+                <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="559,1038" sap2010:WorkflowViewState.IdRef="Sequence_22">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <uix:NClick ClickType="Single" ContinueOnError="True" DisplayName="Click 'Accept cookies'" sap:VirtualizedContainerService.HintSize="497,156" sap2010:WorkflowViewState.IdRef="NClick_7" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="c437b863-15c5-4f8b-aa85-e4de0e6736b7" Timeout="5" Version="V1">
+                  <uix:NClick ClickType="Single" ContinueOnError="True" DisplayName="Click 'Accept cookies'" sap:VirtualizedContainerService.HintSize="497,166" sap2010:WorkflowViewState.IdRef="NClick_7" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="c437b863-15c5-4f8b-aa85-e4de0e6736b7" Timeout="5" Version="V1">
                     <uix:NClick.Target>
                       <uix:TargetAnchorable BrowserURL="https://www.superdrug.com/skin/body-moisturisers/body-lotions/aveeno-cream-100ml/p/322555" DesignTimeRectangle="867, 602, 200, 46" ElementType="Button" FriendlyName="'Accept cookies'" FullSelectorArgument="&lt;webctrl id='onetrust-accept-btn-handler' tag='BUTTON' aaname='Accept cookies' /&gt;" FuzzySelectorArgument="&lt;webctrl id='onetrust-accept-btn-handler' tag='BUTTON' aaname='Accept cookies' type='' class='' check:text='Accept cookies' /&gt;" Guid="87aac0d0-d228-4675-a337-ca30f5f2fa83" ImageBase64="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" InformativeScreenshot="1ba020646d8bd1596489060aea4c245e.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='*Superdrug*' /&gt;" SearchSteps="Selector" Visibility="Interactive" />
                     </uix:NClick.Target>
                   </uix:NClick>
-                  <uix:NTakeScreenshot ContinueOnError="True" DisplayName="Take Screenshot" FileName="screenshot.png" FileNameMode="None" sap:VirtualizedContainerService.HintSize="497,239" sap2010:WorkflowViewState.IdRef="NTakeScreenshot_10" ScopeIdentifier="c437b863-15c5-4f8b-aa85-e4de0e6736b7" Timeout="5" Version="V1">
+                  <uix:NTakeScreenshot ContinueOnError="True" DisplayName="Take Screenshot" FileName="screenshot.png" FileNameMode="None" sap:VirtualizedContainerService.HintSize="497,249" sap2010:WorkflowViewState.IdRef="NTakeScreenshot_10" ScopeIdentifier="c437b863-15c5-4f8b-aa85-e4de0e6736b7" Timeout="5" Version="V1">
                     <uix:NTakeScreenshot.SavedTo>
                       <OutArgument x:TypeArguments="x:String">[out_ScreenshotFilepath]</OutArgument>
                     </uix:NTakeScreenshot.SavedTo>
                   </uix:NTakeScreenshot>
-                  <Switch x:TypeArguments="x:String" DisplayName="Switch" Expression="[in_WhatToExtract]" sap:VirtualizedContainerService.HintSize="497,161" sap2010:WorkflowViewState.IdRef="Switch`1_11">
+                  <Switch x:TypeArguments="x:String" DisplayName="Switch" Expression="[in_WhatToExtract]" sap:VirtualizedContainerService.HintSize="497,171" sap2010:WorkflowViewState.IdRef="Switch`1_11">
                     <Switch.Default>
                       <Assign sap:VirtualizedContainerService.HintSize="262,61" sap2010:WorkflowViewState.IdRef="Assign_15">
                         <Assign.To>
@@ -763,13 +772,13 @@
                         </Assign.Value>
                       </Assign>
                     </Switch.Default>
-                    <Sequence x:Key="Price" sap:VirtualizedContainerService.HintSize="376,354" sap2010:WorkflowViewState.IdRef="Sequence_21">
+                    <Sequence x:Key="Price" sap:VirtualizedContainerService.HintSize="400,352" sap2010:WorkflowViewState.IdRef="Sequence_21">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <uix:NGetText sap2010:Annotation.AnnotationText="Get price of product (DRAG FROM OBJECT REPOSITORY)" DisplayName="Get Text '£7.89 each'" sap:VirtualizedContainerService.HintSize="334,198" sap2010:WorkflowViewState.IdRef="NGetText_25" ScopeIdentifier="c437b863-15c5-4f8b-aa85-e4de0e6736b7" Version="V1">
+                      <uix:NGetText sap2010:Annotation.AnnotationText="Get price of product (DRAG FROM OBJECT REPOSITORY)" DisplayName="Get Text '£7.89 each'" sap:VirtualizedContainerService.HintSize="338,208" sap2010:WorkflowViewState.IdRef="NGetText_25" ScopeIdentifier="c437b863-15c5-4f8b-aa85-e4de0e6736b7" Version="V1">
                         <uix:NGetText.Target>
                           <uix:TargetAnchorable BrowserURL="https://www.superdrug.com/toiletries/washing-bathing/shower-gels-body-wash/aveeno-daily-moisturising-yogurt-vanilla-body-wash-300ml/p/729843" DesignTimeRectangle="1216, 505, 77, 38" FriendlyName="'£7.89 each'" FullSelectorArgument="&lt;webctrl tag='SPAN' class='price__current' parentclass='price' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='SPAN' class='price__current' parentclass='price' type='' /&gt;" Guid="b8e90b13-680d-4217-b129-8614fa78c527" ImageBase64="" InformativeScreenshot="bfc88cc44dfa6ff3439aa60b86139b0d.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='*Superdrug*' /&gt;" SearchSteps="Selector" Visibility="Interactive" />
                         </uix:NGetText.Target>
@@ -782,9 +791,9 @@
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
                       </uix:NGetText>
-                      <c:Extract_GBP_Currency_Amount DisplayName="Extract GBP Currency Amount" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="Extract_GBP_Currency_Amount_8" in_input="[out_value]" out_output="[out_value]" />
+                      <c:Extract_GBP_Currency_Amount DisplayName="Extract GBP Currency Amount" sap:VirtualizedContainerService.HintSize="338,148" sap2010:WorkflowViewState.IdRef="Extract_GBP_Currency_Amount_8" in_input="[out_value]" out_output="[out_value]" />
                     </Sequence>
-                    <uix:NGetText x:Key="PricePerUnit" DisplayName="Get Text 'Price Per Unit'" sap:VirtualizedContainerService.HintSize="334,156" sap2010:WorkflowViewState.IdRef="NGetText_26" ScopeIdentifier="c437b863-15c5-4f8b-aa85-e4de0e6736b7" ScrapingOptions="None" Version="V1">
+                    <uix:NGetText x:Key="PricePerUnit" DisplayName="Get Text 'Price Per Unit'" sap:VirtualizedContainerService.HintSize="334,166" sap2010:WorkflowViewState.IdRef="NGetText_26" ScopeIdentifier="c437b863-15c5-4f8b-aa85-e4de0e6736b7" ScrapingOptions="None" Version="V1">
                       <uix:NGetText.Target>
                         <uix:TargetAnchorable BrowserURL="https://www.superdrug.com/toiletries/washing-bathing/shower-gels-body-wash/aveeno-daily-moisturising-yogurt-vanilla-body-wash-300ml/p/729843" DesignTimeRectangle="1216, 543, 308, 26" ElementType="Text" FriendlyName="'49.80p per 100l'" FullSelectorArgument="&lt;webctrl tag='SPAN' class='price__per-unit' parentclass='price' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='SPAN' class='price__per-unit' parentclass='price' type='' /&gt;" Guid="83e4bcfb-6c99-452e-83b2-41c45fee0aab" ImageBase64="" InformativeScreenshot="aa5ef9f86f7e70a2f1771f634bacd87d.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='*Superdrug*' /&gt;" SearchSteps="Selector" Visibility="Interactive" />
                       </uix:NGetText.Target>
@@ -793,7 +802,7 @@
                       </uix:NGetText.Text>
                     </uix:NGetText>
                   </Switch>
-                  <uix:NGetText sap2010:Annotation.AnnotationText="Get name of product (DRAG FROM OBJECT REPOSITORY)" DisplayName="Get Text 'Radox Mineral'" sap:VirtualizedContainerService.HintSize="497,198" sap2010:WorkflowViewState.IdRef="NGetText_27" ScopeIdentifier="c437b863-15c5-4f8b-aa85-e4de0e6736b7" Version="V1">
+                  <uix:NGetText sap2010:Annotation.AnnotationText="Get name of product (DRAG FROM OBJECT REPOSITORY)" DisplayName="Get Text 'Radox Mineral'" sap:VirtualizedContainerService.HintSize="497,208" sap2010:WorkflowViewState.IdRef="NGetText_27" ScopeIdentifier="c437b863-15c5-4f8b-aa85-e4de0e6736b7" Version="V1">
                     <uix:NGetText.Target>
                       <uix:TargetAnchorable BrowserURL="https://www.superdrug.com/toiletries/washing-bathing/bubble-bath-soaks/radox-mineral-therapy-feel-blissful-bath-soak-500ml/p/795043" DesignTimeRectangle="360, 489, 1200, 35" ElementType="Text" FriendlyName="'Radox Mineral'" FullSelectorArgument="&lt;webctrl tag='H1' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='H1' type='' class='product-details-title__text' /&gt;" Guid="fe207e36-15da-4e31-9d51-d6858f006654" InformativeScreenshot="5417211d5e7fce9200f9a33718bd45ce.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Radox Mineral Therapy Feel Blissful Bath Soak 500ml | Toiletries | Superdrug' /&gt;" SearchSteps="FuzzySelector" Visibility="Interactive" />
                     </uix:NGetText.Target>
@@ -820,40 +829,40 @@
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
           </uix:NApplicationCard>
-          <Sequence x:Key="amazon" sap:VirtualizedContainerService.HintSize="614,1667" sap2010:WorkflowViewState.IdRef="Sequence_25">
+          <Sequence x:Key="amazon" sap:VirtualizedContainerService.HintSize="634,1747" sap2010:WorkflowViewState.IdRef="Sequence_25">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <uix:NApplicationCard WebDriverMode="{x:Null}" sap2010:Annotation.AnnotationText="Set product page to get price from" AttachMode="SingleWindow" CloseMode="Never" DisplayName="Use Browser Chrome: EF ECOFLOW 220Watt Bifacial Foldable Solar Panel, Complete with Adjustable Kicks" sap:VirtualizedContainerService.HintSize="572,1646" sap2010:WorkflowViewState.IdRef="NApplicationCard_11" InteractionMode="DebuggerApi" IsIncognito="True" OutUiElement="[Browser]" ScopeGuid="c437b863-15c5-4f8b-aa85-e4de0e6736b7" Version="V2" WindowResize="Maximize">
+            <uix:NApplicationCard WebDriverMode="{x:Null}" sap2010:Annotation.AnnotationText="Set product page to get price from" AttachMode="SingleWindow" CloseMode="Never" DisplayName="Use Browser Chrome: EF ECOFLOW 220Watt Bifacial Foldable Solar Panel, Complete with Adjustable Kicks" sap:VirtualizedContainerService.HintSize="593,1775" sap2010:WorkflowViewState.IdRef="NApplicationCard_11" InteractionMode="DebuggerApi" IsIncognito="True" OutUiElement="[Browser]" ScopeGuid="c437b863-15c5-4f8b-aa85-e4de0e6736b7" Version="V2" WindowResize="Maximize">
               <uix:NApplicationCard.Body>
                 <ActivityAction x:TypeArguments="x:Object">
                   <ActivityAction.Argument>
                     <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
                   </ActivityAction.Argument>
-                  <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="538,1399" sap2010:WorkflowViewState.IdRef="Sequence_24">
+                  <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="559,1489" sap2010:WorkflowViewState.IdRef="Sequence_24">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <uix:NTakeScreenshot ContinueOnError="True" DisplayName="Take Screenshot" FileName="screenshot.png" FileNameMode="None" sap:VirtualizedContainerService.HintSize="496,239" sap2010:WorkflowViewState.IdRef="NTakeScreenshot_11" ScopeIdentifier="c437b863-15c5-4f8b-aa85-e4de0e6736b7" Timeout="5" Version="V1">
+                    <uix:NTakeScreenshot ContinueOnError="True" DisplayName="Take Screenshot" FileName="screenshot.png" FileNameMode="None" sap:VirtualizedContainerService.HintSize="497,249" sap2010:WorkflowViewState.IdRef="NTakeScreenshot_11" ScopeIdentifier="c437b863-15c5-4f8b-aa85-e4de0e6736b7" Timeout="5" Version="V1">
                       <uix:NTakeScreenshot.SavedTo>
                         <OutArgument x:TypeArguments="x:String">[out_ScreenshotFilepath]</OutArgument>
                       </uix:NTakeScreenshot.SavedTo>
                     </uix:NTakeScreenshot>
-                    <uix:NClick ClickType="Single" DisplayName="Click 'all'" sap:VirtualizedContainerService.HintSize="496,156" sap2010:WorkflowViewState.IdRef="NClick_8" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="c437b863-15c5-4f8b-aa85-e4de0e6736b7" Version="V1">
+                    <uix:NClick ClickType="Single" DisplayName="Click 'all'" sap:VirtualizedContainerService.HintSize="497,166" sap2010:WorkflowViewState.IdRef="NClick_8" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="c437b863-15c5-4f8b-aa85-e4de0e6736b7" Version="V1">
                       <uix:NClick.Target>
                         <uix:TargetAnchorable BrowserURL="https://www.amazon.co.uk/Redken-All-Soft-Shampoo-1000ml/dp/B0959XFZ91/ref=sr_1_3?crid=FKFE3UDO86GG&amp;keywords=redken+all+soft+1000ml&amp;qid=1661800986&amp;sprefix=redken+all+soft+1000ml%2Caps%2C131&amp;sr=8-3" DesignTimeRectangle="1372, 867, 111, 29" ElementType="Button" FriendlyName="'all'" FullSelectorArgument="&lt;webctrl tag='INPUT' type='submit' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='INPUT' type='submit' class='a-button-input celwidget' aaname='all' check:text='all' /&gt;" Guid="8b1d7564-f6d1-4aac-b54d-21f412e4317d" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAHMAAAAhCAYAAADqBZQaAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAP2SURBVGhD7ZtLThtBEIZHbBMpMs4iuUeUi7AIiTgHl2DJLRD7SFGyYcc2iglRHsuIxAY/MA7BDpX+a6Znqqt7xsBY2IN68QnhflXX1zU2cpNMJhMCF+DiImc8HjucR5aGdiE9wZt1yDJzgQCdex/o7483ND16TrOPa4YksnTW2Ae8wA+LtUINLDMXaRpxCi5N59mnx3TdeUTXn1tEx08jKwJ8wAv8wJOtWuuQZbLI83O6+vKS/h1FgU0AnuAL3qzQxIqE6SiyWcAXV2gmNOFS7b7n0g0NiKw28AZ/8JiMuCpf87M41Dmy2sAb/MFjMhqNaNp5Fj/sNBR4gz94TIbDIX/sDXWMNAP4g8dkwDKTYKdIM4A/eEwGg0GU2XBYpvGY9GvKPNxu0ZNWmw4DbatGGmvBzn643604aNNWa532Dvw2Xm+77b2+aOAPHmvKbNOOEbljgl5IYu4M4qiOYW/DJHajTSf2NZawgLgfisyT3XUOln/KRN07c2Tut4NPj4XEXSHzvliITJx2TmDJhjhZ2SPNTVqa/NDjrnRMJmRPtNtxXHXqNclNK6Q8XkNWyWm72Kvau3zb0etWzS/3cNtqri+TN1GcdgS+tSvaVTXIjSHwvK9MRsWYtE3/bpNYXZnOemWotTm5eVLd+VMpWV8Rv5bnxx/eG88nxmHtsr2EqC0TAXjyxGnTG8tRJ1mCMc6c8sA48lIKSfVlevHK5CsRznrZfrYc+Slyzqq9pYcjnJObUFOm+5iU2ISWJtBLTAHG+HNmmwyMKxJULdMTFcCLV6zHyQ68TRQyzfwbRqgSItet3JtpT4X6r9+EejKxUf2eYtAnMZjA21SmhJPrjisEVMssPUDidS9eOcYb71cm4tLSdT5K96bgcYH8llFLZmlgFQmQGy0kAJGY0BhnPjGOf7dy58g0cGUEqsudr1ib++dy3fmduNThlHtzDkjF3px+tk0erDncXWZFZekEpQGbQJliI7afbSvE6jFinSwZ+JvWtkt5nBA1l8b2CY0Hztq6MuzjlBFx6XyIQxaUFJrDwIcnb5O5mk+tylwK6mRHCqLMB0SU+YBQMuP3mU0G/nKZ03jToLHYmwYsE9+D/fm+Ge8ANRR4gz/+PhPfUA9/vYu38xoKvMEf3zTA3ZF+v0+Tb5s0i/dmGwV8wRv88R0g3OrC8/b07Iwuj1/QrBOFNgF4gi94gz++nYf7lrY60QDTU1O6eBbHD0WrBXzAC/zAE4vMqpLvzeImNKzimXuWCe3/fEuTr6/oynxKwsde/B0TWTZr7ANe4Aee4Ave4I9vtNv/NbFCbYX2Tk+pC3o9+i3pdiP3hcg7PMBHz2ArMhdp/I3HY/oPR++6jC4ztFgAAAAASUVORK5CYII=" InformativeScreenshot="5a1e9ba7cc695b4f63c96f8d5f44a9c0.png" ScopeSelectorArgument="&lt;html app='chrome.exe' htmlwindowname='https://images-eu.ssl-images-amazon.com/images/I/11EIQ5IGqaL._RC%7C01ZTHTZObnL.css,41C-I1lXVwL.css,31ufSReDtSL.css,013z33uKh2L.css,017DsKjNQJL.css,0131vqwP5UL.css,41EWOOlBJ9L.css,11TIuySqr6L.css,01ElnPiDxWL.css,11Qjwq-j69L.css,01Dm5eKVxwL.css,01IdKcBuAdL.c*' title='Redken All Soft Shampoo 1000ml : Amazon.co.uk: Beauty' /&gt;" SearchSteps="FuzzySelector" Visibility="Interactive" />
                       </uix:NClick.Target>
                     </uix:NClick>
-                    <uix:NClick ClickType="Single" DisplayName="Click 'DIV nav-packard-glow-lo…'" sap:VirtualizedContainerService.HintSize="496,156" sap2010:WorkflowViewState.IdRef="NClick_9" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="c437b863-15c5-4f8b-aa85-e4de0e6736b7" Version="V1">
+                    <uix:NClick ClickType="Single" DisplayName="Click 'DIV nav-packard-glow-lo…'" sap:VirtualizedContainerService.HintSize="497,166" sap2010:WorkflowViewState.IdRef="NClick_9" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="c437b863-15c5-4f8b-aa85-e4de0e6736b7" Version="V1">
                       <uix:NClick.Target>
                         <uix:TargetAnchorable BrowserURL="https://www.amazon.co.uk/gp/product/B0B3WXTSSP/ref=ppx_yo_dt_b_asin_title_o00?ie=UTF8&amp;th=1" DesignTimeRectangle="188, 104, 15, 18" FriendlyName="'DIV nav-packard-glow-lo…'" FullSelectorArgument="&lt;webctrl id='nav-packard-glow-loc-icon' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl id='nav-packard-glow-loc-icon' tag='DIV' type='' class='nav-sprite nav-progressive-attribute' aaname='' /&gt;" Guid="6e905a3e-a8b5-4428-b9a5-c0a449402d88" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAABMAAAAWCAYAAAAinad/AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAIWSURBVDhP1ZPdS9NhFMf7H0IwhOESlzHYKAxUDNPEqZmIRexCURyR0UBC0YtdRJCi4OgikIoxCklGIhQhojJ0+DZSRDG6qFn2cmMlxjLRwTjyPfAcfw+bk2A3HfhenPOcfX7nbSdOnjJTuvQfwq7U3aDHT/0UnArR8soqvX4zSu2dHsq22JLmQwkwe34xzcwtEOzPzg4tLi2z/3njC8e2t3/TnbYO7TdKGsx6roA2f/ykaDTKVWSZ87TkkvJqmg7NMPT+g17tDdJgqAJfLrh4WWKotLyqTsAZWTk0PPKKgbX1TsmDBOZsaOGEVvdd9k05Vhodm+AY7NfWFjW5bvMbwF+/fafZ+bCAIIE9GxziqjJNFvFjsRh193oZgiXs7e1zpXhHPB6Pk/nM4UIEhiGjTeUDHHg5Ij7mCevy3GO/ofkm+2WOq5IjMHUCyj8OhnHAikoqJEdg/Q8fcVun8+zsqzaxNVSBqo1tDr4I8NbVWCCBFZdW8pd6+rzs4zjHJ4Mcg6FStYD8wksM9vmfCwgSGIQr/7u7q50GfuioqddOYyH8lqs6a7sgeZAGwyOONrL+iXKt57VEJbQPUydklAaDqmqvc3Vr794nAPFfhWG+xrhSAgy65mxk4IePEW4TQx4KDDNo4IkvIV8pKQzCnHD1GDxOBqaWc5SOhEE4A3X5rlvupDlGpYRBaNF4mKl0LOxflEaYmQ4ABewB2uPDs58AAAAASUVORK5CYII=" InformativeScreenshot="7c04944211077562f201023091d4b687.png" ScopeSelectorArgument="&lt;html app='chrome.exe' htmlwindowname='https://images-eu.ssl-images-amazon.com/images/I/11EIQ5IGqaL._RC%7C01ZTHTZObnL.css,41C-I1lXVwL.css,31ufSReDtSL.css,013z33uKh2L.css,017DsKjNQJL.css,0131vqwP5UL.css,41EWOOlBJ9L.css,11TIuySqr6L.css,01ElnPiDxWL.css,11Qjwq-j69L.css,01Dm5eKVxwL.css,01IdKcBuAdL.c*' title='EF ECOFLOW 220Watt Bifacial Foldable Solar Panel, Complete with Adjustable Kickstand, Waterproof IP68 &amp;amp; Durable for Off The Grid Living : Amazon.co.uk: Sports &amp;amp; Outdoors' /&gt;" SearchSteps="FuzzySelector, Image" Visibility="Interactive" />
                       </uix:NClick.Target>
                     </uix:NClick>
-                    <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'or enter a UK postcode'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="496,217" sap2010:WorkflowViewState.IdRef="NTypeInto_1" ScopeIdentifier="c437b863-15c5-4f8b-aa85-e4de0e6736b7" Text="sm6 8ng[k(enter)]" Version="V1">
+                    <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'or enter a UK postcode'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="497,227" sap2010:WorkflowViewState.IdRef="NTypeInto_1" ScopeIdentifier="c437b863-15c5-4f8b-aa85-e4de0e6736b7" Text="sm6 8ng[k(enter)]" Version="V1">
                       <uix:NTypeInto.Target>
                         <uix:TargetAnchorable BrowserURL="https://www.amazon.co.uk/gp/product/B0B3WXTSSP/ref=ppx_yo_dt_b_asin_title_o00?ie=UTF8&amp;th=1" DesignTimeRectangle="806, 601, 214, 31" ElementType="InputBox" FriendlyName="'INPUT GLUXZipUpdateInput'" FullSelectorArgument="&lt;webctrl tag='INPUT' type='text' aria-label='or enter a UK postcode' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='INPUT' type='text' aria-label='or enter a UK postcode' class='GLUX_Full_Width a-declarative' aaname='' /&gt;" Guid="6a227765-fdc7-4786-b0bd-cdcce0756659" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAANoAAAAjCAYAAADygBQKAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAE8SURBVHhe7dwxS0JRHMbhPn6D3yBoDyS/R+lckFuKa4EODnrijQyvVNDV+5+eB97pnvXHme65asDghAYFOqE9zmbt5va2XY9GZtZzaSgtHfsOLR/uxuP29PzcFsulmfVcGkpLD9PpV11HoaXCl/m8vb2/t/V63TabjZn9c2knDaWlNHXwHVquvBzYbrdtt9uZWc+lobSUpg46oaXGHAT6S0Np6dfQcvUJDc6ThtKS0GBAp6Ht93uhwaUJDQoIDQqchhZCgwsTGhQQGhQQGhQQGhQQGhQQGhQQGhQQGhQQGhQQGhQQGhQQGhQQGhQQGhQQGhQ4Dc2PnzAAoUGBP0PLq6qvi4XQ4ExpKC0dXiruhJa398f39221Wn0eNLN+S0PjyeTnt/cjH1Jhrjwz67c0dBxZdEIDhiE0GFxrH2o0zV/KS0Q0AAAAAElFTkSuQmCC" InformativeScreenshot="d1d41e402757b6bcce462bafca294e32.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='*Amazon*' /&gt;" SearchSteps="FuzzySelector" Visibility="Visible">
                           <uix:TargetAnchorable.Anchors>
@@ -864,7 +873,7 @@
                         </uix:TargetAnchorable>
                       </uix:NTypeInto.Target>
                     </uix:NTypeInto>
-                    <Switch x:TypeArguments="x:String" DisplayName="Switch" Expression="[in_WhatToExtract]" sap:VirtualizedContainerService.HintSize="496,139" sap2010:WorkflowViewState.IdRef="Switch`1_12">
+                    <Switch x:TypeArguments="x:String" DisplayName="Switch" Expression="[in_WhatToExtract]" sap:VirtualizedContainerService.HintSize="497,149" sap2010:WorkflowViewState.IdRef="Switch`1_12">
                       <Switch.Default>
                         <Assign sap:VirtualizedContainerService.HintSize="262,61" sap2010:WorkflowViewState.IdRef="Assign_16">
                           <Assign.To>
@@ -875,7 +884,7 @@
                           </Assign.Value>
                         </Assign>
                       </Switch.Default>
-                      <Sequence x:Key="Price" sap:VirtualizedContainerService.HintSize="1874,915" sap2010:WorkflowViewState.IdRef="Sequence_26">
+                      <Sequence x:Key="Price" sap:VirtualizedContainerService.HintSize="1894,987" sap2010:WorkflowViewState.IdRef="Sequence_26">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -993,7 +1002,7 @@
                         </Sequence>
                       </Sequence>
                     </Switch>
-                    <uix:NGetText sap2010:Annotation.AnnotationText="Get name of product (DRAG FROM OBJECT REPOSITORY)" DisplayName="Get Text 'Reolink 128GB'" sap:VirtualizedContainerService.HintSize="496,198" sap2010:WorkflowViewState.IdRef="NGetText_29" ScopeIdentifier="c437b863-15c5-4f8b-aa85-e4de0e6736b7" Version="V1">
+                    <uix:NGetText sap2010:Annotation.AnnotationText="Get name of product (DRAG FROM OBJECT REPOSITORY)" DisplayName="Get Text 'Reolink 128GB'" sap:VirtualizedContainerService.HintSize="497,208" sap2010:WorkflowViewState.IdRef="NGetText_29" ScopeIdentifier="c437b863-15c5-4f8b-aa85-e4de0e6736b7" Version="V1">
                       <uix:NGetText.Target>
                         <uix:TargetAnchorable BrowserURL="https://www.amazon.co.uk/Reolink-MicroSD-Memory-Compatible-Security/dp/B09LD1K8NN/ref=pd_bxgy_img_sccl_1/258-5929781-0514506?pd_rd_w=V4yCh&amp;content-id=amzn1.sym.79b812bf-5c8b-4c0c-851c-784423adaff5&amp;pf_rd_p=79b812bf-5c8b-4c0c-851c-784423adaff5&amp;pf_rd_r=XC7DB7GFFEDZFF5CZXYA&amp;pd_rd_wg=7Z9Qc&amp;pd_rd_r=37c4fbc8-885d-4abd-9243-897b65aca6e8&amp;pd_rd_i=B09LD1K8NN&amp;psc=1" DesignTimeRectangle="908, 341, 483, 62" ElementType="Text" FriendlyName="'Reolink 128GB'" FullSelectorArgument="&lt;webctrl id='productTitle' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl id='productTitle' tag='SPAN' type='' class='a-size-large product-title-word-break' /&gt;" Guid="7f43851a-2465-4e0a-aa24-eb97730fec5f" InformativeScreenshot="63b17bdde34b1094e735e038dc7c15a0.png" ScopeSelectorArgument="&lt;html app='chrome.exe' htmlwindowname='https://images-eu.ssl-images-amazon.com/images/I/11EIQ5IGqaL._RC%7C01ZTHTZObnL.css,41C-I1lXVwL.css,31ufSReDtSL.css,013z33uKh2L.css,017DsKjNQJL.css,0131vqwP5UL.css,41EWOOlBJ9L.css,11TIuySqr6L.css,01ElnPiDxWL.css,11Qjwq-j69L.css,01Dm5eKVxwL.css,01IdKcBuAdL.c*' title='Reolink 128GB MicroSD XC Memory Card, TF Memory Card Compatible Security Camera : Amazon.co.uk: Computers &amp;amp; Accessories' /&gt;" SearchSteps="FuzzySelector" Visibility="Interactive" />
                       </uix:NGetText.Target>
@@ -1021,24 +1030,24 @@
               </sap:WorkflowViewStateService.ViewState>
             </uix:NApplicationCard>
           </Sequence>
-          <uix:NApplicationCard WebDriverMode="{x:Null}" x:Key="wilko" sap2010:Annotation.AnnotationText="Set product page to get price from" AttachMode="SingleWindow" CloseMode="Never" DisplayName="Use Browser Chrome: Pledge Fluffy Duster Refills 5 pack | Wilko" sap:VirtualizedContainerService.HintSize="573,1419" sap2010:WorkflowViewState.IdRef="NApplicationCard_12" InteractionMode="DebuggerApi" IsIncognito="True" OutUiElement="[Browser]" ScopeGuid="c437b863-15c5-4f8b-aa85-e4de0e6736b7" Version="V2">
+          <uix:NApplicationCard WebDriverMode="{x:Null}" x:Key="wilko" sap2010:Annotation.AnnotationText="Set product page to get price from" AttachMode="SingleWindow" CloseMode="Never" DisplayName="Use Browser Chrome: Pledge Fluffy Duster Refills 5 pack | Wilko" sap:VirtualizedContainerService.HintSize="593,1089" sap2010:WorkflowViewState.IdRef="NApplicationCard_12" InteractionMode="DebuggerApi" IsIncognito="True" OutUiElement="[Browser]" ScopeGuid="c437b863-15c5-4f8b-aa85-e4de0e6736b7" Version="V2">
             <uix:NApplicationCard.Body>
               <ActivityAction x:TypeArguments="x:Object">
                 <ActivityAction.Argument>
                   <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
                 </ActivityAction.Argument>
-                <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="539,770" sap2010:WorkflowViewState.IdRef="Sequence_28">
+                <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="559,832" sap2010:WorkflowViewState.IdRef="Sequence_28">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <uix:NTakeScreenshot ContinueOnError="True" DisplayName="Take Screenshot" FileName="screenshot.png" FileNameMode="None" sap:VirtualizedContainerService.HintSize="497,239" sap2010:WorkflowViewState.IdRef="NTakeScreenshot_12" ScopeIdentifier="c437b863-15c5-4f8b-aa85-e4de0e6736b7" Timeout="5" Version="V1">
+                  <uix:NTakeScreenshot ContinueOnError="True" DisplayName="Take Screenshot" FileName="screenshot.png" FileNameMode="None" sap:VirtualizedContainerService.HintSize="497,249" sap2010:WorkflowViewState.IdRef="NTakeScreenshot_12" ScopeIdentifier="c437b863-15c5-4f8b-aa85-e4de0e6736b7" Timeout="5" Version="V1">
                     <uix:NTakeScreenshot.SavedTo>
                       <OutArgument x:TypeArguments="x:String">[out_ScreenshotFilepath]</OutArgument>
                     </uix:NTakeScreenshot.SavedTo>
                   </uix:NTakeScreenshot>
-                  <Switch x:TypeArguments="x:String" DisplayName="Switch" Expression="[in_WhatToExtract]" sap:VirtualizedContainerService.HintSize="497,159" sap2010:WorkflowViewState.IdRef="Switch`1_13">
+                  <Switch x:TypeArguments="x:String" DisplayName="Switch" Expression="[in_WhatToExtract]" sap:VirtualizedContainerService.HintSize="497,171" sap2010:WorkflowViewState.IdRef="Switch`1_13">
                     <Switch.Default>
                       <Assign sap:VirtualizedContainerService.HintSize="262,61" sap2010:WorkflowViewState.IdRef="Assign_18">
                         <Assign.To>
@@ -1049,13 +1058,13 @@
                         </Assign.Value>
                       </Assign>
                     </Switch.Default>
-                    <Sequence x:Key="Price" sap:VirtualizedContainerService.HintSize="376,354" sap2010:WorkflowViewState.IdRef="Sequence_27">
+                    <Sequence x:Key="Price" sap:VirtualizedContainerService.HintSize="400,384" sap2010:WorkflowViewState.IdRef="Sequence_27">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <uix:NGetText sap2010:Annotation.AnnotationText="Get price of product (DRAG FROM OBJECT REPOSITORY)" DisplayName="Get Text '£2.00'" sap:VirtualizedContainerService.HintSize="334,198" sap2010:WorkflowViewState.IdRef="NGetText_33" ScopeIdentifier="c437b863-15c5-4f8b-aa85-e4de0e6736b7" Version="V1">
+                      <uix:NGetText sap2010:Annotation.AnnotationText="Get price of product (DRAG FROM OBJECT REPOSITORY)" DisplayName="Get Text '£2.00'" sap:VirtualizedContainerService.HintSize="338,198" sap2010:WorkflowViewState.IdRef="NGetText_33" ScopeIdentifier="c437b863-15c5-4f8b-aa85-e4de0e6736b7" Version="V1">
                         <uix:NGetText.Target>
                           <uix:TargetAnchorable BrowserURL="https://www.wilko.com/en-uk/pledge-fluffy-duster-refills-5-pack/p/0221897" DesignTimeRectangle="1176, 509, 114, 40" ElementType="Text" FriendlyName="'£2.00'" FullSelectorArgument="&lt;webctrl parentid='pdp-product-title' tag='DIV' class='pdp-price' parentclass='product-details product-details-side page-title' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='pdp-product-title' tag='DIV' class='pdp-price' parentclass='product-details product-details-side page-title' type='' /&gt;" Guid="9d2739a4-29c9-4356-8ad6-9fb53607260d" ImageBase64="" InformativeScreenshot="49e0c8ed66e79ecf210d3f9e2ea52aff.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='*Wilko*' /&gt;" SearchSteps="Selector" Visibility="Interactive" />
                         </uix:NGetText.Target>
@@ -1068,7 +1077,7 @@
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
                       </uix:NGetText>
-                      <c:Extract_GBP_Currency_Amount DisplayName="Extract GBP Currency Amount" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="Extract_GBP_Currency_Amount_10" in_input="[out_value]" out_output="[out_value]" />
+                      <c:Extract_GBP_Currency_Amount DisplayName="Extract GBP Currency Amount" sap:VirtualizedContainerService.HintSize="338,22" sap2010:WorkflowViewState.IdRef="Extract_GBP_Currency_Amount_10" in_input="[out_value]" out_output="[out_value]" />
                     </Sequence>
                     <uix:NGetText x:Key="PricePerUnit" DisplayName="Get Text 'Price Per Unit'" sap:VirtualizedContainerService.HintSize="334,156" sap2010:WorkflowViewState.IdRef="NGetText_34" ScopeIdentifier="c437b863-15c5-4f8b-aa85-e4de0e6736b7" ScrapingOptions="None" Version="V1">
                       <uix:NGetText.Target>
@@ -1079,7 +1088,7 @@
                       </uix:NGetText.Text>
                     </uix:NGetText>
                   </Switch>
-                  <uix:NGetText sap2010:Annotation.AnnotationText="Get name of product (DRAG FROM OBJECT REPOSITORY)" DisplayName="Get Text 'Pledge Fluffy'" sap:VirtualizedContainerService.HintSize="497,198" sap2010:WorkflowViewState.IdRef="NGetText_35" ScopeIdentifier="c437b863-15c5-4f8b-aa85-e4de0e6736b7" Version="V1">
+                  <uix:NGetText sap2010:Annotation.AnnotationText="Get name of product (DRAG FROM OBJECT REPOSITORY)" DisplayName="Get Text 'Pledge Fluffy'" sap:VirtualizedContainerService.HintSize="497,208" sap2010:WorkflowViewState.IdRef="NGetText_35" ScopeIdentifier="c437b863-15c5-4f8b-aa85-e4de0e6736b7" Version="V1">
                     <uix:NGetText.Target>
                       <uix:TargetAnchorable BrowserURL="https://www.wilko.com/en-uk/pledge-fluffy-duster-refills-5-pack/p/0221897" DesignTimeRectangle="1176, 431, 354, 68" ElementType="Text" FriendlyName="'Pledge Fluffy'" FullSelectorArgument="&lt;webctrl tag='H1' class='name' parentclass='product-title' parentid='pdp-product-title' idx='2' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='H1' class='name' parentclass='product-title' parentid='pdp-product-title' type='' /&gt;" Guid="5d21d9cf-4853-4d96-9ab1-74c571448bed" ImageBase64="" InformativeScreenshot="394ee462c900aba0c143ffe26010e9b1.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Pledge Fluffy Duster Refills 5 pack | Wilko' /&gt;" SearchSteps="Selector" Visibility="Interactive" />
                     </uix:NGetText.Target>
@@ -1106,10 +1115,128 @@
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
           </uix:NApplicationCard>
+          <uix:NApplicationCard WebDriverMode="{x:Null}" x:Key="zenauto" sap2010:Annotation.AnnotationText="Set product page to get price from" AttachMode="SingleWindow" CloseMode="Never" DisplayName="Use Browser Chrome: Personal Car Leasing Deals &amp; Offers | Personal Contract Hire UK | PCH | ZenAuto" sap:VirtualizedContainerService.HintSize="624,2444" sap2010:WorkflowViewState.IdRef="NApplicationCard_13" InteractionMode="DebuggerApi" IsIncognito="True" OutUiElement="[Browser]" ScopeGuid="c437b863-15c5-4f8b-aa85-e4de0e6736b7" Version="V2">
+            <uix:NApplicationCard.Body>
+              <ActivityAction x:TypeArguments="x:Object">
+                <ActivityAction.Argument>
+                  <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+                </ActivityAction.Argument>
+                <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="559,2187" sap2010:WorkflowViewState.IdRef="Sequence_31">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <uix:NTakeScreenshot ContinueOnError="True" DisplayName="Take Screenshot" FileName="screenshot.png" FileNameMode="None" sap:VirtualizedContainerService.HintSize="497,249" sap2010:WorkflowViewState.IdRef="NTakeScreenshot_13" ScopeIdentifier="c437b863-15c5-4f8b-aa85-e4de0e6736b7" Timeout="5" Version="V1">
+                    <uix:NTakeScreenshot.SavedTo>
+                      <OutArgument x:TypeArguments="x:String">[out_ScreenshotFilepath]</OutArgument>
+                    </uix:NTakeScreenshot.SavedTo>
+                  </uix:NTakeScreenshot>
+                  <Sequence DisplayName="Search Required Car" sap:VirtualizedContainerService.HintSize="497,908" sap2010:WorkflowViewState.IdRef="Sequence_29">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <uix:NClick ClickType="Single" DisplayName="Click 'Manufacturer'" sap:VirtualizedContainerService.HintSize="338,166" sap2010:WorkflowViewState.IdRef="NClick_13" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="c437b863-15c5-4f8b-aa85-e4de0e6736b7" Version="V1">
+                      <uix:NClick.Target>
+                        <uix:TargetAnchorable BrowserURL="https://zen.auto/" DesignTimeRectangle="286, 402, 340, 40" FriendlyName="'e.g. Audi,'" FullSelectorArgument="&lt;webctrl css-selector='body&amp;gt;div&amp;gt;div&amp;gt;main&amp;gt;div&amp;gt;section&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;section&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div' parentid='zen' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl type='' parentid='zen' tag='DIV' class='dropdown__trigger' aaname='   ' check:innerText='e.g. Audi, Skoda, Ford, VW...' /&gt;" Guid="032de4c4-fd7d-4548-9915-cc3b018d63b8" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAVgAAAAsCAYAAAAgqKAjAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAS7SURBVHhe7Zg7UuswFEDfUlgKO4H1pXTLZGhShJnUpKShIE224Gd9ffWxLRuJEOacmTtEiSxdS74nCv96AABoAoIFAGiEF+z1eu0Ph0P/8vJCEARBrAzlT+VRiRfs6XTKXkQQBEGUhZKsxAvWdQAAgPXkHIpgAQAqgGABABqBYAEAGoFgAQAagWABABqBYAEAGoFgAQAagWABABqBYAEAGoFgAQAagWAD3vv9ruuPX6Z1eev6XXfsL6a5nfO+3+32w+i1uPTHbtfvz7Z5F9xjzgDf4+4FqyVYTV6hYN/3u+KxTd8wujer5l8u2FzudfNVFOb8dew7Nf8+nd3stdoftU+ZPrl1tuP5vQD4Qe5csKZolRDqyCYUbDG6sNPrLl93JNiM0OqyIufsepnrnShzX6zui0LOUfcLGGAdDQRrTxcqFn5em4ff9O3e3tdLwxbiUY0Tz6VPLqH0VAHGJxl5etuft/2LYLFfLAzdDnMJ1yIdaXmtxLqrudQchf/eWBbs+EWWfpGYeVUu8Tjb93cc0xPv50S7U3mKHJbvDaAddQVrf46ZB9oVZf704MRmimiUQ1kBKsSJJiPT3HtqzlFeLj/bx+UurikVrL92qq8UrO073udEHrEk/DWZtYrm92KrIdiJscf8pdjHtfvu/urrRf5pjmL/VcvtVfBllhE1wATPz8/96+urbeVRnz8+PtrWMlUFu1QEHl20ofxc3+JiiMZI5s7Mofr4XOJTpUYV5HhNsWAVTkQu5HVuLtsnWI9cHrafXovMfcRrla77gBq3MHd9vcxdhb02N7aR7IzECnJeJBgjL8pxf+TY4nV2jwHyfHx8aHlOSVa9//DwYFtlVBSsebCTQh0iEWz2wV9XgEnh6zFFUWeKXAo2L89vCFZiBenzs/e7F/M78nOYtdB9F9dK9JWo6wpzzwpaMzH2kvwq7K+ce3IfdB7DPO6vfVv3H+7H/QUoZUqyW+SqqC7YpBhzxDLUrClAU9SzMr+lYAeCa51wrHjlGk3nYdfiNwo2yKmVYAf0OOb/qkkOGptfF4nUrrN6HlbNBzAQS3arXBUVBTtgCyIW58W2R8GZwpAC0KKRBRGdSiSmb/pZ+L4p/LEwl9ru+g2CPR+je47GlsLRr2Xhp3lo4fn7sGslBRKPkax7ur5zTAt2IBnb5Dv2N+1QZAU5F2HnmngOFGatJuaXeQfPkxrXfSZfAxikZLfKVVFXsANOlDLMw2+LxRe9KwIb3fATemi7QnHjJAWZOQWO2DlsYYe5ZE5C4qRjchj6iGILBDsnCPtZEIlcRkn4vFyfOI9EKE40Lsy9yFziddenOpf77JoNo88JdiAeO+xrckvXZT7n8EtkGj33TG7x2jqCvXNtl6fdL70e8jWA4PPzs396erKtbVQX7HamCvV3oIVQeCL8bRi5LMvs5zB7jdTgr3MzwSph+QJzJ7g7FRgAQI6bCdadYtxPSE4zAPDXuKFgAQD+NggWAKARCBYAoBEIFgCgEQgWAKARCBYAoBEIFgCgEQgWAKARCBYAoBEIFgCgEQgWAKARCBYAoBGzgj2dTr4DQRAEsT6URyVesNfrFckSBEFsjMPhoD0q8YIFAIC6IFgAgCb0/X/q5vHMXUfHRgAAAABJRU5ErkJggg==" InformativeScreenshot="e801403027fa9681dbe9858b2d109b9f.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Personal Car Leasing Deals &amp;amp; Offers | Personal Contract Hire UK | PCH | ZenAuto' /&gt;" SearchSteps="FuzzySelector" Visibility="Interactive">
+                          <uix:TargetAnchorable.Anchors>
+                            <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                              <uix:Target DesignTimeRectangle="286, 371, 340, 21" ElementType="Text" FriendlyName="'Manufacturer'" FullSelectorArgument="&lt;webctrl tag='H4' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='H4' type='' class='journey__title' aaname='Manufacturer' check:innerText='Manufacturer' /&gt;" ImageBase64="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" SearchSteps="FuzzySelector" />
+                            </scg:List>
+                          </uix:TargetAnchorable.Anchors>
+                        </uix:TargetAnchorable>
+                      </uix:NClick.Target>
+                    </uix:NClick>
+                    <uix:NClick ClickType="Single" DisplayName="Click 'ABARTH'" sap:VirtualizedContainerService.HintSize="338,166" sap2010:WorkflowViewState.IdRef="NClick_12" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="c437b863-15c5-4f8b-aa85-e4de0e6736b7" Version="V1">
+                      <uix:NClick.Target>
+                        <uix:TargetAnchorable BrowserURL="https://zen.auto/" DesignTimeRectangle="322, 384, 190, 36" ElementType="Text" FriendlyName="'ABARTH'" FullSelectorArgument="[String.Format(&quot;&lt;webctrl aaname='*{0}*' parentid='zen' tag='A' /&gt;&quot;, in_SearchTerm1)]" FuzzySelectorArgument="[String.Format(&quot;&lt;webctrl parentid='zen' tag='A' type='' class='' check:text='{0}' /&gt;&quot;, in_SearchTerm1)]" Guid="8c3f2be2-3337-4fec-b1f7-46f54ce89611" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAMIAAAAoCAYAAACsPiXVAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAH0SURBVHhe7ddBSsNAFMZxr+Sii15IEDyCIF5DxCso3kI9g93bTbqwm27G9wkPhud7kUl37X/gR8xMmkT4vja5uFytG3DuKAJgKAJgKAJgKAJgKAJgKAJgKAJgKAJgKAJgKAJgKAJgKAJgjirC7d19m6apPTw+/Vm7ur5pX9tti0NzWovHy9v7R/vcbNI1zcfxvd//3oPWtdV+NXRuv6fsGs8vr+1wOKT/C07fUUVQuDSyYGWhU8gUtqwMHuQqjDpP/zk/f18G5+dSuPt5ioDK4iJ4qHa7XRrGKnQKXHa8B1FrKli/JrEIUgWeImDU4iJ4cLTNwluFTsfFIvTHZusyV4R4bYqAUYuLoDB5oBTEGFIPXTZiQBU+BVfbKsRZEXTdLLz/FaEaFOF8LSqCwuK/Btm+zIUufiPHkGeh11w2YtiFImDUoiLEoHrA+oBnc6Kg+be/78cS6e8Yyv6a1bkdj0YYNVwED1k2+iDNFaEPvh5vqtF/ti+C9ueCSxEwargI1cush89DVoVO+x44/0x82ZX4/B+LUM0JRcCooSIoJApLFiTxb3eFykMXRwx3FT4Pswc9C73fT5ynCBi16B0BODUUATAUATAUATAUATAUATAUATAUATAUATAUATAUATAUATAUATAUATAUATAUATAUAVit2w9byl+slu9bfgAAAABJRU5ErkJggg==" InformativeScreenshot="50ac1e77d4d92e9c57d3aaf4f4109365.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Personal Car Leasing Deals &amp;amp; Offers | Personal Contract Hire UK | PCH | ZenAuto' /&gt;" SearchSteps="FuzzySelector" Visibility="Interactive" />
+                      </uix:NClick.Target>
+                    </uix:NClick>
+                    <uix:NClick ClickType="Single" DisplayName="Click 'Model'" sap:VirtualizedContainerService.HintSize="338,166" sap2010:WorkflowViewState.IdRef="NClick_14" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="c437b863-15c5-4f8b-aa85-e4de0e6736b7" Version="V1">
+                      <uix:NClick.Target>
+                        <uix:TargetAnchorable BrowserURL="https://zen.auto/search-personal-leasing/make/volkswagen" DesignTimeRectangle="490, 269, 40, 21" ElementType="Text" FriendlyName="'Model'" FullSelectorArgument="&lt;webctrl aaname='Model' parentid='react-tabs-1' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Model' parentid='react-tabs-1' tag='DIV' type='' class='dropdown__label' check:innerText='Model' /&gt;" Guid="ae18c134-e9eb-448f-903c-ab74da8c4693" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAACwAAAAZCAYAAABKM8wfAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAEmSURBVFhH7ZNtCsMgDIY9o9ALFa/SHqU7yH54jCzNh01qJ91A2MAHhNWa18fYBfgzhnBvhnBvhnCbDVKIsDzlsUmGZQoQ1yzPjBPe5nrBAQekhzx+RQfhEBLG1uQ14rufFMYxn5X3jfidF+ZQqnkjUjKp9kr4yA7TgonKXeEpQqRwmURofk4UXOafC63TTeob0MOIoK63wjpHDdL1esN3hbGYN5fCR5Lf3AkV0rWW6zqL73CdYSU/EC6ndV21wtdh3DEWInl3xTtWWPagrvvxhTDirmvnhrDp6l3hKqPwqTCS13R8b04YITnzPcr78wHthvzJmJoqYydDbhyoKew5CSMsgDU6zrXljyaD/tBesMrA0bpFJ/wPDOHeDOHeDOHeDOG+ALwAlBndDKJ63l4AAAAASUVORK5CYII=" InformativeScreenshot="53cbe9799a856874b37c2a5b18d6d6a0.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='VW Lease Deals | Volkswagen Personal Car Leasing &amp;amp; Contract Hire Offers | PCH | ZenAuto' /&gt;" SearchSteps="FuzzySelector, Image" Visibility="Interactive">
+                          <uix:TargetAnchorable.Anchors>
+                            <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                              <uix:Target DesignTimeRectangle="474, 254, 200, 51" FriendlyName="'Model'" FullSelectorArgument="&lt;webctrl css-selector='body&amp;gt;div&amp;gt;div&amp;gt;main&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;section&amp;gt;div&amp;gt;div&amp;gt;div' idx='2' parentid='react-tabs-1' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl type='' class='dropdown__trigger' parentid='react-tabs-1' tag='DIV' aaname='' check:innerText='Model' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAMwAAAA3CAYAAABAd6UoAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAJOSURBVHhe7dg/bsIwGIfhHIWjcIZI7NwECeUeTHANhkrt0LEHYOiQjSu4tmMHm5A0PyBITd9H+qTmbxe/NbQ4n8+GYZhxQzAMI0wbzNvnF8MwPXMzGABdBAMICAYQEAwgIBhAQDCAgGAAAcEAAoIBBAQDCAgGEBAMICAYQEAwgIBgAAHBAAKCAQQEAwj+cDDvpipKs/8Oh4Nqs18VpjzU4Ri4z2TBvG+HFmizgKuPcHgXgsHrTRpMUVR2WXfVh9JeIxj8PRMHY2d7nYxb6M21PJhmUftnekJo3+mfvRXM5d3Fam/fGBHMnK3Xa3M6ncJRP3fPcrkMR/eZNphVaUq/uMNJy5/fVn5ht+e/9/6+uMi7O1CMKQQS70+Died8oPH+uMMRzJwdj0cfwlA07tpisfD3PmLaYOzibRZ/WLgfVfi52QliEPHe1O3nUvkO031HGgnBzN1msxmMxl17NBZn8mDav/bZrpIG07OY/Y7RBOHjyT5iOWkw4Xf4XScfgvk/+qJx53a7XTh6zAuCsbKPS86IYJJdZWww/UEQzH/honETo3lmLM5rgrHqQ3X5vpEFY/k4ku8j4fp1YOmCbz6yJc903uHUph4VFOYkRuNicf8QeKaXBZO7CsZqArDPxLl+tv2iH8b/QyEPpPMOO4O7GGbLBfPsWJzJggHmiGAAAcEAAoIBBAQDCAgGEBAMICAYQEAwgIBgAAHBAAKCAQQEAwgIBhAQDCAgGEBAMICAYAABwQACggEEBAMIeoNhGOb2dIJhGOb3IRiGGT1n8wPVQEGoFbq8FwAAAABJRU5ErkJggg==" SearchSteps="FuzzySelector" />
+                            </scg:List>
+                          </uix:TargetAnchorable.Anchors>
+                        </uix:TargetAnchorable>
+                      </uix:NClick.Target>
+                    </uix:NClick>
+                    <uix:NClick ClickType="Single" DisplayName="Click 'ID3'" sap:VirtualizedContainerService.HintSize="338,166" sap2010:WorkflowViewState.IdRef="NClick_15" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="c437b863-15c5-4f8b-aa85-e4de0e6736b7" Version="V1">
+                      <uix:NClick.Target>
+                        <uix:TargetAnchorable BrowserURL="https://zen.auto/search-personal-leasing/make/volkswagen" DesignTimeRectangle="760, 390, 267, 28" ElementType="ListItem" FriendlyName="'ID3'" FullSelectorArgument="&lt;webctrl idx='11' parentid='react-tabs-1' tag='LI' /&gt;" FuzzySelectorArgument="[String.Format(&quot;&lt;webctrl type='' parentid='react-tabs-1' tag='LI' class='dropdown__option' check:innerText='{0}' /&gt;&quot;, in_SearchTerm2)]" Guid="2589f394-fd55-4833-9573-484668554d91" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAQ8AAAAgCAYAAAAMov1pAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAEeSURBVHhe7do9joJQFIDR2ZLFFG4QCtdhwiYMW5AtYM8W3uCgBAWLuVHCy5ziFDx+yi/vAl+7730C+CvxAELEAwgRDyBEPIAQ8QBCxAMIEQ8gRDyAEPEAQsQDCHlfPKomdV2Tjg/H3UxbH8Z7ivqycM0lncrbM4DN+nA8Jsfj2mNARmWdWuGAbKwbj5frVTr3UTlX0zVgy9aPxywUh3Rqh5FFPCAfm4hHcR1VfseWPiJtnYrZPcDWrB+PWySWdxnGF8jF6vEYvrAs7UiuxANysWo8js3Tu42yH1km54ew+OICOfhwPO7/btw97Thm1wgH5OJ98QD+FfEAQsQDCBEPIEQ8gBDxAELEAwgRDyBEPIAQ8QBCxAMIEQ8gYJ9+AIH9cdenG5dpAAAAAElFTkSuQmCC" InformativeScreenshot="0ca5be04783a801f74dab62f5b919b30.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='VW Lease Deals | Volkswagen Personal Car Leasing &amp;amp; Contract Hire Offers | PCH | ZenAuto' /&gt;" SearchSteps="FuzzySelector" Visibility="Interactive" />
+                      </uix:NClick.Target>
+                    </uix:NClick>
+                  </Sequence>
+                  <Switch x:TypeArguments="x:String" DisplayName="Switch" Expression="[in_WhatToExtract]" sap:VirtualizedContainerService.HintSize="497,715" sap2010:WorkflowViewState.IdRef="Switch`1_14">
+                    <Switch.Default>
+                      <Assign sap:VirtualizedContainerService.HintSize="262,61" sap2010:WorkflowViewState.IdRef="Assign_19">
+                        <Assign.To>
+                          <OutArgument x:TypeArguments="x:String">[out_value]</OutArgument>
+                        </Assign.To>
+                        <Assign.Value>
+                          <InArgument x:TypeArguments="x:String">ERROR</InArgument>
+                        </Assign.Value>
+                      </Assign>
+                    </Switch.Default>
+                    <Sequence x:Key="PricePerMonth" sap:VirtualizedContainerService.HintSize="400,520" sap2010:WorkflowViewState.IdRef="Sequence_30">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <uix:NGetText sap2010:Annotation.AnnotationText="Get price of product (DRAG FROM OBJECT REPOSITORY)" DisplayName="Get Text 'ID.3 HATCHBACK'" sap:VirtualizedContainerService.HintSize="338,208" sap2010:WorkflowViewState.IdRef="NGetText_36" ScopeIdentifier="c437b863-15c5-4f8b-aa85-e4de0e6736b7" Version="V1">
+                        <uix:NGetText.Target>
+                          <uix:TargetAnchorable BrowserURL="https://zen.auto/search-personal-leasing/make/volkswagen/id3" DesignTimeRectangle="700, 804, 118, 28" ElementType="Text" FriendlyName="'487'" FullSelectorArgument="&lt;webctrl css-selector='body&amp;gt;div&amp;gt;div&amp;gt;main&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;section&amp;gt;section&amp;gt;div&amp;gt;ol&amp;gt;li&amp;gt;div&amp;gt;section&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;p' idx='2' isleaf='1' tag='P' /&gt;" FuzzySelectorArgument="&lt;webctrl type='' class='price__value price__value--pound' isleaf='1' tag='P' /&gt;" Guid="11cea52e-418a-4ceb-9c28-e16e3fe6d75c" InformativeScreenshot="a42b32ed8a781e7e320448ccab8a8b3d.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='VW ID.3 Lease Deals UK | Personal Car Leasing Offers &amp;amp; Prices | ZenAuto' /&gt;" SearchSteps="FuzzySelector" Visibility="Interactive">
+                            <uix:TargetAnchorable.Anchors>
+                              <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                                <uix:Target DesignTimeRectangle="700, 458, 273, 24" ElementType="Text" FriendlyName="'ID.3 HATCHBACK'" FullSelectorArgument="&lt;webctrl parentid='react-tabs-5' tag='H2' aaname='ID.3 HATCHBACK' /&gt;" FuzzySelectorArgument="[String.Format(&quot;&lt;webctrl parentid='react-tabs-5' tag='H2' type='' class='model-range-card__title' check:text='{0}' /&gt;&quot;, in_TextAnchor1)]" ImageBase64="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" SearchSteps="FuzzySelector" />
+                              </scg:List>
+                            </uix:TargetAnchorable.Anchors>
+                          </uix:TargetAnchorable>
+                        </uix:NGetText.Target>
+                        <uix:NGetText.Text>
+                          <OutArgument x:TypeArguments="x:String">[out_value]</OutArgument>
+                        </uix:NGetText.Text>
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                      </uix:NGetText>
+                      <c:Extract_GBP_Currency_Amount DisplayName="Extract GBP Currency Amount" sap:VirtualizedContainerService.HintSize="338,148" sap2010:WorkflowViewState.IdRef="Extract_GBP_Currency_Amount_11" in_input="[out_value]" out_output="[out_value]" />
+                    </Sequence>
+                  </Switch>
+                  <Assign sap:VirtualizedContainerService.HintSize="497,71" sap2010:WorkflowViewState.IdRef="Assign_20">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:String">[out_variant]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="x:String">[in_TextAnchor1]</InArgument>
+                    </Assign.Value>
+                  </Assign>
+                </Sequence>
+              </ActivityAction>
+            </uix:NApplicationCard.Body>
+            <uix:NApplicationCard.TargetApp>
+              <uix:TargetApp Area="-8, -8, 1936, 1048" BrowserType="Chrome" IconBase64="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" InformativeScreenshot="101cabc5aa87175f24ca2c4720e01bf3.png" Selector="&lt;html app='chrome.exe' title='Personal Car Leasing Deals &amp;amp; Offers | Personal Contract Hire UK | PCH | ZenAuto' /&gt;" Url="[in_url]" />
+            </uix:NApplicationCard.TargetApp>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+          </uix:NApplicationCard>
         </Switch>
       </TryCatch.Try>
       <TryCatch.Catches>
-        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="616,21" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="668,21" sap2010:WorkflowViewState.IdRef="Catch`1_1">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -1120,7 +1247,7 @@
             <ActivityAction.Argument>
               <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
             </ActivityAction.Argument>
-            <Switch x:TypeArguments="x:String" DisplayName="Switch" Expression="[exception.Message]" sap:VirtualizedContainerService.HintSize="496,116" sap2010:WorkflowViewState.IdRef="Switch`1_2">
+            <Switch x:TypeArguments="x:String" DisplayName="Switch" Expression="[exception.Message]" sap:VirtualizedContainerService.HintSize="497,126" sap2010:WorkflowViewState.IdRef="Switch`1_2">
               <Switch.Default>
                 <Sequence sap:VirtualizedContainerService.HintSize="376,283" sap2010:WorkflowViewState.IdRef="Sequence_3">
                   <sap:WorkflowViewStateService.ViewState>
