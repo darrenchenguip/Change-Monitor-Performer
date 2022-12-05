@@ -1,0 +1,81 @@
+{
+  "name": "Change Monitor Performer",
+  "description": "Performer to process product checks in the queue",
+  "main": "Main.xaml",
+  "dependencies": {
+    "Change.Monitor.Library": "[1.0.10]",
+    "UiPath.DataService.Activities": "[21.10.1]",
+    "UiPath.Excel.Activities": "[2.12.3]",
+    "UiPath.System.Activities": "[22.4.4]",
+    "UiPath.Testing.Activities": "[22.4.3]",
+    "UiPath.UIAutomation.Activities": "[22.4.7]",
+    "UiPath.WebAPI.Activities": "[1.11.1]"
+  },
+  "webServices": [],
+  "entitiesStores": [
+    {
+      "serviceDocument": ".entities/EntitiesStore.json",
+      "tenantName": "Dev",
+      "namespace": "Change_Monitor_Performer",
+      "uniqueReference": "XDM2G43BFKr3wCYkCv0YnTlT0sKFcAOyz7EPfPwwZ6A="
+    }
+  ],
+  "schemaVersion": "4.0",
+  "studioVersion": "22.4.4.0",
+  "projectVersion": "1.0.32",
+  "runtimeOptions": {
+    "autoDispose": false,
+    "netFrameworkLazyLoading": false,
+    "isPausable": true,
+    "isAttended": false,
+    "requiresUserInteraction": true,
+    "supportsPersistence": false,
+    "excludedLoggedData": [
+      "Private:*",
+      "*password*"
+    ],
+    "executionType": "Workflow",
+    "readyForPiP": false,
+    "startsInPiP": false,
+    "mustRestoreAllDependencies": true
+  },
+  "designOptions": {
+    "projectProfile": "Developement",
+    "outputType": "Process",
+    "libraryOptions": {
+      "includeOriginalXaml": false,
+      "privateWorkflows": []
+    },
+    "processOptions": {
+      "ignoredFiles": []
+    },
+    "fileInfoCollection": [
+      {
+        "editingStatus": "InProgress",
+        "testCaseId": "6651131d-b4db-4543-aefb-4d512bd73152",
+        "testCaseType": "TestCase",
+        "fileName": "Tests\\tc01 Get Shop Name.xaml"
+      },
+      {
+        "editingStatus": "InProgress",
+        "testCaseId": "acdf1c7f-6071-4537-b701-0fe949d1385b",
+        "testCaseType": "TestCase",
+        "fileName": "Tests\\tc01 Check Shop.xaml"
+      }
+    ],
+    "modernBehavior": true
+  },
+  "expressionLanguage": "VisualBasic",
+  "entryPoints": [
+    {
+      "filePath": "Main.xaml",
+      "uniqueId": "766e9d6e-32c9-4285-8b0a-cf71a9f4d776",
+      "input": [],
+      "output": []
+    }
+  ],
+  "isTemplate": false,
+  "templateProjectData": {},
+  "publishData": {},
+  "targetFramework": "Windows"
+}
