@@ -106,11 +106,6 @@
         <InArgument x:TypeArguments="x:Boolean" x:Key="DisablePushNotifications">
           <Literal x:TypeArguments="x:Boolean" />
         </InArgument>
-        <OutArgument x:TypeArguments="x:String" x:Key="OutputTitle" />
-        <OutArgument x:TypeArguments="x:String" x:Key="OutputMessage" />
-        <OutArgument x:TypeArguments="x:String" x:Key="OutputURL" />
-        <OutArgument x:TypeArguments="x:Int32" x:Key="OutputResponseStatus" />
-        <OutArgument x:TypeArguments="x:String" x:Key="Output" />
         <InArgument x:TypeArguments="x:String" x:Key="ApiKey">
           <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_TransactionItem.SpecificContent(&quot;ApiKey&quot;).ToString" />
         </InArgument>

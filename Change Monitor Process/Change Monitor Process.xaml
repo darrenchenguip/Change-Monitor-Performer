@@ -5,11 +5,6 @@
     <x:Property sap2010:Annotation.AnnotationText="URL of a specific product to check" Name="ProductURL" Type="InArgument(x:String)" />
     <x:Property sap2010:Annotation.AnnotationText="The type of data to be extracted from the URL. Should be one of the following:&#xA;- Price&#xA;- PricePerUnit&#xA;- General" Name="WhatToExtract" Type="InArgument(x:String)" />
     <x:Property sap2010:Annotation.AnnotationText="Parameter used for automated testing. Should be TRUE in testing" Name="DisablePushNotifications" Type="InArgument(x:Boolean)" />
-    <x:Property Name="OutputTitle" Type="OutArgument(x:String)" />
-    <x:Property Name="OutputMessage" Type="OutArgument(x:String)" />
-    <x:Property Name="OutputURL" Type="OutArgument(x:String)" />
-    <x:Property Name="OutputResponseStatus" Type="OutArgument(x:Int32)" />
-    <x:Property Name="Output" Type="OutArgument(x:String)" />
     <x:Property Name="ApiKey" Type="InArgument(x:String)" />
     <x:Property Name="SearchTerm1" Type="InArgument(x:String)" />
     <x:Property Name="SearchTerm2" Type="InArgument(x:String)" />
@@ -26,7 +21,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1580,8367</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1580,8024</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Main_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="76">
@@ -131,7 +126,7 @@
       <x:Boolean x:Key="ShouldExpandAll">False</x:Boolean>
     </scg:Dictionary>
   </sap:WorkflowViewStateService.ViewState>
-  <Sequence DisplayName="Change Monitor" sap:VirtualizedContainerService.HintSize="1590,8302" sap2010:WorkflowViewState.IdRef="Sequence_10">
+  <Sequence DisplayName="Change Monitor" sap:VirtualizedContainerService.HintSize="1590,7959" sap2010:WorkflowViewState.IdRef="Sequence_10">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" sap2010:Annotation.AnnotationText="Variant name of a product (e.g. sunflow oil 1L, sunflower oil 3L). This value is automatically extracted from the product page." Name="ProductVariant" />
       <Variable x:TypeArguments="x:String" Name="PushoverAPIKey" />
@@ -185,7 +180,7 @@
         </sap:WorkflowViewStateService.ViewState>
       </ui:GetRobotAsset>
     </Sequence>
-    <Sequence DisplayName="Process Check" sap:VirtualizedContainerService.HintSize="1528,8019" sap2010:WorkflowViewState.IdRef="Sequence_85">
+    <Sequence DisplayName="Process Check" sap:VirtualizedContainerService.HintSize="1528,7676" sap2010:WorkflowViewState.IdRef="Sequence_85">
       <Sequence.Variables>
         <Variable x:TypeArguments="x:String" sap2010:Annotation.AnnotationText="The last value recorded for this product" Name="OldValue" />
         <Variable x:TypeArguments="x:Boolean" sap2010:Annotation.AnnotationText="Whether an existing record for this product exists or not (true/false)" Name="NoExistingValue" />
@@ -267,7 +262,7 @@
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </Delay>
-      <TryCatch sap2010:Annotation.AnnotationText="If the process throws an exception, catch it, and set the new value as &quot;ERROR&quot;" DisplayName="Run Process" sap:VirtualizedContainerService.HintSize="1466,523" sap2010:WorkflowViewState.IdRef="TryCatch_2">
+      <TryCatch sap2010:Annotation.AnnotationText="If the process throws an exception, catch it, and set the new value as &quot;ERROR&quot;" DisplayName="Run Process" sap:VirtualizedContainerService.HintSize="1466,1030" sap2010:WorkflowViewState.IdRef="TryCatch_2">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
@@ -285,45 +280,19 @@
             </sap:WorkflowViewStateService.ViewState>
             <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke Check Shop workflow" sap:VirtualizedContainerService.HintSize="338,122" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_56" UnSafe="False" WorkflowFileName="Change Monitor Process\Check Shop.xaml">
               <ui:InvokeWorkflowFile.Arguments>
-                <InArgument x:TypeArguments="x:String" x:Key="in_Shop">
-                  <VisualBasicValue x:TypeArguments="x:String" ExpressionText="ShopName" />
-                </InArgument>
-                <InArgument x:TypeArguments="x:String" x:Key="in_url">
-                  <VisualBasicValue x:TypeArguments="x:String" ExpressionText="ProductURL" />
-                </InArgument>
-                <OutArgument x:TypeArguments="x:String" x:Key="out_ScreenshotFilepath">
-                  <VisualBasicReference x:TypeArguments="x:String" ExpressionText="ScreenshotFilepath" />
-                </OutArgument>
-                <OutArgument x:TypeArguments="x:String" x:Key="out_value">
-                  <VisualBasicReference x:TypeArguments="x:String" ExpressionText="NewValue" />
-                </OutArgument>
-                <OutArgument x:TypeArguments="x:String" x:Key="out_variant">
-                  <VisualBasicReference x:TypeArguments="x:String" ExpressionText="ProductVariant" />
-                </OutArgument>
-                <OutArgument x:TypeArguments="x:String" x:Key="out_url">
-                  <VisualBasicReference x:TypeArguments="x:String" ExpressionText="URL" />
-                </OutArgument>
-                <InArgument x:TypeArguments="x:String" x:Key="in_WhatToExtract">
-                  <VisualBasicValue x:TypeArguments="x:String" ExpressionText="WhatToExtract" />
-                </InArgument>
-                <InArgument x:TypeArguments="x:String" x:Key="in_SearchTerm1">
-                  <VisualBasicValue x:TypeArguments="x:String" ExpressionText="SearchTerm1" />
-                </InArgument>
-                <InArgument x:TypeArguments="x:String" x:Key="in_SearchTerm2">
-                  <VisualBasicValue x:TypeArguments="x:String" ExpressionText="SearchTerm2" />
-                </InArgument>
-                <InArgument x:TypeArguments="x:String" x:Key="in_SearchTerm3">
-                  <VisualBasicValue x:TypeArguments="x:String" ExpressionText="SearchTerm3" />
-                </InArgument>
-                <InArgument x:TypeArguments="x:String" x:Key="in_TextAnchor1">
-                  <VisualBasicValue x:TypeArguments="x:String" ExpressionText="TextAnchor1" />
-                </InArgument>
-                <InArgument x:TypeArguments="x:String" x:Key="in_TextAnchor2">
-                  <VisualBasicValue x:TypeArguments="x:String" ExpressionText="TextAnchor2" />
-                </InArgument>
-                <InArgument x:TypeArguments="x:String" x:Key="in_TextAnchor3">
-                  <VisualBasicValue x:TypeArguments="x:String" ExpressionText="TextAnchor3" />
-                </InArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="in_Shop">[ShopName]</InArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="in_url">[ProductURL]</InArgument>
+                <OutArgument x:TypeArguments="x:String" x:Key="out_ScreenshotFilepath">[ScreenshotFilepath]</OutArgument>
+                <OutArgument x:TypeArguments="x:String" x:Key="out_value">[NewValue]</OutArgument>
+                <OutArgument x:TypeArguments="x:String" x:Key="out_variant">[ProductVariant]</OutArgument>
+                <OutArgument x:TypeArguments="x:String" x:Key="out_url">[URL]</OutArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="in_WhatToExtract">[WhatToExtract]</InArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="in_SearchTerm1">[SearchTerm1]</InArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="in_SearchTerm2">[SearchTerm2]</InArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="in_SearchTerm3">[SearchTerm3]</InArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="in_TextAnchor1">[TextAnchor1]</InArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="in_TextAnchor2">[TextAnchor2]</InArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="in_TextAnchor3">[TextAnchor3]</InArgument>
               </ui:InvokeWorkflowFile.Arguments>
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -334,18 +303,18 @@
           </Sequence>
         </TryCatch.Try>
         <TryCatch.Catches>
-          <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="404,21" sap2010:WorkflowViewState.IdRef="Catch`1_2">
+          <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="503,827" sap2010:WorkflowViewState.IdRef="Catch`1_2">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                <x:Boolean x:Key="IsPinned">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
             <ActivityAction x:TypeArguments="s:Exception">
               <ActivityAction.Argument>
                 <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
               </ActivityAction.Argument>
-              <Switch x:TypeArguments="x:String" DisplayName="Switch" Expression="[exception.Message]" sap:VirtualizedContainerService.HintSize="497,144" sap2010:WorkflowViewState.IdRef="Switch`1_4">
+              <Switch x:TypeArguments="x:String" DisplayName="Switch" Expression="[exception.Message]" sap:VirtualizedContainerService.HintSize="497,758" sap2010:WorkflowViewState.IdRef="Switch`1_4">
                 <Switch.Default>
                   <Sequence sap2010:Annotation.AnnotationText="Error due to inability to find value specified in product process, or other error source" sap:VirtualizedContainerService.HintSize="376,325" sap2010:WorkflowViewState.IdRef="Sequence_62">
                     <sap:WorkflowViewStateService.ViewState>
@@ -377,7 +346,7 @@
                     <x:Boolean x:Key="IsPinned">True</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <Sequence x:Key="Shop not found" sap2010:Annotation.AnnotationText="Error handling specifically for shop name not fond in product process" sap:VirtualizedContainerService.HintSize="441,759" sap2010:WorkflowViewState.IdRef="Sequence_61">
+                <Sequence x:Key="Shop not found" sap2010:Annotation.AnnotationText="Error handling specifically for shop name not fond in product process" sap:VirtualizedContainerService.HintSize="441,564" sap2010:WorkflowViewState.IdRef="Sequence_61">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -385,7 +354,7 @@
                       <x:Boolean x:Key="IsPinned">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke Send Push Notification workflow" sap:VirtualizedContainerService.HintSize="400,122" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_39" UnSafe="False" WorkflowFileName="Change Monitor Process\Send Push Notification.xaml">
+                  <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke Send Push Notification workflow" sap:VirtualizedContainerService.HintSize="379,122" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_39" UnSafe="False" WorkflowFileName="Change Monitor Process\Send Push Notification.xaml">
                     <ui:InvokeWorkflowFile.Arguments>
                       <InArgument x:TypeArguments="x:String" x:Key="in_apikey">[PushoverErrorAPIKey]</InArgument>
                       <InArgument x:TypeArguments="x:String" x:Key="in_userkey">[PushoverUserKey]</InArgument>
@@ -405,37 +374,14 @@
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
                   </ui:InvokeWorkflowFile>
-                  <Sequence DisplayName="Automated Testing Helper Code" sap:VirtualizedContainerService.HintSize="400,380" sap2010:WorkflowViewState.IdRef="Sequence_100">
-                    <sap:WorkflowViewStateService.ViewState>
-                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                        <x:Boolean x:Key="IsPinned">True</x:Boolean>
-                      </scg:Dictionary>
-                    </sap:WorkflowViewStateService.ViewState>
-                    <Assign sap:VirtualizedContainerService.HintSize="338,70" sap2010:WorkflowViewState.IdRef="Assign_17">
-                      <Assign.To>
-                        <OutArgument x:TypeArguments="x:String">[Output]</OutArgument>
-                      </Assign.To>
-                      <Assign.Value>
-                        <InArgument x:TypeArguments="x:String">[exception.Message]</InArgument>
-                      </Assign.Value>
-                    </Assign>
-                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="338,148" sap2010:WorkflowViewState.IdRef="LogMessage_65" Level="Trace" Message="[&quot;Output: &quot; + Output]">
-                      <sap:WorkflowViewStateService.ViewState>
-                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                          <x:Boolean x:Key="IsPinned">True</x:Boolean>
-                        </scg:Dictionary>
-                      </sap:WorkflowViewStateService.ViewState>
-                    </ui:LogMessage>
-                  </Sequence>
-                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="400,91" sap2010:WorkflowViewState.IdRef="LogMessage_33" Level="Error" Message="[&quot;Shop not found. Check that &quot;&quot;&quot; + ShopName + &quot;&quot;&quot; from &quot;&quot;in_Shops&quot;&quot; argument matches a switch case in the product process.&quot;]">
+                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="379,148" sap2010:WorkflowViewState.IdRef="LogMessage_33" Level="Error" Message="[&quot;Shop not found. Check that &quot;&quot;&quot; + ShopName + &quot;&quot;&quot; from &quot;&quot;in_Shops&quot;&quot; argument matches a switch case in the product process.&quot;]">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsPinned">True</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
                   </ui:LogMessage>
-                  <TerminateWorkflow DisplayName="Terminate Workflow" Exception="[new Exception(&quot;Shop not found. Check that &quot;&quot;&quot; + ShopName + &quot;&quot;&quot; from &quot;&quot;in_Shops&quot;&quot; argument matches a switch case in the product process.&quot;)]" sap:VirtualizedContainerService.HintSize="400,32" sap2010:WorkflowViewState.IdRef="TerminateWorkflow_5" />
+                  <TerminateWorkflow DisplayName="Terminate Workflow" Exception="[new Exception(&quot;Shop not found. Check that &quot;&quot;&quot; + ShopName + &quot;&quot;&quot; from &quot;&quot;in_Shops&quot;&quot; argument matches a switch case in the product process.&quot;)]" sap:VirtualizedContainerService.HintSize="379,61" sap2010:WorkflowViewState.IdRef="TerminateWorkflow_5" />
                 </Sequence>
               </Switch>
             </ActivityAction>
@@ -503,12 +449,12 @@
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </ui:MultipleAssign>
-      <ui:IfElseIf sap2010:Annotation.AnnotationText="Depending on the result of the check, create a new record or do nothing." DisplayName="Else If" sap:VirtualizedContainerService.HintSize="1466,5456" sap2010:WorkflowViewState.IdRef="IfElseIf_2">
+      <ui:IfElseIf sap2010:Annotation.AnnotationText="Depending on the result of the check, create a new record or do nothing." DisplayName="Else If" sap:VirtualizedContainerService.HintSize="1466,4606" sap2010:WorkflowViewState.IdRef="IfElseIf_2">
         <ui:IfElseIf.ConditionBlocks>
           <sc:BindingList x:TypeArguments="ui:IfElseIfBlock" AllowEdit="True" AllowNew="True" AllowRemove="True" RaiseListChangedEvents="True">
             <ui:IfElseIfBlock BlockType="If" Condition="[NewValue &lt;&gt; OldValue]">
               <ui:IfElseIfBlock.Then>
-                <Sequence sap2010:Annotation.AnnotationText="Delete all previous records for the product (if there are any), then create a new record" DisplayName="Body" sap:VirtualizedContainerService.HintSize="688,4335" sap2010:WorkflowViewState.IdRef="Sequence_81">
+                <Sequence sap2010:Annotation.AnnotationText="Delete all previous records for the product (if there are any), then create a new record" DisplayName="Body" sap:VirtualizedContainerService.HintSize="688,3945" sap2010:WorkflowViewState.IdRef="Sequence_81">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -739,7 +685,7 @@
                       </Sequence>
                     </If.Else>
                   </If>
-                  <If sap2010:Annotation.AnnotationText="Send notification depending on whether the check is a Price Check or a Stock Check" Condition="[StockCheckMode]" sap:VirtualizedContainerService.HintSize="626,2110" sap2010:WorkflowViewState.IdRef="If_45">
+                  <If sap2010:Annotation.AnnotationText="Send notification depending on whether the check is a Price Check or a Stock Check" Condition="[StockCheckMode]" sap:VirtualizedContainerService.HintSize="626,1720" sap2010:WorkflowViewState.IdRef="If_45">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
@@ -748,7 +694,7 @@
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
                     <If.Then>
-                      <Sequence sap2010:Annotation.AnnotationText="Send stock check notification" DisplayName="Stock Checking Mode" sap:VirtualizedContainerService.HintSize="462,710" sap2010:WorkflowViewState.IdRef="Sequence_91">
+                      <Sequence sap2010:Annotation.AnnotationText="Send stock check notification" DisplayName="Stock Checking Mode" sap:VirtualizedContainerService.HintSize="441,580" sap2010:WorkflowViewState.IdRef="Sequence_91">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -756,7 +702,7 @@
                             <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
-                        <If sap2010:Annotation.AnnotationText="If NewValue is ERROR it means that the &quot;Out of Stock&quot; message has disappeared, so set NewValue to &quot;In Stock&quot;" Condition="[NewValue = &quot;ERROR&quot;]" sap:VirtualizedContainerService.HintSize="400,133" sap2010:WorkflowViewState.IdRef="If_43">
+                        <If sap2010:Annotation.AnnotationText="If NewValue is ERROR it means that the &quot;Out of Stock&quot; message has disappeared, so set NewValue to &quot;In Stock&quot;" Condition="[NewValue = &quot;ERROR&quot;]" sap:VirtualizedContainerService.HintSize="379,133" sap2010:WorkflowViewState.IdRef="If_43">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
@@ -784,7 +730,7 @@
                             </Sequence>
                           </If.Else>
                         </If>
-                        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="400,61" sap2010:WorkflowViewState.IdRef="LogMessage_46" Level="Info" Message="[&quot;Sending to Stock Check Alerts pushover app&quot;]">
+                        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="379,61" sap2010:WorkflowViewState.IdRef="LogMessage_46" Level="Info" Message="[&quot;Sending to Stock Check Alerts pushover app&quot;]">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <x:Boolean x:Key="IsPinned">False</x:Boolean>
@@ -792,7 +738,7 @@
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
                         </ui:LogMessage>
-                        <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Send notification to &quot;Stock Check Alerts&quot; Pushover app" DisplayName="Invoke Send Push Notification workflow" sap:VirtualizedContainerService.HintSize="400,153" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_52" UnSafe="False" WorkflowFileName="Change Monitor Process\Send Push Notification.xaml">
+                        <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Send notification to &quot;Stock Check Alerts&quot; Pushover app" DisplayName="Invoke Send Push Notification workflow" sap:VirtualizedContainerService.HintSize="379,153" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_52" UnSafe="False" WorkflowFileName="Change Monitor Process\Send Push Notification.xaml">
                           <ui:InvokeWorkflowFile.Arguments>
                             <InArgument x:TypeArguments="x:String" x:Key="in_apikey">[PushoverAPIKey]</InArgument>
                             <InArgument x:TypeArguments="x:String" x:Key="in_userkey">[PushoverUserKey]</InArgument>
@@ -811,104 +757,10 @@
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
                         </ui:InvokeWorkflowFile>
-                        <Sequence DisplayName="Automated Testing Helper Code" sap:VirtualizedContainerService.HintSize="400,90" sap2010:WorkflowViewState.IdRef="Sequence_97">
-                          <sap:WorkflowViewStateService.ViewState>
-                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                            </scg:Dictionary>
-                          </sap:WorkflowViewStateService.ViewState>
-                          <ui:MultipleAssign DisplayName="Assign Output for Automated Testing" sap:VirtualizedContainerService.HintSize="431,224" sap2010:WorkflowViewState.IdRef="MultipleAssign_3">
-                            <ui:MultipleAssign.AssignOperations>
-                              <scg:List x:TypeArguments="ui:AssignOperation" Capacity="8">
-                                <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_7">
-                                  <ui:AssignOperation.To>
-                                    <OutArgument x:TypeArguments="x:String">[OutputTitle]</OutArgument>
-                                  </ui:AssignOperation.To>
-                                  <ui:AssignOperation.Value>
-                                    <InArgument x:TypeArguments="x:String">[Product + Environment.NewLine + "(" + ShopName + ")"]</InArgument>
-                                  </ui:AssignOperation.Value>
-                                </ui:AssignOperation>
-                                <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_8">
-                                  <ui:AssignOperation.To>
-                                    <OutArgument x:TypeArguments="x:String">[OutputMessage]</OutArgument>
-                                  </ui:AssignOperation.To>
-                                  <ui:AssignOperation.Value>
-                                    <InArgument x:TypeArguments="x:String">[NewValue]</InArgument>
-                                  </ui:AssignOperation.Value>
-                                </ui:AssignOperation>
-                                <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_9">
-                                  <ui:AssignOperation.To>
-                                    <OutArgument x:TypeArguments="x:String">[OutputURL]</OutArgument>
-                                  </ui:AssignOperation.To>
-                                  <ui:AssignOperation.Value>
-                                    <InArgument x:TypeArguments="x:String">[URL]</InArgument>
-                                  </ui:AssignOperation.Value>
-                                </ui:AssignOperation>
-                                <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_10">
-                                  <ui:AssignOperation.To>
-                                    <OutArgument x:TypeArguments="x:Int32">[OutputResponseStatus]</OutArgument>
-                                  </ui:AssignOperation.To>
-                                  <ui:AssignOperation.Value>
-                                    <InArgument x:TypeArguments="x:Int32">[PushNotificationResponseStatus]</InArgument>
-                                  </ui:AssignOperation.Value>
-                                </ui:AssignOperation>
-                                <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_19">
-                                  <ui:AssignOperation.To>
-                                    <OutArgument x:TypeArguments="x:String">[Output]</OutArgument>
-                                  </ui:AssignOperation.To>
-                                  <ui:AssignOperation.Value>
-                                    <InArgument x:TypeArguments="x:String">Send stock check notification</InArgument>
-                                  </ui:AssignOperation.Value>
-                                </ui:AssignOperation>
-                              </scg:List>
-                            </ui:MultipleAssign.AssignOperations>
-                            <sap:WorkflowViewStateService.ViewState>
-                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                <x:Boolean x:Key="IsPinned">True</x:Boolean>
-                              </scg:Dictionary>
-                            </sap:WorkflowViewStateService.ViewState>
-                          </ui:MultipleAssign>
-                          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="431,87" sap2010:WorkflowViewState.IdRef="LogMessage_50" Level="Trace" Message="[&quot;OutputTitle: &quot; + OutputTitle]">
-                            <sap:WorkflowViewStateService.ViewState>
-                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                <x:Boolean x:Key="IsPinned">True</x:Boolean>
-                              </scg:Dictionary>
-                            </sap:WorkflowViewStateService.ViewState>
-                          </ui:LogMessage>
-                          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="431,87" sap2010:WorkflowViewState.IdRef="LogMessage_51" Level="Trace" Message="[&quot;OutputMessage: &quot; + OutputMessage]">
-                            <sap:WorkflowViewStateService.ViewState>
-                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                <x:Boolean x:Key="IsPinned">True</x:Boolean>
-                              </scg:Dictionary>
-                            </sap:WorkflowViewStateService.ViewState>
-                          </ui:LogMessage>
-                          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="431,87" sap2010:WorkflowViewState.IdRef="LogMessage_52" Level="Trace" Message="[&quot;OutputURL: &quot; + OutputURL]">
-                            <sap:WorkflowViewStateService.ViewState>
-                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                <x:Boolean x:Key="IsPinned">True</x:Boolean>
-                              </scg:Dictionary>
-                            </sap:WorkflowViewStateService.ViewState>
-                          </ui:LogMessage>
-                          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="431,87" sap2010:WorkflowViewState.IdRef="LogMessage_53" Level="Trace" Message="[&quot;OutputResponseStatus: &quot; + OutputResponseStatus.ToString]">
-                            <sap:WorkflowViewStateService.ViewState>
-                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                <x:Boolean x:Key="IsPinned">True</x:Boolean>
-                              </scg:Dictionary>
-                            </sap:WorkflowViewStateService.ViewState>
-                          </ui:LogMessage>
-                          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="431,87" sap2010:WorkflowViewState.IdRef="LogMessage_66" Level="Trace" Message="[&quot;Output: &quot; + Output]">
-                            <sap:WorkflowViewStateService.ViewState>
-                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                <x:Boolean x:Key="IsPinned">True</x:Boolean>
-                              </scg:Dictionary>
-                            </sap:WorkflowViewStateService.ViewState>
-                          </ui:LogMessage>
-                        </Sequence>
                       </Sequence>
                     </If.Then>
                     <If.Else>
-                      <If sap2010:Annotation.AnnotationText="Send price check notification" Condition="[NewValue = &quot;ERROR&quot;]" DisplayName="Price Checking Mode" sap:VirtualizedContainerService.HintSize="544,1206" sap2010:WorkflowViewState.IdRef="If_44">
+                      <If sap2010:Annotation.AnnotationText="Send price check notification" Condition="[NewValue = &quot;ERROR&quot;]" DisplayName="Price Checking Mode" sap:VirtualizedContainerService.HintSize="523,946" sap2010:WorkflowViewState.IdRef="If_44">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
@@ -917,15 +769,15 @@
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
                         <If.Then>
-                          <Sequence DisplayName="Send Error Notification" sap:VirtualizedContainerService.HintSize="462,506" sap2010:WorkflowViewState.IdRef="Sequence_92">
+                          <Sequence DisplayName="Send Error Notification" sap:VirtualizedContainerService.HintSize="441,376" sap2010:WorkflowViewState.IdRef="Sequence_92">
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                 <x:Boolean x:Key="IsPinned">True</x:Boolean>
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
-                            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="400,61" sap2010:WorkflowViewState.IdRef="LogMessage_47" Level="Info" Message="[&quot;Sending to Price Alerts Errors pushover app&quot;]" />
-                            <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Send notification to &quot;Price Alerts Errors&quot; Pushover app" DisplayName="Invoke Send Push Notification workflow" sap:VirtualizedContainerService.HintSize="400,153" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_53" UnSafe="False" WorkflowFileName="Change Monitor Process\Send Push Notification.xaml">
+                            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="379,61" sap2010:WorkflowViewState.IdRef="LogMessage_47" Level="Info" Message="[&quot;Sending to Price Alerts Errors pushover app&quot;]" />
+                            <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Send notification to &quot;Price Alerts Errors&quot; Pushover app" DisplayName="Invoke Send Push Notification workflow" sap:VirtualizedContainerService.HintSize="379,153" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_53" UnSafe="False" WorkflowFileName="Change Monitor Process\Send Push Notification.xaml">
                               <ui:InvokeWorkflowFile.Arguments>
                                 <InArgument x:TypeArguments="x:String" x:Key="in_apikey">[PushoverErrorAPIKey]</InArgument>
                                 <InArgument x:TypeArguments="x:String" x:Key="in_userkey">[PushoverUserKey]</InArgument>
@@ -944,112 +796,18 @@
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
                             </ui:InvokeWorkflowFile>
-                            <Sequence DisplayName="Automated Testing Helper Code" sap:VirtualizedContainerService.HintSize="400,90" sap2010:WorkflowViewState.IdRef="Sequence_98">
-                              <sap:WorkflowViewStateService.ViewState>
-                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                                </scg:Dictionary>
-                              </sap:WorkflowViewStateService.ViewState>
-                              <ui:MultipleAssign DisplayName="Assign Output for Automated Testing" sap:VirtualizedContainerService.HintSize="431,224" sap2010:WorkflowViewState.IdRef="MultipleAssign_4">
-                                <ui:MultipleAssign.AssignOperations>
-                                  <scg:List x:TypeArguments="ui:AssignOperation" Capacity="8">
-                                    <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_11">
-                                      <ui:AssignOperation.To>
-                                        <OutArgument x:TypeArguments="x:String">[OutputTitle]</OutArgument>
-                                      </ui:AssignOperation.To>
-                                      <ui:AssignOperation.Value>
-                                        <InArgument x:TypeArguments="x:String">[Product + Environment.NewLine + "(" + ShopName + ")"]</InArgument>
-                                      </ui:AssignOperation.Value>
-                                    </ui:AssignOperation>
-                                    <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_12">
-                                      <ui:AssignOperation.To>
-                                        <OutArgument x:TypeArguments="x:String">[OutputMessage]</OutArgument>
-                                      </ui:AssignOperation.To>
-                                      <ui:AssignOperation.Value>
-                                        <InArgument x:TypeArguments="x:String">[NewValue]</InArgument>
-                                      </ui:AssignOperation.Value>
-                                    </ui:AssignOperation>
-                                    <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_13">
-                                      <ui:AssignOperation.To>
-                                        <OutArgument x:TypeArguments="x:String">[OutputURL]</OutArgument>
-                                      </ui:AssignOperation.To>
-                                      <ui:AssignOperation.Value>
-                                        <InArgument x:TypeArguments="x:String">[URL]</InArgument>
-                                      </ui:AssignOperation.Value>
-                                    </ui:AssignOperation>
-                                    <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_14">
-                                      <ui:AssignOperation.To>
-                                        <OutArgument x:TypeArguments="x:Int32">[OutputResponseStatus]</OutArgument>
-                                      </ui:AssignOperation.To>
-                                      <ui:AssignOperation.Value>
-                                        <InArgument x:TypeArguments="x:Int32">[PushNotificationResponseStatus]</InArgument>
-                                      </ui:AssignOperation.Value>
-                                    </ui:AssignOperation>
-                                    <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_20">
-                                      <ui:AssignOperation.To>
-                                        <OutArgument x:TypeArguments="x:String">[Output]</OutArgument>
-                                      </ui:AssignOperation.To>
-                                      <ui:AssignOperation.Value>
-                                        <InArgument x:TypeArguments="x:String">Send price check error notification</InArgument>
-                                      </ui:AssignOperation.Value>
-                                    </ui:AssignOperation>
-                                  </scg:List>
-                                </ui:MultipleAssign.AssignOperations>
-                                <sap:WorkflowViewStateService.ViewState>
-                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                    <x:Boolean x:Key="IsPinned">True</x:Boolean>
-                                  </scg:Dictionary>
-                                </sap:WorkflowViewStateService.ViewState>
-                              </ui:MultipleAssign>
-                              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="431,87" sap2010:WorkflowViewState.IdRef="LogMessage_54" Level="Trace" Message="[&quot;OutputTitle: &quot; + OutputTitle]">
-                                <sap:WorkflowViewStateService.ViewState>
-                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                    <x:Boolean x:Key="IsPinned">True</x:Boolean>
-                                  </scg:Dictionary>
-                                </sap:WorkflowViewStateService.ViewState>
-                              </ui:LogMessage>
-                              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="431,87" sap2010:WorkflowViewState.IdRef="LogMessage_55" Level="Trace" Message="[&quot;OutputMessage: &quot; + OutputMessage]">
-                                <sap:WorkflowViewStateService.ViewState>
-                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                    <x:Boolean x:Key="IsPinned">True</x:Boolean>
-                                  </scg:Dictionary>
-                                </sap:WorkflowViewStateService.ViewState>
-                              </ui:LogMessage>
-                              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="431,87" sap2010:WorkflowViewState.IdRef="LogMessage_56" Level="Trace" Message="[&quot;OutputURL: &quot; + OutputURL]">
-                                <sap:WorkflowViewStateService.ViewState>
-                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                    <x:Boolean x:Key="IsPinned">True</x:Boolean>
-                                  </scg:Dictionary>
-                                </sap:WorkflowViewStateService.ViewState>
-                              </ui:LogMessage>
-                              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="431,87" sap2010:WorkflowViewState.IdRef="LogMessage_57" Level="Trace" Message="[&quot;OutputResponseStatus: &quot; + OutputResponseStatus.ToString]">
-                                <sap:WorkflowViewStateService.ViewState>
-                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                    <x:Boolean x:Key="IsPinned">True</x:Boolean>
-                                  </scg:Dictionary>
-                                </sap:WorkflowViewStateService.ViewState>
-                              </ui:LogMessage>
-                              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="431,87" sap2010:WorkflowViewState.IdRef="LogMessage_67" Level="Trace" Message="[&quot;Output: &quot; + Output]">
-                                <sap:WorkflowViewStateService.ViewState>
-                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                    <x:Boolean x:Key="IsPinned">True</x:Boolean>
-                                  </scg:Dictionary>
-                                </sap:WorkflowViewStateService.ViewState>
-                              </ui:LogMessage>
-                            </Sequence>
                           </Sequence>
                         </If.Then>
                         <If.Else>
-                          <Sequence DisplayName="Send Price Update Notification" sap:VirtualizedContainerService.HintSize="462,506" sap2010:WorkflowViewState.IdRef="Sequence_93">
+                          <Sequence DisplayName="Send Price Update Notification" sap:VirtualizedContainerService.HintSize="441,376" sap2010:WorkflowViewState.IdRef="Sequence_93">
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                 <x:Boolean x:Key="IsPinned">True</x:Boolean>
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
-                            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="400,61" sap2010:WorkflowViewState.IdRef="LogMessage_48" Level="Info" Message="[&quot;Sending to Price Alerts pushover app&quot;]" />
-                            <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Send notification to &quot;Price Alerts&quot; Pushover app" DisplayName="Invoke Send Push Notification workflow" sap:VirtualizedContainerService.HintSize="400,153" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_54" UnSafe="False" WorkflowFileName="Change Monitor Process\Send Push Notification.xaml">
+                            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="379,61" sap2010:WorkflowViewState.IdRef="LogMessage_48" Level="Info" Message="[&quot;Sending to Price Alerts pushover app&quot;]" />
+                            <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Send notification to &quot;Price Alerts&quot; Pushover app" DisplayName="Invoke Send Push Notification workflow" sap:VirtualizedContainerService.HintSize="379,153" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_54" UnSafe="False" WorkflowFileName="Change Monitor Process\Send Push Notification.xaml">
                               <ui:InvokeWorkflowFile.Arguments>
                                 <InArgument x:TypeArguments="x:String" x:Key="in_apikey">[PushoverAPIKey]</InArgument>
                                 <InArgument x:TypeArguments="x:String" x:Key="in_userkey">[PushoverUserKey]</InArgument>
@@ -1068,100 +826,6 @@
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
                             </ui:InvokeWorkflowFile>
-                            <Sequence DisplayName="Automated Testing Helper Code" sap:VirtualizedContainerService.HintSize="400,90" sap2010:WorkflowViewState.IdRef="Sequence_99">
-                              <sap:WorkflowViewStateService.ViewState>
-                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                                </scg:Dictionary>
-                              </sap:WorkflowViewStateService.ViewState>
-                              <ui:MultipleAssign DisplayName="Assign Output for Automated Testing" sap:VirtualizedContainerService.HintSize="431,224" sap2010:WorkflowViewState.IdRef="MultipleAssign_5">
-                                <ui:MultipleAssign.AssignOperations>
-                                  <scg:List x:TypeArguments="ui:AssignOperation" Capacity="8">
-                                    <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_15">
-                                      <ui:AssignOperation.To>
-                                        <OutArgument x:TypeArguments="x:String">[OutputTitle]</OutArgument>
-                                      </ui:AssignOperation.To>
-                                      <ui:AssignOperation.Value>
-                                        <InArgument x:TypeArguments="x:String">[Product + Environment.NewLine + "(" + ShopName + ")"]</InArgument>
-                                      </ui:AssignOperation.Value>
-                                    </ui:AssignOperation>
-                                    <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_16">
-                                      <ui:AssignOperation.To>
-                                        <OutArgument x:TypeArguments="x:String">[OutputMessage]</OutArgument>
-                                      </ui:AssignOperation.To>
-                                      <ui:AssignOperation.Value>
-                                        <InArgument x:TypeArguments="x:String">[NewValue]</InArgument>
-                                      </ui:AssignOperation.Value>
-                                    </ui:AssignOperation>
-                                    <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_17">
-                                      <ui:AssignOperation.To>
-                                        <OutArgument x:TypeArguments="x:String">[OutputURL]</OutArgument>
-                                      </ui:AssignOperation.To>
-                                      <ui:AssignOperation.Value>
-                                        <InArgument x:TypeArguments="x:String">[URL]</InArgument>
-                                      </ui:AssignOperation.Value>
-                                    </ui:AssignOperation>
-                                    <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_18">
-                                      <ui:AssignOperation.To>
-                                        <OutArgument x:TypeArguments="x:Int32">[OutputResponseStatus]</OutArgument>
-                                      </ui:AssignOperation.To>
-                                      <ui:AssignOperation.Value>
-                                        <InArgument x:TypeArguments="x:Int32">[PushNotificationResponseStatus]</InArgument>
-                                      </ui:AssignOperation.Value>
-                                    </ui:AssignOperation>
-                                    <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_21">
-                                      <ui:AssignOperation.To>
-                                        <OutArgument x:TypeArguments="x:String">[Output]</OutArgument>
-                                      </ui:AssignOperation.To>
-                                      <ui:AssignOperation.Value>
-                                        <InArgument x:TypeArguments="x:String">Send price check notification</InArgument>
-                                      </ui:AssignOperation.Value>
-                                    </ui:AssignOperation>
-                                  </scg:List>
-                                </ui:MultipleAssign.AssignOperations>
-                                <sap:WorkflowViewStateService.ViewState>
-                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                    <x:Boolean x:Key="IsPinned">True</x:Boolean>
-                                  </scg:Dictionary>
-                                </sap:WorkflowViewStateService.ViewState>
-                              </ui:MultipleAssign>
-                              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="431,87" sap2010:WorkflowViewState.IdRef="LogMessage_58" Level="Trace" Message="[&quot;OutputTitle: &quot; + OutputTitle]">
-                                <sap:WorkflowViewStateService.ViewState>
-                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                    <x:Boolean x:Key="IsPinned">True</x:Boolean>
-                                  </scg:Dictionary>
-                                </sap:WorkflowViewStateService.ViewState>
-                              </ui:LogMessage>
-                              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="431,87" sap2010:WorkflowViewState.IdRef="LogMessage_59" Level="Trace" Message="[&quot;OutputMessage: &quot; + OutputMessage]">
-                                <sap:WorkflowViewStateService.ViewState>
-                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                    <x:Boolean x:Key="IsPinned">True</x:Boolean>
-                                  </scg:Dictionary>
-                                </sap:WorkflowViewStateService.ViewState>
-                              </ui:LogMessage>
-                              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="431,87" sap2010:WorkflowViewState.IdRef="LogMessage_60" Level="Trace" Message="[&quot;OutputURL: &quot; + OutputURL]">
-                                <sap:WorkflowViewStateService.ViewState>
-                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                    <x:Boolean x:Key="IsPinned">True</x:Boolean>
-                                  </scg:Dictionary>
-                                </sap:WorkflowViewStateService.ViewState>
-                              </ui:LogMessage>
-                              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="431,87" sap2010:WorkflowViewState.IdRef="LogMessage_61" Level="Trace" Message="[&quot;OutputResponseStatus: &quot; + OutputResponseStatus.ToString]">
-                                <sap:WorkflowViewStateService.ViewState>
-                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                    <x:Boolean x:Key="IsPinned">True</x:Boolean>
-                                  </scg:Dictionary>
-                                </sap:WorkflowViewStateService.ViewState>
-                              </ui:LogMessage>
-                              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="431,87" sap2010:WorkflowViewState.IdRef="LogMessage_68" Level="Trace" Message="[&quot;Output: &quot; + Output]">
-                                <sap:WorkflowViewStateService.ViewState>
-                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                    <x:Boolean x:Key="IsPinned">True</x:Boolean>
-                                  </scg:Dictionary>
-                                </sap:WorkflowViewStateService.ViewState>
-                              </ui:LogMessage>
-                            </Sequence>
                           </Sequence>
                         </If.Else>
                       </If>
@@ -1172,7 +836,7 @@
             </ui:IfElseIfBlock>
             <ui:IfElseIfBlock BlockType="ElseIf" Condition="[NewValue = OldValue]">
               <ui:IfElseIfBlock.Then>
-                <Sequence sap2010:Annotation.AnnotationText="Do nothing." DisplayName="Body" sap:VirtualizedContainerService.HintSize="555,761" sap2010:WorkflowViewState.IdRef="Sequence_72">
+                <Sequence sap2010:Annotation.AnnotationText="Do nothing." DisplayName="Body" sap:VirtualizedContainerService.HintSize="400,301" sap2010:WorkflowViewState.IdRef="Sequence_72">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -1180,47 +844,13 @@
                       <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="493,148" sap2010:WorkflowViewState.IdRef="LogMessage_41" Level="Info" Message="[&quot;No changes&quot;]">
+                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="338,148" sap2010:WorkflowViewState.IdRef="LogMessage_41" Level="Info" Message="[&quot;No changes&quot;]">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsPinned">True</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
                   </ui:LogMessage>
-                  <Sequence DisplayName="Automated Testing Helper Code" sap:VirtualizedContainerService.HintSize="493,420" sap2010:WorkflowViewState.IdRef="Sequence_101">
-                    <sap:WorkflowViewStateService.ViewState>
-                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                        <x:Boolean x:Key="IsPinned">True</x:Boolean>
-                      </scg:Dictionary>
-                    </sap:WorkflowViewStateService.ViewState>
-                    <ui:MultipleAssign DisplayName="Assign Output for Automated Testing" sap:VirtualizedContainerService.HintSize="431,110" sap2010:WorkflowViewState.IdRef="MultipleAssign_6">
-                      <ui:MultipleAssign.AssignOperations>
-                        <scg:List x:TypeArguments="ui:AssignOperation" Capacity="8">
-                          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_22">
-                            <ui:AssignOperation.To>
-                              <OutArgument x:TypeArguments="x:String">[Output]</OutArgument>
-                            </ui:AssignOperation.To>
-                            <ui:AssignOperation.Value>
-                              <InArgument x:TypeArguments="x:String">Old and new values identical, no notification</InArgument>
-                            </ui:AssignOperation.Value>
-                          </ui:AssignOperation>
-                        </scg:List>
-                      </ui:MultipleAssign.AssignOperations>
-                      <sap:WorkflowViewStateService.ViewState>
-                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                          <x:Boolean x:Key="IsPinned">True</x:Boolean>
-                        </scg:Dictionary>
-                      </sap:WorkflowViewStateService.ViewState>
-                    </ui:MultipleAssign>
-                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="431,148" sap2010:WorkflowViewState.IdRef="LogMessage_69" Level="Trace" Message="[&quot;Output: &quot; + Output]">
-                      <sap:WorkflowViewStateService.ViewState>
-                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                          <x:Boolean x:Key="IsPinned">True</x:Boolean>
-                        </scg:Dictionary>
-                      </sap:WorkflowViewStateService.ViewState>
-                    </ui:LogMessage>
-                  </Sequence>
                 </Sequence>
               </ui:IfElseIfBlock.Then>
             </ui:IfElseIfBlock>

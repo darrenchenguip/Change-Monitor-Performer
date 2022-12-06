@@ -142,7 +142,7 @@
               <x:Boolean x:Key="IsPinned">False</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <uix:NApplicationCard WebDriverMode="{x:Null}" x:Key="sainsburys" sap2010:Annotation.AnnotationText="Set product page to get price from" AttachMode="SingleWindow" CloseMode="Never" DisplayName="Use Browser Chrome: Hula Hoops Original Potato Ring Crisps 6x24g | Sainsbury's" sap:VirtualizedContainerService.HintSize="593,1337" sap2010:WorkflowViewState.IdRef="NApplicationCard_3" InteractionMode="DebuggerApi" IsIncognito="True" OutUiElement="[Browser]" ScopeGuid="c437b863-15c5-4f8b-aa85-e4de0e6736b7" Version="V2">
+          <uix:NApplicationCard WebDriverMode="{x:Null}" x:Key="sainsburys" sap2010:Annotation.AnnotationText="Set product page to get price from" AttachMode="SingleWindow" CloseMode="Never" DisplayName="Use Browser Chrome: Hula Hoops Original Potato Ring Crisps 6x24g | Sainsbury's" sap:VirtualizedContainerService.HintSize="593,1336" sap2010:WorkflowViewState.IdRef="NApplicationCard_3" InteractionMode="DebuggerApi" IsIncognito="True" OutUiElement="[Browser]" ScopeGuid="c437b863-15c5-4f8b-aa85-e4de0e6736b7" Version="V2">
             <uix:NApplicationCard.Body>
               <ActivityAction x:TypeArguments="x:Object">
                 <ActivityAction.Argument>
@@ -309,7 +309,7 @@
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
           </uix:NApplicationCard>
-          <uix:NApplicationCard WebDriverMode="{x:Null}" x:Key="asda" sap2010:Annotation.AnnotationText="Set product page to get price from" AttachMode="SingleWindow" CloseMode="Never" DisplayName="Use Browser Chrome: Hula Hoops Salt &amp; Vinegar Multipack Crisps - ASDA Groceries" sap:VirtualizedContainerService.HintSize="593,1676" sap2010:WorkflowViewState.IdRef="NApplicationCard_6" InteractionMode="DebuggerApi" IsIncognito="True" OutUiElement="[Browser]" ScopeGuid="c437b863-15c5-4f8b-aa85-e4de0e6736b7" Version="V2">
+          <uix:NApplicationCard WebDriverMode="{x:Null}" x:Key="asda" sap2010:Annotation.AnnotationText="Set product page to get price from" AttachMode="SingleWindow" CloseMode="Never" DisplayName="Use Browser Chrome: Hula Hoops Salt &amp; Vinegar Multipack Crisps - ASDA Groceries" sap:VirtualizedContainerService.HintSize="593,1694" sap2010:WorkflowViewState.IdRef="NApplicationCard_6" InteractionMode="DebuggerApi" IsIncognito="True" OutUiElement="[Browser]" ScopeGuid="c437b863-15c5-4f8b-aa85-e4de0e6736b7" Version="V2">
             <uix:NApplicationCard.Body>
               <ActivityAction x:TypeArguments="x:Object">
                 <ActivityAction.Argument>
@@ -429,7 +429,7 @@
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
           </uix:NApplicationCard>
-          <uix:NApplicationCard WebDriverMode="{x:Null}" x:Key="morrisons" sap2010:Annotation.AnnotationText="Set product page to get price from" AttachMode="SingleWindow" CloseMode="Never" DisplayName="Use Browser Chrome: Morrisons | Online Shopping | Food, Drink &amp; More To Your Door" sap:VirtualizedContainerService.HintSize="593,1295" sap2010:WorkflowViewState.IdRef="NApplicationCard_7" InteractionMode="DebuggerApi" IsIncognito="True" OutUiElement="[Browser]" ScopeGuid="c437b863-15c5-4f8b-aa85-e4de0e6736b7" Version="V2">
+          <uix:NApplicationCard WebDriverMode="{x:Null}" x:Key="morrisons" sap2010:Annotation.AnnotationText="Set product page to get price from" AttachMode="SingleWindow" CloseMode="Never" DisplayName="Use Browser Chrome: Morrisons | Online Shopping | Food, Drink &amp; More To Your Door" sap:VirtualizedContainerService.HintSize="593,1293" sap2010:WorkflowViewState.IdRef="NApplicationCard_7" InteractionMode="DebuggerApi" IsIncognito="True" OutUiElement="[Browser]" ScopeGuid="c437b863-15c5-4f8b-aa85-e4de0e6736b7" Version="V2">
             <uix:NApplicationCard.Body>
               <ActivityAction x:TypeArguments="x:Object">
                 <ActivityAction.Argument>
@@ -531,7 +531,7 @@
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
           </uix:NApplicationCard>
-          <uix:NApplicationCard WebDriverMode="{x:Null}" x:Key="lidl" sap2010:Annotation.AnnotationText="Set product page to get price from" AttachMode="SingleWindow" CloseMode="Never" DisplayName="Use Browser Chrome: Woodcote 12 Large Free Range Eggs - at Lidl UK - www.lidl.co.uk" sap:VirtualizedContainerService.HintSize="593,1295" sap2010:WorkflowViewState.IdRef="NApplicationCard_8" InteractionMode="DebuggerApi" IsIncognito="True" OutUiElement="[Browser]" ScopeGuid="c437b863-15c5-4f8b-aa85-e4de0e6736b7" Version="V2">
+          <uix:NApplicationCard WebDriverMode="{x:Null}" x:Key="lidl" sap2010:Annotation.AnnotationText="Set product page to get price from" AttachMode="SingleWindow" CloseMode="Never" DisplayName="Use Browser Chrome: Woodcote 12 Large Free Range Eggs - at Lidl UK - www.lidl.co.uk" sap:VirtualizedContainerService.HintSize="593,1293" sap2010:WorkflowViewState.IdRef="NApplicationCard_8" InteractionMode="DebuggerApi" IsIncognito="True" OutUiElement="[Browser]" ScopeGuid="c437b863-15c5-4f8b-aa85-e4de0e6736b7" Version="V2">
             <uix:NApplicationCard.Body>
               <ActivityAction x:TypeArguments="x:Object">
                 <ActivityAction.Argument>
@@ -633,7 +633,7 @@
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
           </uix:NApplicationCard>
-          <uix:NApplicationCard WebDriverMode="{x:Null}" x:Key="leagueofgraphs" sap2010:Annotation.AnnotationText="Set product page to get price from" AttachMode="SingleWindow" CloseMode="Never" DisplayName="Use Browser Chrome: Tomo (EUW) - LeagueOfGraphs" sap:VirtualizedContainerService.HintSize="593,1273" sap2010:WorkflowViewState.IdRef="NApplicationCard_9" InteractionMode="DebuggerApi" IsIncognito="True" OutUiElement="[Browser]" ScopeGuid="c437b863-15c5-4f8b-aa85-e4de0e6736b7" Version="V2">
+          <uix:NApplicationCard WebDriverMode="{x:Null}" x:Key="leagueofgraphs" sap2010:Annotation.AnnotationText="Set product page to get price from" AttachMode="SingleWindow" CloseMode="Never" DisplayName="Use Browser Chrome: Tomo (EUW) - LeagueOfGraphs" sap:VirtualizedContainerService.HintSize="593,1272" sap2010:WorkflowViewState.IdRef="NApplicationCard_9" InteractionMode="DebuggerApi" IsIncognito="True" OutUiElement="[Browser]" ScopeGuid="c437b863-15c5-4f8b-aa85-e4de0e6736b7" Version="V2">
             <uix:NApplicationCard.Body>
               <ActivityAction x:TypeArguments="x:Object">
                 <ActivityAction.Argument>
@@ -739,7 +739,7 @@
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
           </uix:NApplicationCard>
-          <uix:NApplicationCard WebDriverMode="{x:Null}" x:Key="superdrug" sap2010:Annotation.AnnotationText="Set product page to get price from" AttachMode="SingleWindow" CloseMode="Never" DisplayName="Use Browser Chrome: Aveeno Daily Moisturising Yogurt Vanilla Body Wash 300ml | Toiletries | Superdru" sap:VirtualizedContainerService.HintSize="593,1295" sap2010:WorkflowViewState.IdRef="NApplicationCard_10" InteractionMode="DebuggerApi" IsIncognito="True" OutUiElement="[Browser]" ScopeGuid="c437b863-15c5-4f8b-aa85-e4de0e6736b7" Version="V2">
+          <uix:NApplicationCard WebDriverMode="{x:Null}" x:Key="superdrug" sap2010:Annotation.AnnotationText="Set product page to get price from" AttachMode="SingleWindow" CloseMode="Never" DisplayName="Use Browser Chrome: Aveeno Daily Moisturising Yogurt Vanilla Body Wash 300ml | Toiletries | Superdru" sap:VirtualizedContainerService.HintSize="593,1293" sap2010:WorkflowViewState.IdRef="NApplicationCard_10" InteractionMode="DebuggerApi" IsIncognito="True" OutUiElement="[Browser]" ScopeGuid="c437b863-15c5-4f8b-aa85-e4de0e6736b7" Version="V2">
             <uix:NApplicationCard.Body>
               <ActivityAction x:TypeArguments="x:Object">
                 <ActivityAction.Argument>
@@ -829,13 +829,13 @@
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
           </uix:NApplicationCard>
-          <Sequence x:Key="amazon" sap:VirtualizedContainerService.HintSize="655,1797" sap2010:WorkflowViewState.IdRef="Sequence_25">
+          <Sequence x:Key="amazon" sap:VirtualizedContainerService.HintSize="655,1837" sap2010:WorkflowViewState.IdRef="Sequence_25">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <uix:NApplicationCard WebDriverMode="{x:Null}" sap2010:Annotation.AnnotationText="Set product page to get price from" AttachMode="SingleWindow" CloseMode="Never" DisplayName="Use Browser Chrome: EF ECOFLOW 220Watt Bifacial Foldable Solar Panel, Complete with Adjustable Kicks" sap:VirtualizedContainerService.HintSize="593,1746" sap2010:WorkflowViewState.IdRef="NApplicationCard_11" InteractionMode="DebuggerApi" IsIncognito="True" OutUiElement="[Browser]" ScopeGuid="c437b863-15c5-4f8b-aa85-e4de0e6736b7" Version="V2" WindowResize="Maximize">
+            <uix:NApplicationCard WebDriverMode="{x:Null}" sap2010:Annotation.AnnotationText="Set product page to get price from" AttachMode="SingleWindow" CloseMode="Never" DisplayName="Use Browser Chrome: EF ECOFLOW 220Watt Bifacial Foldable Solar Panel, Complete with Adjustable Kicks" sap:VirtualizedContainerService.HintSize="593,1786" sap2010:WorkflowViewState.IdRef="NApplicationCard_11" InteractionMode="DebuggerApi" IsIncognito="True" OutUiElement="[Browser]" ScopeGuid="c437b863-15c5-4f8b-aa85-e4de0e6736b7" Version="V2" WindowResize="Maximize">
               <uix:NApplicationCard.Body>
                 <ActivityAction x:TypeArguments="x:Object">
                   <ActivityAction.Argument>
@@ -1115,7 +1115,7 @@
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
           </uix:NApplicationCard>
-          <uix:NApplicationCard WebDriverMode="{x:Null}" x:Key="zenauto" sap2010:Annotation.AnnotationText="Set product page to get price from" AttachMode="SingleWindow" CloseMode="Never" DisplayName="Use Browser Chrome: Personal Car Leasing Deals &amp; Offers | Personal Contract Hire UK | PCH | ZenAuto" sap:VirtualizedContainerService.HintSize="593,1266" sap2010:WorkflowViewState.IdRef="NApplicationCard_13" InteractionMode="DebuggerApi" IsIncognito="True" OutUiElement="[Browser]" ScopeGuid="c437b863-15c5-4f8b-aa85-e4de0e6736b7" Version="V2">
+          <uix:NApplicationCard WebDriverMode="{x:Null}" x:Key="zenauto" sap2010:Annotation.AnnotationText="Set product page to get price from" AttachMode="SingleWindow" CloseMode="Never" DisplayName="Use Browser Chrome: Personal Car Leasing Deals &amp; Offers | Personal Contract Hire UK | PCH | ZenAuto" sap:VirtualizedContainerService.HintSize="593,1266" sap2010:WorkflowViewState.IdRef="NApplicationCard_13" InteractionMode="DebuggerApi" IsIncognito="True" OutUiElement="[Browser]" ScopeGuid="c437b863-15c5-4f8b-aa85-e4de0e6736b7" Version="V2" WindowResize="Maximize">
             <uix:NApplicationCard.Body>
               <ActivityAction x:TypeArguments="x:Object">
                 <ActivityAction.Argument>
@@ -1136,7 +1136,7 @@
                     <uix:NClick.Target>
                       <uix:TargetAnchorable BrowserURL="https://zen.auto/" DesignTimeRectangle="377, 786, 15, 15" ElementType="Icon" FriendlyName="'PATH'" FullSelectorArgument="&lt;webctrl css-selector='body&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;button&amp;gt;span&amp;gt;svg&amp;gt;path' parentid='Layer_1' tag='path' /&gt;" FuzzySelectorArgument="&lt;webctrl type='' parentid='Layer_1' tag='path' class='' aaname='' /&gt;" Guid="509bc98a-1d68-47a6-aca8-996fac4552df" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAABMAAAATCAYAAAByUDbMAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAADHSURBVDhPrdQxDsIwDAVQzsctOEVvwS2yMyLBwoTEWNayMXTphliDPuAI299pJGrpD6mtp0ZJu1rvU14qDttez2pdi51VWD+NGXW439QQC5stWHc5vptSNVAgKXnDgm1Ou5yG/tv+FAMthLX01DYZOD4fpV+DEHcAETgHIQ5DGPhbDEIohkRgBCEhhtitoWqnHGIMkopAilkI65Zr4zAG4XnLPVRYBEnmwILZz8lCEgZWP6cIkkSzapsYav0FsVl3AP9kQSzlF/JDSXAjSdJMAAAAAElFTkSuQmCC" InformativeScreenshot="da30ccf2cf197b302abfc205d6f80467.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Personal Car Leasing Deals &amp;amp; Offers | Personal Contract Hire UK | PCH | ZenAuto' /&gt;" SearchSteps="FuzzySelector" Visibility="Interactive">
                         <uix:TargetAnchorable.Anchors>
-                          <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                          <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
                             <uix:Target DesignTimeRectangle="86, 810, 294, 32" ElementType="Text" FriendlyName="'Cookies'" FullSelectorArgument="&lt;webctrl css-selector='body&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;h4' tag='H4' /&gt;" FuzzySelectorArgument="&lt;webctrl type='' tag='H4' class='cookie-banner__title' aaname=' Cookies ' check:innerText='COOKIES' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAASoAAAAkCAYAAAA+R3frAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAa3SURBVHhe7ZxBT9tIFMf7+fZb5AP0A3DhtCcOq544ceFQKRcOCKnaSEiRkMKiIJDbsolSUgKmkaOmcQP2kloE3o4Txxl73thOwIm1+3/S7xLPmInD/PTmeew3v/35ngAAoMhAVACAwgNRAQAKD0QFACg8EBUAoPBAVACAwgNRFYGjQ9q5Mcm4G5LljckbCx5HZDp9qt+c08YR0yfCB9r80qK6PSTzwZv2H3tku0NqDzpUvjikEtsvATGmd187kzGZo/k5LWdIzX6Lds8+8P1CTqjc7VBV4qB1yLQTnBlUibWtfmvQ9klw/PScDmLHy5+l/szfSuaC3oV9JaTvHP4OwXduD8zJ+Be+juBVgKjWSpX2Bg55z5Qczx4Zl1z/fdq67pH1FLRLCm9I1UaaXHw+0HZ3SG7amER4Dz3a+7jPnMOnTWbQbhbu4Fxtd3ROhhc0kML9IbVt9sgNPp+F+U06B/O3kmNIlbDvlM2rjNfxsUe7sb4gfyCqdXFskPEr+OfPENGJ6VOlg3tmhifGmCzrVJ8VCGnUR+OgbcZ4HlHzqsqcL4uo9mlnoH4Hz23TptwuZ1GVWur59aFKDuQPRLUONFlEUkQnZpUqzoJCCWMszsWIxR/TAuKMhsj4WvHMKl1Um9+GomcsvB7txJe6uYrKoOZClxKiWgcQ1crhs4hJPI3ItLthLcWvOdmP00PyxNy4ZSa4H2KJaIX9u9R80NnQodqZPKb3tPND03YsxjQwp+e0emTqMq5xn8oRwaSI6swkK/g8jGeHqrFxTVhGVJ5DpjPUYM6Xb+2+ei3FdTT7HTr4UqOtTzXavelQbWCTNWkIUa0DiGrVnHbUCSrC/dmILnck3jY6VAlrVHwG4Lkd2mKK7qWPDWoyDvLuG/MloG5MA4PeSuea8bYhJMPUc+zvJ1K7BFGxGaUm0/NZQlRsPYyh1HWCHvNo3+jqbuK7Xxq0w3wO8gWiWjFb30fBdJDin45WUgpcBsAtl2TOhIiU4rjIDII+G5Y6WZU6UQy2rvMoxhG20cljn/buVdP6x7S1sxxFxWW3SaIC6wGiWjEVZXaPqB651Z7MNrNEyzKx1Ak5pmZ7eqyieCrLmPaZ7yKWlKez47w8uLpUmhSXEZXnzpfQCl+lzE+MR40x2U6ParcXtG1gS0IReBP8MmH88fkvtiF4DcSSJ6g5heHXdti2PMlySODaDtrPw7L8fU3Lj0nNDufy40XVUz6jJ5HZpY3/tYvpQoxh309dUq+MGu7Iplq7BmmtiYioIKm8YaQQWS6lo4oqY3GXmezT5dELxsRkI3OBZBSVv2yNnzdOnqISmWHZVrNUXSTVEkF+hKKCpFbB/11UHfZGQGJ9yidXUfkEG2+Dw8kxpvY1alirZiIqSGpV1Kiu7FWaF7WzsHcfdAvDI6PBt5XhCubTya4ZE3OOOOWfceuIsTRnxzlRCSFxNwP8fso+LIllRPU8ewSG4a4l9ZU4PqHybZeajkOuaKcNJy46kDdvIKnVok5uf9JpnoFj4IQzzYz49lOqVHsIGocxF9xSYzq6YLIjWXC8qHR3/dR9WBJLiCr9mmTAfwazx2RaC2bB4OXgrt+quWQyCr+gzG10DNmn0mwSs3uekjMSdge4PNkWHpNm06pYUs2XcAnyOGpQm9mH5YlMZSPsL7EuUU14+XIdvByIauWcMEstEU8jat7G35TgvxWhTYbrSRNTk5EI1ZhdgzaPpf5iKXMwGKkSEmFZ8uZK/ZiMm5PImEr1c6o63Bn9O36yLJPlUbq2mXFpNn0uI6qfjcmuch3hdWp2yXR7VPlS1WxuZe4KPpi8UEFuQFRrIPUh2KcxebGMIzIxz8TETHrSn+kfiV9d5TUnaWOa1HYS3qgQ2ek+IS3LOeSfV+QyudcuposI+8fOHallaa6h3Zd34INVAFGtCXY5lhDRiZlBdrp4tOlAs6RbdEyz8EZdZmd8mqgEpxrhxnfqr1BUqZFl3xd4dSCqNbJ51Sc7w3uf/IiLyqf0N//MnS68hy7tyktDhkXG5Id712KfMcwkKoFOjpHnBosiKrEUrifdnQS5AVGtm+NTqgyG5OqEM3mSv6GRgcC/M9W1w7cscLHwrmq/ttVPGtOYXL+uk/givmyimryyxuVrbuENgjxFNXlRYPL1838D+65D2ymSB/kBURWIUv0oWvRNfd1vjONqtP8nvkC8CMqY/svPvgnp/y5/V59FfwOQCxAVAKDwQFQAgMIDUQEACg9EBQAoPBAVAKDwQFQAgMIDUQEACg9EBQAoPBAVAKDwQFQAgILznv4FRg+rvO6MIGIAAAAASUVORK5CYII=" SearchSteps="FuzzySelector" />
                           </scg:List>
                         </uix:TargetAnchorable.Anchors>
