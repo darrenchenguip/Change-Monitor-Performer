@@ -128,10 +128,16 @@
   </sap:WorkflowViewStateService.ViewState>
   <Sequence DisplayName="Change Monitor" sap:VirtualizedContainerService.HintSize="1590,7959" sap2010:WorkflowViewState.IdRef="Sequence_10">
     <Sequence.Variables>
-      <Variable x:TypeArguments="x:String" sap2010:Annotation.AnnotationText="Variant name of a product (e.g. sunflow oil 1L, sunflower oil 3L). This value is automatically extracted from the product page." Name="ProductVariant" />
-      <Variable x:TypeArguments="x:String" Name="PushoverAPIKey" />
-      <Variable x:TypeArguments="x:String" Name="PushoverUserKey" />
-      <Variable x:TypeArguments="x:String" Name="PushoverErrorAPIKey" />
+      <Variable x:TypeArguments="x:String" sap2010:Annotation.AnnotationText="Variant name of a product (e.g. sunflow oil 1L, sunflower oil 3L). This value is automatically extracted from the product page." Name="ProductVariant">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsAnnotationDocked">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </Variable>
+      <Variable x:TypeArguments="x:String" sap2010:Annotation.AnnotationText="Pushover API key for price notifications" Name="PushoverAPIKey" />
+      <Variable x:TypeArguments="x:String" sap2010:Annotation.AnnotationText="Pushover user key for API authentication" Name="PushoverUserKey" />
+      <Variable x:TypeArguments="x:String" sap2010:Annotation.AnnotationText="Pushover API key for error notifications (e.g. when a price cannot be extracted from a website)" Name="PushoverErrorAPIKey" />
       <Variable x:TypeArguments="x:String" sap2010:Annotation.AnnotationText="URL of the product being checked" Name="URL" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
@@ -191,7 +197,7 @@
         <Variable x:TypeArguments="x:String" sap2010:Annotation.AnnotationText="Push notification title if the current check is successful" Name="PushNotificationTitle" />
         <Variable x:TypeArguments="x:String" sap2010:Annotation.AnnotationText="Push notification title if the current check is unsuccessful (i.e. resulted in ERROR)" Name="PushNotificationErrorTitle" />
         <Variable x:TypeArguments="x:String" sap2010:Annotation.AnnotationText="Numerical value extracted from &quot;NewValue&quot; extracted from the current check. Used for ease of sorting when data is exported by the report generator process." Name="SortValue" />
-        <Variable x:TypeArguments="x:String" Name="ShopName" />
+        <Variable x:TypeArguments="x:String" sap2010:Annotation.AnnotationText="Name of the shop, identified by parsing the URL domain name" Name="ShopName" />
         <Variable x:TypeArguments="x:String" Name="PushNotificationResponse" />
         <Variable x:TypeArguments="x:Int32" Name="PushNotificationResponseStatus" />
       </Sequence.Variables>
