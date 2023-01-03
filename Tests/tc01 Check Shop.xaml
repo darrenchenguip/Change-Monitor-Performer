@@ -112,7 +112,7 @@
           </InArgument>
           <InArgument x:TypeArguments="x:String" x:Key="in_SearchTerm3" />
           <InArgument x:TypeArguments="x:String" x:Key="in_TextAnchor1">
-            <Literal x:TypeArguments="x:String">ID.3 HATCHBACK</Literal>
+            <Literal x:TypeArguments="x:String">ID3</Literal>
           </InArgument>
           <InArgument x:TypeArguments="x:String" x:Key="in_TextAnchor2" />
           <InArgument x:TypeArguments="x:String" x:Key="in_TextAnchor3" />

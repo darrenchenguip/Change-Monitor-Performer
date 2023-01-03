@@ -17,7 +17,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1051,2082</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1051,2488</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Check_Shop_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="70">
@@ -115,7 +115,7 @@
       <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Check_Shop" sap:VirtualizedContainerService.HintSize="733,2017" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Check_Shop" sap:VirtualizedContainerService.HintSize="733,2423" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="ui:UiElement" Name="Browser" />
     </Sequence.Variables>
@@ -124,7 +124,7 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="671,1895" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="671,2301" sap2010:WorkflowViewState.IdRef="TryCatch_1">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -132,7 +132,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
       <TryCatch.Try>
-        <Switch x:TypeArguments="x:String" DisplayName="Switch" Expression="[in_Shop]" sap:VirtualizedContainerService.HintSize="633,1658" sap2010:WorkflowViewState.IdRef="Switch`1_4">
+        <Switch x:TypeArguments="x:String" DisplayName="Switch" Expression="[in_Shop]" sap:VirtualizedContainerService.HintSize="633,2064" sap2010:WorkflowViewState.IdRef="Switch`1_4">
           <Switch.Default>
             <Throw Exception="[new Exception(&quot;Shop not found&quot;)]" sap:VirtualizedContainerService.HintSize="334,97" sap2010:WorkflowViewState.IdRef="Throw_1" />
           </Switch.Default>
@@ -148,7 +148,7 @@
                 <ActivityAction.Argument>
                   <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
                 </ActivityAction.Argument>
-                <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="559,1079" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="559,1038" sap2010:WorkflowViewState.IdRef="Sequence_5">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -169,7 +169,7 @@
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
                   </uix:NClick>
-                  <Switch x:TypeArguments="x:String" DisplayName="Switch" Expression="[in_WhatToExtract]" sap:VirtualizedContainerService.HintSize="497,170" sap2010:WorkflowViewState.IdRef="Switch`1_5">
+                  <Switch x:TypeArguments="x:String" DisplayName="Switch" Expression="[in_WhatToExtract]" sap:VirtualizedContainerService.HintSize="497,171" sap2010:WorkflowViewState.IdRef="Switch`1_5">
                     <Switch.Default>
                       <Assign sap:VirtualizedContainerService.HintSize="262,61" sap2010:WorkflowViewState.IdRef="Assign_4">
                         <Assign.To>
@@ -180,13 +180,13 @@
                         </Assign.Value>
                       </Assign>
                     </Switch.Default>
-                    <Sequence x:Key="Price" sap:VirtualizedContainerService.HintSize="376,354" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                    <Sequence x:Key="Price" sap:VirtualizedContainerService.HintSize="400,384" sap2010:WorkflowViewState.IdRef="Sequence_6">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <uix:NGetText sap2010:Annotation.AnnotationText="Get price of product (DRAG FROM OBJECT REPOSITORY)" DisplayName="Get Text 'Price'" sap:VirtualizedContainerService.HintSize="334,198" sap2010:WorkflowViewState.IdRef="NGetText_5" ScopeIdentifier="c437b863-15c5-4f8b-aa85-e4de0e6736b7" Version="V1">
+                      <uix:NGetText sap2010:Annotation.AnnotationText="Get price of product (DRAG FROM OBJECT REPOSITORY)" DisplayName="Get Text 'Price'" sap:VirtualizedContainerService.HintSize="338,208" sap2010:WorkflowViewState.IdRef="NGetText_5" ScopeIdentifier="c437b863-15c5-4f8b-aa85-e4de0e6736b7" Version="V1">
                         <uix:NGetText.Target>
                           <uix:TargetAnchorable BrowserURL="https://www.sainsburys.co.uk/gol-ui/product/meatandfish-essentials/sainsburys-responsibly-sourced-scottish-salmon-fillet-x2-240g" DesignTimeRectangle="611, 685, 318, 26" ElementType="Text" FriendlyName="'Price'" FullSelectorArgument="&lt;webctrl parentid='root' tag='DIV' class='pd__cost__total* undefined' parentclass='pd__cost' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='root' tag='DIV' class='pd__cost__total* undefined' parentclass='pd__cost' type='' aaname='£3.25' check:text='£3.25£4.40' /&gt;" Guid="ed38d189-6dd2-4fcb-b18a-1434d9def054" ImageBase64="" InformativeScreenshot="b42e9f3e24843e568c98040e2d336bb7.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='*Sainsbury&amp;apos;s' /&gt;" SearchSteps="Selector" Visibility="Interactive" />
                         </uix:NGetText.Target>
@@ -199,9 +199,9 @@
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
                       </uix:NGetText>
-                      <c:Extract_GBP_Currency_Amount DisplayName="Extract GBP Currency Amount" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="Extract_GBP_Currency_Amount_4" in_input="[out_value]" out_output="[out_value]" />
+                      <c:Extract_GBP_Currency_Amount DisplayName="Extract GBP Currency Amount" sap:VirtualizedContainerService.HintSize="338,148" sap2010:WorkflowViewState.IdRef="Extract_GBP_Currency_Amount_4" in_input="[out_value]" out_output="[out_value]" />
                     </Sequence>
-                    <uix:NGetText x:Key="PricePerUnit" DisplayName="Get Text 'Price Per Unit'" sap:VirtualizedContainerService.HintSize="334,156" sap2010:WorkflowViewState.IdRef="NGetText_7" ScopeIdentifier="c437b863-15c5-4f8b-aa85-e4de0e6736b7" Version="V1">
+                    <uix:NGetText x:Key="PricePerUnit" DisplayName="Get Text 'Price Per Unit'" sap:VirtualizedContainerService.HintSize="334,166" sap2010:WorkflowViewState.IdRef="NGetText_7" ScopeIdentifier="c437b863-15c5-4f8b-aa85-e4de0e6736b7" Version="V1">
                       <uix:NGetText.Target>
                         <uix:TargetAnchorable BrowserURL="https://www.sainsburys.co.uk/gol-ui/product/fairy-platinum-plus-all-in-one-dishwasher-tablets-lemon-x63" DesignTimeRectangle="611, 620, 56, 26" ElementType="Text" FriendlyName="'27p / ea'" FullSelectorArgument="&lt;webctrl parentid='root' aria-label='unit price and measure*' class='pd__cost__per-unit' parentclass='pd__cost' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='root' aria-label='unit price and measure*' class='pd__cost__per-unit' parentclass='pd__cost' tag='SPAN' type='' aaname='27p / ea' check:text='27p / ea' /&gt;" Guid="3bb4295b-ff80-4b23-844d-1fa3648939db" ImageBase64="" InformativeScreenshot="3bd1c2d9bbdb17a35a926ce72387c1e7.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='*| Sainsbury&amp;apos;s' /&gt;" SearchSteps="Selector" Visibility="Interactive" />
                       </uix:NGetText.Target>
@@ -315,7 +315,7 @@
                 <ActivityAction.Argument>
                   <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
                 </ActivityAction.Argument>
-                <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="559,1437" sap2010:WorkflowViewState.IdRef="Sequence_12">
+                <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="559,1397" sap2010:WorkflowViewState.IdRef="Sequence_12">
                   <Sequence.Variables>
                     <Variable x:TypeArguments="x:String" Name="ProductName" />
                     <Variable x:TypeArguments="x:String" Name="ProductVariant" />
@@ -340,7 +340,7 @@
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
                   </uix:NClick>
-                  <Switch x:TypeArguments="x:String" DisplayName="Switch" Expression="[in_WhatToExtract]" sap:VirtualizedContainerService.HintSize="497,169" sap2010:WorkflowViewState.IdRef="Switch`1_7">
+                  <Switch x:TypeArguments="x:String" DisplayName="Switch" Expression="[in_WhatToExtract]" sap:VirtualizedContainerService.HintSize="497,171" sap2010:WorkflowViewState.IdRef="Switch`1_7">
                     <Switch.Default>
                       <Assign sap:VirtualizedContainerService.HintSize="262,61" sap2010:WorkflowViewState.IdRef="Assign_9">
                         <Assign.To>
@@ -351,13 +351,13 @@
                         </Assign.Value>
                       </Assign>
                     </Switch.Default>
-                    <Sequence x:Key="Price" sap:VirtualizedContainerService.HintSize="376,312" sap2010:WorkflowViewState.IdRef="Sequence_11">
+                    <Sequence x:Key="Price" sap:VirtualizedContainerService.HintSize="400,384" sap2010:WorkflowViewState.IdRef="Sequence_11">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <uix:NGetText sap2010:Annotation.AnnotationText="Get price of product (DRAG FROM OBJECT REPOSITORY)" DisplayName="Get Text 'now £3.00'" sap:VirtualizedContainerService.HintSize="334,198" sap2010:WorkflowViewState.IdRef="NGetText_11" ScopeIdentifier="c437b863-15c5-4f8b-aa85-e4de0e6736b7" ScrapingOptions="None" Version="V1">
+                      <uix:NGetText sap2010:Annotation.AnnotationText="Get price of product (DRAG FROM OBJECT REPOSITORY)" DisplayName="Get Text 'now £3.00'" sap:VirtualizedContainerService.HintSize="338,208" sap2010:WorkflowViewState.IdRef="NGetText_11" ScopeIdentifier="c437b863-15c5-4f8b-aa85-e4de0e6736b7" ScrapingOptions="None" Version="V1">
                         <uix:NGetText.Target>
                           <uix:TargetAnchorable BrowserURL="https://groceries.asda.com/product/large-multipack-crisps-10-packs/hula-hoops-variety-multipack-crisps/1000100852506" DesignTimeRectangle="580, 459, 67, 36" ElementType="Text" FriendlyName="'now £3.00'" FullSelectorArgument="&lt;webctrl css-selector='body&amp;gt;div&amp;gt;div&amp;gt;section&amp;gt;main&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;strong' tag='STRONG' /&gt;" FuzzySelectorArgument="&lt;webctrl type='' tag='STRONG' class='co-product__price pdp-main-details__price' /&gt;" Guid="9272e096-c56c-46e4-adb1-8d46d16201c0" InformativeScreenshot="26fc9f7c5ea1378c4c6ebaf5f0867450.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Hula Hoops Variety Multipack Crisps - ASDA Groceries' /&gt;" SearchSteps="FuzzySelector" Visibility="Interactive" />
                         </uix:NGetText.Target>
@@ -370,7 +370,7 @@
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
                       </uix:NGetText>
-                      <c:Extract_GBP_Currency_Amount DisplayName="Extract GBP Currency Amount" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="Extract_GBP_Currency_Amount_5" in_input="[out_value]" out_output="[out_value]" />
+                      <c:Extract_GBP_Currency_Amount DisplayName="Extract GBP Currency Amount" sap:VirtualizedContainerService.HintSize="338,148" sap2010:WorkflowViewState.IdRef="Extract_GBP_Currency_Amount_5" in_input="[out_value]" out_output="[out_value]" />
                     </Sequence>
                     <uix:NGetText x:Key="PricePerUnit" DisplayName="Get Text 'Price Per Unit'" sap:VirtualizedContainerService.HintSize="334,166" sap2010:WorkflowViewState.IdRef="NGetText_12" ScopeIdentifier="c437b863-15c5-4f8b-aa85-e4de0e6736b7" ScrapingOptions="None" Version="V1">
                       <uix:NGetText.Target>
@@ -435,7 +435,7 @@
                 <ActivityAction.Argument>
                   <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
                 </ActivityAction.Argument>
-                <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="559,1036" sap2010:WorkflowViewState.IdRef="Sequence_14">
+                <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="559,1038" sap2010:WorkflowViewState.IdRef="Sequence_14">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -456,7 +456,7 @@
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
                   </uix:NClick>
-                  <Switch x:TypeArguments="x:String" DisplayName="Switch" Expression="[in_WhatToExtract]" sap:VirtualizedContainerService.HintSize="497,169" sap2010:WorkflowViewState.IdRef="Switch`1_8">
+                  <Switch x:TypeArguments="x:String" DisplayName="Switch" Expression="[in_WhatToExtract]" sap:VirtualizedContainerService.HintSize="497,171" sap2010:WorkflowViewState.IdRef="Switch`1_8">
                     <Switch.Default>
                       <Assign sap:VirtualizedContainerService.HintSize="262,61" sap2010:WorkflowViewState.IdRef="Assign_11">
                         <Assign.To>
@@ -467,7 +467,7 @@
                         </Assign.Value>
                       </Assign>
                     </Switch.Default>
-                    <Sequence x:Key="Price" sap:VirtualizedContainerService.HintSize="400,352" sap2010:WorkflowViewState.IdRef="Sequence_13">
+                    <Sequence x:Key="Price" sap:VirtualizedContainerService.HintSize="400,478" sap2010:WorkflowViewState.IdRef="Sequence_13">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -488,7 +488,7 @@
                       </uix:NGetText>
                       <c:Extract_GBP_Currency_Amount DisplayName="Extract GBP Currency Amount" sap:VirtualizedContainerService.HintSize="338,148" sap2010:WorkflowViewState.IdRef="Extract_GBP_Currency_Amount_6" in_input="[out_value]" out_output="[out_value]" />
                     </Sequence>
-                    <Sequence x:Key="PricePerUnit" sap:VirtualizedContainerService.HintSize="400,290" sap2010:WorkflowViewState.IdRef="Sequence_15">
+                    <Sequence x:Key="PricePerUnit" sap:VirtualizedContainerService.HintSize="400,332" sap2010:WorkflowViewState.IdRef="Sequence_15">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -537,7 +537,7 @@
                 <ActivityAction.Argument>
                   <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
                 </ActivityAction.Argument>
-                <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="559,1036" sap2010:WorkflowViewState.IdRef="Sequence_18">
+                <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="559,1334" sap2010:WorkflowViewState.IdRef="Sequence_18">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -558,7 +558,7 @@
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
                   </uix:NClick>
-                  <Switch x:TypeArguments="x:String" DisplayName="Switch" Expression="[in_WhatToExtract]" sap:VirtualizedContainerService.HintSize="497,169" sap2010:WorkflowViewState.IdRef="Switch`1_9">
+                  <Switch x:TypeArguments="x:String" DisplayName="Switch" Expression="[in_WhatToExtract]" sap:VirtualizedContainerService.HintSize="497,171" sap2010:WorkflowViewState.IdRef="Switch`1_9">
                     <Switch.Default>
                       <Assign sap:VirtualizedContainerService.HintSize="262,61" sap2010:WorkflowViewState.IdRef="Assign_12">
                         <Assign.To>
@@ -569,7 +569,7 @@
                         </Assign.Value>
                       </Assign>
                     </Switch.Default>
-                    <Sequence x:Key="Price" sap:VirtualizedContainerService.HintSize="400,352" sap2010:WorkflowViewState.IdRef="Sequence_16">
+                    <Sequence x:Key="Price" sap:VirtualizedContainerService.HintSize="400,478" sap2010:WorkflowViewState.IdRef="Sequence_16">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -590,7 +590,7 @@
                       </uix:NGetText>
                       <c:Extract_GBP_Currency_Amount DisplayName="Extract GBP Currency Amount" sap:VirtualizedContainerService.HintSize="338,148" sap2010:WorkflowViewState.IdRef="Extract_GBP_Currency_Amount_7" in_input="[out_value]" out_output="[out_value]" />
                     </Sequence>
-                    <Sequence x:Key="PricePerUnit" sap:VirtualizedContainerService.HintSize="400,290" sap2010:WorkflowViewState.IdRef="Sequence_17">
+                    <Sequence x:Key="PricePerUnit" sap:VirtualizedContainerService.HintSize="400,332" sap2010:WorkflowViewState.IdRef="Sequence_17">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -639,7 +639,7 @@
                 <ActivityAction.Argument>
                   <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
                 </ActivityAction.Argument>
-                <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="559,1015" sap2010:WorkflowViewState.IdRef="Sequence_20">
+                <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="559,1016" sap2010:WorkflowViewState.IdRef="Sequence_20">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -660,7 +660,7 @@
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
                   </uix:NClick>
-                  <Switch x:TypeArguments="x:String" DisplayName="Switch" Expression="[in_WhatToExtract]" sap:VirtualizedContainerService.HintSize="497,148" sap2010:WorkflowViewState.IdRef="Switch`1_10">
+                  <Switch x:TypeArguments="x:String" DisplayName="Switch" Expression="[in_WhatToExtract]" sap:VirtualizedContainerService.HintSize="497,149" sap2010:WorkflowViewState.IdRef="Switch`1_10">
                     <Switch.Default>
                       <Assign sap:VirtualizedContainerService.HintSize="262,61" sap2010:WorkflowViewState.IdRef="Assign_13">
                         <Assign.To>
@@ -671,7 +671,7 @@
                         </Assign.Value>
                       </Assign>
                     </Switch.Default>
-                    <Sequence x:Key="Rank" sap:VirtualizedContainerService.HintSize="400,629" sap2010:WorkflowViewState.IdRef="Sequence_19">
+                    <Sequence x:Key="Rank" sap:VirtualizedContainerService.HintSize="400,691" sap2010:WorkflowViewState.IdRef="Sequence_19">
                       <Sequence.Variables>
                         <Variable x:TypeArguments="x:String" Name="Tier" />
                         <Variable x:TypeArguments="x:String" Name="LP" />
@@ -745,7 +745,7 @@
                 <ActivityAction.Argument>
                   <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
                 </ActivityAction.Argument>
-                <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="559,1036" sap2010:WorkflowViewState.IdRef="Sequence_22">
+                <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="559,1038" sap2010:WorkflowViewState.IdRef="Sequence_22">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -761,7 +761,7 @@
                       <OutArgument x:TypeArguments="x:String">[out_ScreenshotFilepath]</OutArgument>
                     </uix:NTakeScreenshot.SavedTo>
                   </uix:NTakeScreenshot>
-                  <Switch x:TypeArguments="x:String" DisplayName="Switch" Expression="[in_WhatToExtract]" sap:VirtualizedContainerService.HintSize="497,169" sap2010:WorkflowViewState.IdRef="Switch`1_11">
+                  <Switch x:TypeArguments="x:String" DisplayName="Switch" Expression="[in_WhatToExtract]" sap:VirtualizedContainerService.HintSize="497,171" sap2010:WorkflowViewState.IdRef="Switch`1_11">
                     <Switch.Default>
                       <Assign sap:VirtualizedContainerService.HintSize="262,61" sap2010:WorkflowViewState.IdRef="Assign_15">
                         <Assign.To>
@@ -772,7 +772,7 @@
                         </Assign.Value>
                       </Assign>
                     </Switch.Default>
-                    <Sequence x:Key="Price" sap:VirtualizedContainerService.HintSize="400,352" sap2010:WorkflowViewState.IdRef="Sequence_21">
+                    <Sequence x:Key="Price" sap:VirtualizedContainerService.HintSize="400,478" sap2010:WorkflowViewState.IdRef="Sequence_21">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -829,13 +829,13 @@
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
           </uix:NApplicationCard>
-          <Sequence x:Key="amazon" sap:VirtualizedContainerService.HintSize="655,1837" sap2010:WorkflowViewState.IdRef="Sequence_25">
+          <Sequence x:Key="amazon" sap:VirtualizedContainerService.HintSize="655,1797" sap2010:WorkflowViewState.IdRef="Sequence_25">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <uix:NApplicationCard WebDriverMode="{x:Null}" sap2010:Annotation.AnnotationText="Set product page to get price from" AttachMode="SingleWindow" CloseMode="Never" DisplayName="Use Browser Chrome: EF ECOFLOW 220Watt Bifacial Foldable Solar Panel, Complete with Adjustable Kicks" sap:VirtualizedContainerService.HintSize="593,1786" sap2010:WorkflowViewState.IdRef="NApplicationCard_11" InteractionMode="DebuggerApi" IsIncognito="True" OutUiElement="[Browser]" ScopeGuid="c437b863-15c5-4f8b-aa85-e4de0e6736b7" Version="V2" WindowResize="Maximize">
+            <uix:NApplicationCard WebDriverMode="{x:Null}" sap2010:Annotation.AnnotationText="Set product page to get price from" AttachMode="SingleWindow" CloseMode="Never" DisplayName="Use Browser Chrome: EF ECOFLOW 220Watt Bifacial Foldable Solar Panel, Complete with Adjustable Kicks" sap:VirtualizedContainerService.HintSize="593,1746" sap2010:WorkflowViewState.IdRef="NApplicationCard_11" InteractionMode="DebuggerApi" IsIncognito="True" OutUiElement="[Browser]" ScopeGuid="c437b863-15c5-4f8b-aa85-e4de0e6736b7" Version="V2" WindowResize="Maximize">
               <uix:NApplicationCard.Body>
                 <ActivityAction x:TypeArguments="x:Object">
                   <ActivityAction.Argument>
@@ -1064,7 +1064,7 @@
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <uix:NGetText sap2010:Annotation.AnnotationText="Get price of product (DRAG FROM OBJECT REPOSITORY)" DisplayName="Get Text '£2.00'" sap:VirtualizedContainerService.HintSize="338,198" sap2010:WorkflowViewState.IdRef="NGetText_33" ScopeIdentifier="c437b863-15c5-4f8b-aa85-e4de0e6736b7" Version="V1">
+                      <uix:NGetText sap2010:Annotation.AnnotationText="Get price of product (DRAG FROM OBJECT REPOSITORY)" DisplayName="Get Text '£2.00'" sap:VirtualizedContainerService.HintSize="338,208" sap2010:WorkflowViewState.IdRef="NGetText_33" ScopeIdentifier="c437b863-15c5-4f8b-aa85-e4de0e6736b7" Version="V1">
                         <uix:NGetText.Target>
                           <uix:TargetAnchorable BrowserURL="https://www.wilko.com/en-uk/pledge-fluffy-duster-refills-5-pack/p/0221897" DesignTimeRectangle="1176, 509, 114, 40" ElementType="Text" FriendlyName="'£2.00'" FullSelectorArgument="&lt;webctrl parentid='pdp-product-title' tag='DIV' class='pdp-price' parentclass='product-details product-details-side page-title' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='pdp-product-title' tag='DIV' class='pdp-price' parentclass='product-details product-details-side page-title' type='' /&gt;" Guid="9d2739a4-29c9-4356-8ad6-9fb53607260d" ImageBase64="" InformativeScreenshot="49e0c8ed66e79ecf210d3f9e2ea52aff.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='*Wilko*' /&gt;" SearchSteps="Selector" Visibility="Interactive" />
                         </uix:NGetText.Target>
@@ -1077,9 +1077,9 @@
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
                       </uix:NGetText>
-                      <c:Extract_GBP_Currency_Amount DisplayName="Extract GBP Currency Amount" sap:VirtualizedContainerService.HintSize="338,22" sap2010:WorkflowViewState.IdRef="Extract_GBP_Currency_Amount_10" in_input="[out_value]" out_output="[out_value]" />
+                      <c:Extract_GBP_Currency_Amount DisplayName="Extract GBP Currency Amount" sap:VirtualizedContainerService.HintSize="338,148" sap2010:WorkflowViewState.IdRef="Extract_GBP_Currency_Amount_10" in_input="[out_value]" out_output="[out_value]" />
                     </Sequence>
-                    <uix:NGetText x:Key="PricePerUnit" DisplayName="Get Text 'Price Per Unit'" sap:VirtualizedContainerService.HintSize="334,156" sap2010:WorkflowViewState.IdRef="NGetText_34" ScopeIdentifier="c437b863-15c5-4f8b-aa85-e4de0e6736b7" ScrapingOptions="None" Version="V1">
+                    <uix:NGetText x:Key="PricePerUnit" DisplayName="Get Text 'Price Per Unit'" sap:VirtualizedContainerService.HintSize="334,166" sap2010:WorkflowViewState.IdRef="NGetText_34" ScopeIdentifier="c437b863-15c5-4f8b-aa85-e4de0e6736b7" ScrapingOptions="None" Version="V1">
                       <uix:NGetText.Target>
                         <uix:TargetAnchorable BrowserURL="https://www.wilko.com/en-uk/pledge-expert-care-wood-cleaner-aloe-vera-500ml/p/0517775" DesignTimeRectangle="1294, 529, 97, 22" ElementType="Text" FriendlyName="'£ 4.00 per 1 L'" FullSelectorArgument="&lt;webctrl parentid='pdp-product-title' tag='DIV' class='pdp-unit-price' parentclass='product-details product-details-side page-title' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='pdp-product-title' tag='DIV' class='pdp-unit-price' parentclass='product-details product-details-side page-title' type='' /&gt;" Guid="cd53ffb3-749b-4c2c-93fb-d649ba1cdef8" ImageBase64="" InformativeScreenshot="48a3819a4c4cceb85eb1989ce1b41512.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Pledge Expert Care Wood Cleaner Aloe Vera 500ml | Wilko' /&gt;" SearchSteps="Selector" Visibility="Interactive" />
                       </uix:NGetText.Target>
@@ -1115,13 +1115,13 @@
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
           </uix:NApplicationCard>
-          <uix:NApplicationCard WebDriverMode="{x:Null}" x:Key="zenauto" sap2010:Annotation.AnnotationText="Set product page to get price from" AttachMode="SingleWindow" CloseMode="Never" DisplayName="Use Browser Chrome: Personal Car Leasing Deals &amp; Offers | Personal Contract Hire UK | PCH | ZenAuto" sap:VirtualizedContainerService.HintSize="593,1266" sap2010:WorkflowViewState.IdRef="NApplicationCard_13" InteractionMode="DebuggerApi" IsIncognito="True" OutUiElement="[Browser]" ScopeGuid="c437b863-15c5-4f8b-aa85-e4de0e6736b7" Version="V2" WindowResize="Maximize">
+          <uix:NApplicationCard WebDriverMode="{x:Null}" x:Key="zenauto" sap2010:Annotation.AnnotationText="Set product page to get price from" AttachMode="SingleWindow" CloseMode="Never" DisplayName="Use Browser Chrome: Personal Car Leasing Deals &amp; Offers | Personal Contract Hire UK | PCH | ZenAuto" sap:VirtualizedContainerService.HintSize="593,1672" sap2010:WorkflowViewState.IdRef="NApplicationCard_13" InteractionMode="DebuggerApi" IsIncognito="True" OutUiElement="[Browser]" ScopeGuid="c437b863-15c5-4f8b-aa85-e4de0e6736b7" Version="V2" WindowResize="Maximize">
             <uix:NApplicationCard.Body>
               <ActivityAction x:TypeArguments="x:Object">
                 <ActivityAction.Argument>
                   <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
                 </ActivityAction.Argument>
-                <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="559,1009" sap2010:WorkflowViewState.IdRef="Sequence_31">
+                <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="559,1415" sap2010:WorkflowViewState.IdRef="Sequence_31">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -1143,10 +1143,10 @@
                       </uix:TargetAnchorable>
                     </uix:NClick.Target>
                   </uix:NClick>
-                  <Sequence DisplayName="Search Required Car" sap:VirtualizedContainerService.HintSize="497,90" sap2010:WorkflowViewState.IdRef="Sequence_29">
+                  <Sequence DisplayName="Search Required Car" sap:VirtualizedContainerService.HintSize="497,496" sap2010:WorkflowViewState.IdRef="Sequence_29">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                         <x:Boolean x:Key="IsPinned">False</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
@@ -1166,22 +1166,6 @@
                         <uix:TargetAnchorable BrowserURL="https://zen.auto/" DesignTimeRectangle="322, 384, 190, 36" ElementType="Text" FriendlyName="'ABARTH'" FullSelectorArgument="[String.Format(&quot;&lt;webctrl aaname='*{0}*' parentid='zen' tag='A' /&gt;&quot;, in_SearchTerm1)]" FuzzySelectorArgument="[String.Format(&quot;&lt;webctrl parentid='zen' tag='A' type='' class='' check:text='{0}' /&gt;&quot;, in_SearchTerm1)]" Guid="8c3f2be2-3337-4fec-b1f7-46f54ce89611" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAMIAAAAoCAYAAACsPiXVAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAH0SURBVHhe7ddBSsNAFMZxr+Sii15IEDyCIF5DxCso3kI9g93bTbqwm27G9wkPhud7kUl37X/gR8xMmkT4vja5uFytG3DuKAJgKAJgKAJgKAJgKAJgKAJgKAJgKAJgKAJgKAJgKAJgKAJgjirC7d19m6apPTw+/Vm7ur5pX9tti0NzWovHy9v7R/vcbNI1zcfxvd//3oPWtdV+NXRuv6fsGs8vr+1wOKT/C07fUUVQuDSyYGWhU8gUtqwMHuQqjDpP/zk/f18G5+dSuPt5ioDK4iJ4qHa7XRrGKnQKXHa8B1FrKli/JrEIUgWeImDU4iJ4cLTNwluFTsfFIvTHZusyV4R4bYqAUYuLoDB5oBTEGFIPXTZiQBU+BVfbKsRZEXTdLLz/FaEaFOF8LSqCwuK/Btm+zIUufiPHkGeh11w2YtiFImDUoiLEoHrA+oBnc6Kg+be/78cS6e8Yyv6a1bkdj0YYNVwED1k2+iDNFaEPvh5vqtF/ti+C9ueCSxEwargI1cush89DVoVO+x44/0x82ZX4/B+LUM0JRcCooSIoJApLFiTxb3eFykMXRwx3FT4Pswc9C73fT5ynCBi16B0BODUUATAUATAUATAUATAUATAUATAUATAUATAUATAUATAUATAUATAUATAUATAUATAUAVit2w9byl+slu9bfgAAAABJRU5ErkJggg==" InformativeScreenshot="50ac1e77d4d92e9c57d3aaf4f4109365.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Personal Car Leasing Deals &amp;amp; Offers | Personal Contract Hire UK | PCH | ZenAuto' /&gt;" SearchSteps="FuzzySelector" Visibility="Interactive" />
                       </uix:NClick.Target>
                     </uix:NClick>
-                    <uix:NClick ClickType="Single" DisplayName="Click 'Model'" sap:VirtualizedContainerService.HintSize="338,166" sap2010:WorkflowViewState.IdRef="NClick_14" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="c437b863-15c5-4f8b-aa85-e4de0e6736b7" Version="V1">
-                      <uix:NClick.Target>
-                        <uix:TargetAnchorable BrowserURL="https://zen.auto/search-personal-leasing/make/volkswagen" DesignTimeRectangle="490, 269, 40, 21" ElementType="Text" FriendlyName="'Model'" FullSelectorArgument="&lt;webctrl aaname='Model' parentid='react-tabs-1' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Model' parentid='react-tabs-1' tag='DIV' type='' class='dropdown__label' check:innerText='Model' /&gt;" Guid="ae18c134-e9eb-448f-903c-ab74da8c4693" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAACwAAAAZCAYAAABKM8wfAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAEmSURBVFhH7ZNtCsMgDIY9o9ALFa/SHqU7yH54jCzNh01qJ91A2MAHhNWa18fYBfgzhnBvhnBvhnCbDVKIsDzlsUmGZQoQ1yzPjBPe5nrBAQekhzx+RQfhEBLG1uQ14rufFMYxn5X3jfidF+ZQqnkjUjKp9kr4yA7TgonKXeEpQqRwmURofk4UXOafC63TTeob0MOIoK63wjpHDdL1esN3hbGYN5fCR5Lf3AkV0rWW6zqL73CdYSU/EC6ndV21wtdh3DEWInl3xTtWWPagrvvxhTDirmvnhrDp6l3hKqPwqTCS13R8b04YITnzPcr78wHthvzJmJoqYydDbhyoKew5CSMsgDU6zrXljyaD/tBesMrA0bpFJ/wPDOHeDOHeDOHeDOG+ALwAlBndDKJ63l4AAAAASUVORK5CYII=" InformativeScreenshot="53cbe9799a856874b37c2a5b18d6d6a0.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='VW Lease Deals | Volkswagen Personal Car Leasing &amp;amp; Contract Hire Offers | PCH | ZenAuto' /&gt;" SearchSteps="FuzzySelector, Image" Visibility="Interactive">
-                          <uix:TargetAnchorable.Anchors>
-                            <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
-                              <uix:Target DesignTimeRectangle="474, 254, 200, 51" FriendlyName="'Model'" FullSelectorArgument="&lt;webctrl css-selector='body&amp;gt;div&amp;gt;div&amp;gt;main&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;section&amp;gt;div&amp;gt;div&amp;gt;div' idx='2' parentid='react-tabs-1' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl type='' class='dropdown__trigger' parentid='react-tabs-1' tag='DIV' aaname='' check:innerText='Model' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAMwAAAA3CAYAAABAd6UoAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAJOSURBVHhe7dg/bsIwGIfhHIWjcIZI7NwECeUeTHANhkrt0LEHYOiQjSu4tmMHm5A0PyBITd9H+qTmbxe/NbQ4n8+GYZhxQzAMI0wbzNvnF8MwPXMzGABdBAMICAYQEAwgIBhAQDCAgGAAAcEAAoIBBAQDCAgGEBAMICAYQEAwgIBgAAHBAAKCAQQEAwj+cDDvpipKs/8Oh4Nqs18VpjzU4Ri4z2TBvG+HFmizgKuPcHgXgsHrTRpMUVR2WXfVh9JeIxj8PRMHY2d7nYxb6M21PJhmUftnekJo3+mfvRXM5d3Fam/fGBHMnK3Xa3M6ncJRP3fPcrkMR/eZNphVaUq/uMNJy5/fVn5ht+e/9/6+uMi7O1CMKQQS70+Died8oPH+uMMRzJwdj0cfwlA07tpisfD3PmLaYOzibRZ/WLgfVfi52QliEPHe1O3nUvkO031HGgnBzN1msxmMxl17NBZn8mDav/bZrpIG07OY/Y7RBOHjyT5iOWkw4Xf4XScfgvk/+qJx53a7XTh6zAuCsbKPS86IYJJdZWww/UEQzH/honETo3lmLM5rgrHqQ3X5vpEFY/k4ku8j4fp1YOmCbz6yJc903uHUph4VFOYkRuNicf8QeKaXBZO7CsZqArDPxLl+tv2iH8b/QyEPpPMOO4O7GGbLBfPsWJzJggHmiGAAAcEAAoIBBAQDCAgGEBAMICAYQEAwgIBgAAHBAAKCAQQEAwgIBhAQDCAgGEBAMICAYAABwQACggEEBAMIeoNhGOb2dIJhGOb3IRiGGT1n8wPVQEGoFbq8FwAAAABJRU5ErkJggg==" SearchSteps="FuzzySelector" />
-                            </scg:List>
-                          </uix:TargetAnchorable.Anchors>
-                        </uix:TargetAnchorable>
-                      </uix:NClick.Target>
-                    </uix:NClick>
-                    <uix:NClick ClickType="Single" DisplayName="Click 'ID3'" sap:VirtualizedContainerService.HintSize="338,166" sap2010:WorkflowViewState.IdRef="NClick_15" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="c437b863-15c5-4f8b-aa85-e4de0e6736b7" Version="V1">
-                      <uix:NClick.Target>
-                        <uix:TargetAnchorable BrowserURL="https://zen.auto/search-personal-leasing/make/volkswagen" DesignTimeRectangle="760, 390, 267, 28" ElementType="ListItem" FriendlyName="'ID3'" FullSelectorArgument="&lt;webctrl idx='11' parentid='react-tabs-1' tag='LI' /&gt;" FuzzySelectorArgument="[String.Format(&quot;&lt;webctrl type='' parentid='react-tabs-1' tag='LI' class='dropdown__option' check:innerText='{0}' /&gt;&quot;, in_SearchTerm2)]" Guid="2589f394-fd55-4833-9573-484668554d91" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAQ8AAAAgCAYAAAAMov1pAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAEeSURBVHhe7do9joJQFIDR2ZLFFG4QCtdhwiYMW5AtYM8W3uCgBAWLuVHCy5ziFDx+yi/vAl+7730C+CvxAELEAwgRDyBEPIAQ8QBCxAMIEQ8gRDyAEPEAQsQDCHlfPKomdV2Tjg/H3UxbH8Z7ivqycM0lncrbM4DN+nA8Jsfj2mNARmWdWuGAbKwbj5frVTr3UTlX0zVgy9aPxywUh3Rqh5FFPCAfm4hHcR1VfseWPiJtnYrZPcDWrB+PWySWdxnGF8jF6vEYvrAs7UiuxANysWo8js3Tu42yH1km54ew+OICOfhwPO7/btw97Thm1wgH5OJ98QD+FfEAQsQDCBEPIEQ8gBDxAELEAwgRDyBEPIAQ8QBCxAMIEQ8gYJ9+AIH9cdenG5dpAAAAAElFTkSuQmCC" InformativeScreenshot="0ca5be04783a801f74dab62f5b919b30.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='VW Lease Deals | Volkswagen Personal Car Leasing &amp;amp; Contract Hire Offers | PCH | ZenAuto' /&gt;" SearchSteps="FuzzySelector" Visibility="Interactive" />
-                      </uix:NClick.Target>
-                    </uix:NClick>
                   </Sequence>
                   <Switch x:TypeArguments="x:String" DisplayName="Switch" Expression="[in_WhatToExtract]" sap:VirtualizedContainerService.HintSize="497,149" sap2010:WorkflowViewState.IdRef="Switch`1_14">
                     <Switch.Default>
@@ -1194,7 +1178,7 @@
                         </Assign.Value>
                       </Assign>
                     </Switch.Default>
-                    <Sequence x:Key="PricePerMonth" sap:VirtualizedContainerService.HintSize="400,478" sap2010:WorkflowViewState.IdRef="Sequence_30">
+                    <Sequence x:Key="PricePerMonth" sap:VirtualizedContainerService.HintSize="400,520" sap2010:WorkflowViewState.IdRef="Sequence_30">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
