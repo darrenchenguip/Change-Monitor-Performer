@@ -17,7 +17,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1051,2488</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1051,2246</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Check_Shop_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="70">
@@ -115,7 +115,7 @@
       <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Check_Shop" sap:VirtualizedContainerService.HintSize="733,2423" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Check_Shop" sap:VirtualizedContainerService.HintSize="733,2181" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="ui:UiElement" Name="Browser" />
     </Sequence.Variables>
@@ -124,7 +124,7 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="671,2301" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="671,2059" sap2010:WorkflowViewState.IdRef="TryCatch_1">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -132,7 +132,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
       <TryCatch.Try>
-        <Switch x:TypeArguments="x:String" DisplayName="Switch" Expression="[in_Shop]" sap:VirtualizedContainerService.HintSize="633,2064" sap2010:WorkflowViewState.IdRef="Switch`1_4">
+        <Switch x:TypeArguments="x:String" DisplayName="Switch" Expression="[in_Shop]" sap:VirtualizedContainerService.HintSize="633,1822" sap2010:WorkflowViewState.IdRef="Switch`1_4">
           <Switch.Default>
             <Throw Exception="[new Exception(&quot;Shop not found&quot;)]" sap:VirtualizedContainerService.HintSize="334,97" sap2010:WorkflowViewState.IdRef="Throw_1" />
           </Switch.Default>
@@ -142,13 +142,13 @@
               <x:Boolean x:Key="IsPinned">False</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <uix:NApplicationCard WebDriverMode="{x:Null}" x:Key="sainsburys" sap2010:Annotation.AnnotationText="Set product page to get price from" AttachMode="SingleWindow" CloseMode="Never" DisplayName="Use Browser Chrome: Hula Hoops Original Potato Ring Crisps 6x24g | Sainsbury's" sap:VirtualizedContainerService.HintSize="593,1336" sap2010:WorkflowViewState.IdRef="NApplicationCard_3" InteractionMode="DebuggerApi" IsIncognito="True" OutUiElement="[Browser]" ScopeGuid="c437b863-15c5-4f8b-aa85-e4de0e6736b7" Version="V2">
+          <uix:NApplicationCard WebDriverMode="{x:Null}" x:Key="sainsburys" sap2010:Annotation.AnnotationText="Set product page to get price from" AttachMode="SingleWindow" CloseMode="Never" DisplayName="Use Browser Chrome: Hula Hoops Original Potato Ring Crisps 6x24g | Sainsbury's" sap:VirtualizedContainerService.HintSize="593,1295" sap2010:WorkflowViewState.IdRef="NApplicationCard_3" InteractionMode="DebuggerApi" IsIncognito="True" OutUiElement="[Browser]" ScopeGuid="c437b863-15c5-4f8b-aa85-e4de0e6736b7" Version="V2">
             <uix:NApplicationCard.Body>
               <ActivityAction x:TypeArguments="x:Object">
                 <ActivityAction.Argument>
                   <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
                 </ActivityAction.Argument>
-                <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="559,1038" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="559,1080" sap2010:WorkflowViewState.IdRef="Sequence_5">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -309,13 +309,13 @@
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
           </uix:NApplicationCard>
-          <uix:NApplicationCard WebDriverMode="{x:Null}" x:Key="asda" sap2010:Annotation.AnnotationText="Set product page to get price from" AttachMode="SingleWindow" CloseMode="Never" DisplayName="Use Browser Chrome: Hula Hoops Salt &amp; Vinegar Multipack Crisps - ASDA Groceries" sap:VirtualizedContainerService.HintSize="593,1694" sap2010:WorkflowViewState.IdRef="NApplicationCard_6" InteractionMode="DebuggerApi" IsIncognito="True" OutUiElement="[Browser]" ScopeGuid="c437b863-15c5-4f8b-aa85-e4de0e6736b7" Version="V2">
+          <uix:NApplicationCard WebDriverMode="{x:Null}" x:Key="asda" sap2010:Annotation.AnnotationText="Set product page to get price from" AttachMode="SingleWindow" CloseMode="Never" DisplayName="Use Browser Chrome: Hula Hoops Salt &amp; Vinegar Multipack Crisps - ASDA Groceries" sap:VirtualizedContainerService.HintSize="593,1654" sap2010:WorkflowViewState.IdRef="NApplicationCard_6" InteractionMode="DebuggerApi" IsIncognito="True" OutUiElement="[Browser]" ScopeGuid="c437b863-15c5-4f8b-aa85-e4de0e6736b7" Version="V2">
             <uix:NApplicationCard.Body>
               <ActivityAction x:TypeArguments="x:Object">
                 <ActivityAction.Argument>
                   <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
                 </ActivityAction.Argument>
-                <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="559,1397" sap2010:WorkflowViewState.IdRef="Sequence_12">
+                <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="559,1439" sap2010:WorkflowViewState.IdRef="Sequence_12">
                   <Sequence.Variables>
                     <Variable x:TypeArguments="x:String" Name="ProductName" />
                     <Variable x:TypeArguments="x:String" Name="ProductVariant" />
@@ -429,7 +429,7 @@
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
           </uix:NApplicationCard>
-          <uix:NApplicationCard WebDriverMode="{x:Null}" x:Key="morrisons" sap2010:Annotation.AnnotationText="Set product page to get price from" AttachMode="SingleWindow" CloseMode="Never" DisplayName="Use Browser Chrome: Morrisons | Online Shopping | Food, Drink &amp; More To Your Door" sap:VirtualizedContainerService.HintSize="593,1293" sap2010:WorkflowViewState.IdRef="NApplicationCard_7" InteractionMode="DebuggerApi" IsIncognito="True" OutUiElement="[Browser]" ScopeGuid="c437b863-15c5-4f8b-aa85-e4de0e6736b7" Version="V2">
+          <uix:NApplicationCard WebDriverMode="{x:Null}" x:Key="morrisons" sap2010:Annotation.AnnotationText="Set product page to get price from" AttachMode="SingleWindow" CloseMode="Never" DisplayName="Use Browser Chrome: Morrisons | Online Shopping | Food, Drink &amp; More To Your Door" sap:VirtualizedContainerService.HintSize="593,1295" sap2010:WorkflowViewState.IdRef="NApplicationCard_7" InteractionMode="DebuggerApi" IsIncognito="True" OutUiElement="[Browser]" ScopeGuid="c437b863-15c5-4f8b-aa85-e4de0e6736b7" Version="V2">
             <uix:NApplicationCard.Body>
               <ActivityAction x:TypeArguments="x:Object">
                 <ActivityAction.Argument>
@@ -531,13 +531,13 @@
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
           </uix:NApplicationCard>
-          <uix:NApplicationCard WebDriverMode="{x:Null}" x:Key="lidl" sap2010:Annotation.AnnotationText="Set product page to get price from" AttachMode="SingleWindow" CloseMode="Never" DisplayName="Use Browser Chrome: Woodcote 12 Large Free Range Eggs - at Lidl UK - www.lidl.co.uk" sap:VirtualizedContainerService.HintSize="593,1293" sap2010:WorkflowViewState.IdRef="NApplicationCard_8" InteractionMode="DebuggerApi" IsIncognito="True" OutUiElement="[Browser]" ScopeGuid="c437b863-15c5-4f8b-aa85-e4de0e6736b7" Version="V2">
+          <uix:NApplicationCard WebDriverMode="{x:Null}" x:Key="lidl" sap2010:Annotation.AnnotationText="Set product page to get price from" AttachMode="SingleWindow" CloseMode="Never" DisplayName="Use Browser Chrome: Woodcote 12 Large Free Range Eggs - at Lidl UK - www.lidl.co.uk" sap:VirtualizedContainerService.HintSize="593,1591" sap2010:WorkflowViewState.IdRef="NApplicationCard_8" InteractionMode="DebuggerApi" IsIncognito="True" OutUiElement="[Browser]" ScopeGuid="c437b863-15c5-4f8b-aa85-e4de0e6736b7" Version="V2">
             <uix:NApplicationCard.Body>
               <ActivityAction x:TypeArguments="x:Object">
                 <ActivityAction.Argument>
                   <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
                 </ActivityAction.Argument>
-                <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="559,1334" sap2010:WorkflowViewState.IdRef="Sequence_18">
+                <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="559,1038" sap2010:WorkflowViewState.IdRef="Sequence_18">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -633,7 +633,7 @@
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
           </uix:NApplicationCard>
-          <uix:NApplicationCard WebDriverMode="{x:Null}" x:Key="leagueofgraphs" sap2010:Annotation.AnnotationText="Set product page to get price from" AttachMode="SingleWindow" CloseMode="Never" DisplayName="Use Browser Chrome: Tomo (EUW) - LeagueOfGraphs" sap:VirtualizedContainerService.HintSize="593,1272" sap2010:WorkflowViewState.IdRef="NApplicationCard_9" InteractionMode="DebuggerApi" IsIncognito="True" OutUiElement="[Browser]" ScopeGuid="c437b863-15c5-4f8b-aa85-e4de0e6736b7" Version="V2">
+          <uix:NApplicationCard WebDriverMode="{x:Null}" x:Key="leagueofgraphs" sap2010:Annotation.AnnotationText="Set product page to get price from" AttachMode="SingleWindow" CloseMode="Never" DisplayName="Use Browser Chrome: Tomo (EUW) - LeagueOfGraphs" sap:VirtualizedContainerService.HintSize="593,1273" sap2010:WorkflowViewState.IdRef="NApplicationCard_9" InteractionMode="DebuggerApi" IsIncognito="True" OutUiElement="[Browser]" ScopeGuid="c437b863-15c5-4f8b-aa85-e4de0e6736b7" Version="V2">
             <uix:NApplicationCard.Body>
               <ActivityAction x:TypeArguments="x:Object">
                 <ActivityAction.Argument>
@@ -739,13 +739,13 @@
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
           </uix:NApplicationCard>
-          <uix:NApplicationCard WebDriverMode="{x:Null}" x:Key="superdrug" sap2010:Annotation.AnnotationText="Set product page to get price from" AttachMode="SingleWindow" CloseMode="Never" DisplayName="Use Browser Chrome: Aveeno Daily Moisturising Yogurt Vanilla Body Wash 300ml | Toiletries | Superdru" sap:VirtualizedContainerService.HintSize="593,1293" sap2010:WorkflowViewState.IdRef="NApplicationCard_10" InteractionMode="DebuggerApi" IsIncognito="True" OutUiElement="[Browser]" ScopeGuid="c437b863-15c5-4f8b-aa85-e4de0e6736b7" Version="V2">
+          <uix:NApplicationCard WebDriverMode="{x:Null}" x:Key="superdrug" sap2010:Annotation.AnnotationText="Set product page to get price from" AttachMode="SingleWindow" CloseMode="Never" DisplayName="Use Browser Chrome: Aveeno Daily Moisturising Yogurt Vanilla Body Wash 300ml | Toiletries | Superdru" sap:VirtualizedContainerService.HintSize="593,1430" sap2010:WorkflowViewState.IdRef="NApplicationCard_10" InteractionMode="DebuggerApi" IsIncognito="True" OutUiElement="[Browser]" ScopeGuid="c437b863-15c5-4f8b-aa85-e4de0e6736b7" Version="V2">
             <uix:NApplicationCard.Body>
               <ActivityAction x:TypeArguments="x:Object">
                 <ActivityAction.Argument>
                   <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
                 </ActivityAction.Argument>
-                <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="559,1038" sap2010:WorkflowViewState.IdRef="Sequence_22">
+                <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="559,1173" sap2010:WorkflowViewState.IdRef="Sequence_22">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -756,12 +756,13 @@
                       <uix:TargetAnchorable BrowserURL="https://www.superdrug.com/skin/body-moisturisers/body-lotions/aveeno-cream-100ml/p/322555" DesignTimeRectangle="867, 602, 200, 46" ElementType="Button" FriendlyName="'Accept cookies'" FullSelectorArgument="&lt;webctrl id='onetrust-accept-btn-handler' tag='BUTTON' aaname='Accept cookies' /&gt;" FuzzySelectorArgument="&lt;webctrl id='onetrust-accept-btn-handler' tag='BUTTON' aaname='Accept cookies' type='' class='' check:text='Accept cookies' /&gt;" Guid="87aac0d0-d228-4675-a337-ca30f5f2fa83" ImageBase64="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" InformativeScreenshot="1ba020646d8bd1596489060aea4c245e.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='*Superdrug*' /&gt;" SearchSteps="Selector" Visibility="Interactive" />
                     </uix:NClick.Target>
                   </uix:NClick>
+                  <Delay Duration="00:00:02" sap:VirtualizedContainerService.HintSize="497,97" sap2010:WorkflowViewState.IdRef="Delay_1" />
                   <uix:NTakeScreenshot ContinueOnError="True" DisplayName="Take Screenshot" FileName="screenshot.png" FileNameMode="None" sap:VirtualizedContainerService.HintSize="497,249" sap2010:WorkflowViewState.IdRef="NTakeScreenshot_10" ScopeIdentifier="c437b863-15c5-4f8b-aa85-e4de0e6736b7" Timeout="5" Version="V1">
                     <uix:NTakeScreenshot.SavedTo>
                       <OutArgument x:TypeArguments="x:String">[out_ScreenshotFilepath]</OutArgument>
                     </uix:NTakeScreenshot.SavedTo>
                   </uix:NTakeScreenshot>
-                  <Switch x:TypeArguments="x:String" DisplayName="Switch" Expression="[in_WhatToExtract]" sap:VirtualizedContainerService.HintSize="497,171" sap2010:WorkflowViewState.IdRef="Switch`1_11">
+                  <Switch x:TypeArguments="x:String" DisplayName="Switch" Expression="[in_WhatToExtract]" sap:VirtualizedContainerService.HintSize="497,169" sap2010:WorkflowViewState.IdRef="Switch`1_11">
                     <Switch.Default>
                       <Assign sap:VirtualizedContainerService.HintSize="262,61" sap2010:WorkflowViewState.IdRef="Assign_15">
                         <Assign.To>
